@@ -25,17 +25,11 @@ def proteins(strand):
 
     if stop:
 
-        # if stop codon at end
-        if strand[-3:] in amino_acids['STOP']:
-
-            strand_temp = strand_temp[:-1]
-            result = get_acids(strand_temp, codons, amino_acids)
-
         # if stop codon at beginning
-        elif strand[:3] in amino_acids['STOP']:
+        if strand[:3] in amino_acids['STOP']:
             return result
 
-        # if stop codon in the middle
+        # if stop codon in the middle or at the end
         else:
             strand_temp = strand_temp[0:stop_i]
             result = get_acids(strand_temp, codons, amino_acids)
