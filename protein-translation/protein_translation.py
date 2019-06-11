@@ -29,12 +29,7 @@ def proteins(strand):
         if strand[-3:] in amino_acids['STOP']:
 
             strand_temp = strand_temp[:-1]
-
-            for c in codons:
-                for t in strand_temp:
-                    # transfer amino_acids key into list of codons
-                    if t in [c[i:i + 3] for i in range(0, len(c), 3)]:
-                        result += amino_acids[c]
+            result = get_acids(strand_temp, codons, amino_acids)
 
         # if stop codon at beginning
         elif strand[:3] in amino_acids['STOP']:
@@ -43,17 +38,21 @@ def proteins(strand):
         # if stop codon in the middle
         else:
             strand_temp = strand_temp[0:stop_i]
-
-            for s in strand_temp:
-                for c in codons:
-                    if s in [c[i:i + 3] for i in range(0, len(c), 3)]:
-                        result += amino_acids[c]
+            result = get_acids(strand_temp, codons, amino_acids)
 
     else:
-        for s in strand_temp:
-            for c in codons:
-                if s in [c[i:i+3] for i in range(0, len(c), 3)]:
-                    result += amino_acids[c]
+        result = get_acids(strand_temp, codons, amino_acids)
+
+    return result
+
+
+def get_acids(strand_temp: list, codons: list, amino_acids: dict):
+    result = []
+
+    for s in strand_temp:
+        for c in codons:
+            if s in [c[i:i+3] for i in range(0, len(c), 3)]:
+                result += amino_acids[c]
 
     return result
 
