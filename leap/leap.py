@@ -1,4 +1,4 @@
-def is_leap(year:int):
+def leap_year(year:int):
     '''
     The tricky thing here is that a leap year occurs:
         on every year that is evenly divisible by 4
