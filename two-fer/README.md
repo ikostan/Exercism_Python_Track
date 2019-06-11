@@ -14,7 +14,6 @@ Use your code editor to solve the problem locally.
 
 3. Submit:<br/>
 exercism submit /path/to/file [/path/to/file2 ...]
-Still stuck?
 
 ### Source
 https://en.wikipedia.org/wiki/Two-fer
