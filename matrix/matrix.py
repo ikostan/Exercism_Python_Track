@@ -6,4 +6,5 @@ class Matrix(object):
         return self.matrix[index - 1]
 
     def column(self, index):
-        pass
+        return [m[index - 1] for m in self.matrix]
+
