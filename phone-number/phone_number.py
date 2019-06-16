@@ -46,7 +46,7 @@ class Phone(object):
         else:
             return False
 
-    # Area code validation:
+    # Exchange code validation:
     def __exchange_code__(self, digits_only: str):
         if int(digits_only[3]) > 1 and len(digits_only) == 10:
             return True
