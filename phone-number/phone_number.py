@@ -1,36 +1,36 @@
 class Phone(object):
 
     def __init__(self, phone_number):
-        print('Raw data: {0}'.format(phone_number))  # debug only
+        #  print('Raw data: {0}'.format(phone_number))  # debug only
 
         npa = [200, 999]
         digits_only = ''.join(n for n in phone_number if n.isdigit())
-        print('Formatted number: {0}'.format(digits_only))  # debug only
+        #  print('Formatted number: {0}'.format(digits_only))  # debug only
 
         if len(digits_only) == 10:
             #  print('NPA: {0}'.format(digits_only[0:3]))  # debug only
             #  NPA validation
             if npa[0] <= int(digits_only[0:3]) <= npa[1]:
-                print('Exchange code: {0}'.format(digits_only[3]))  # debug only
+                #  print('Exchange code: {0}'.format(digits_only[3]))  # debug only
                 # exchange code validation
                 if int(digits_only[3]) > 1:
                     self.number = digits_only
                     self.area_code = digits_only[0:3]
                 else:
-                    ValueError('Invalid exchange code')
+                    raise ValueError('Invalid exchange code')
             else:
                 raise ValueError('Invalid NPA')
         elif digits_only[0] == '1' and len(digits_only[1:]) == 10:
             #  print('NPA: {0}'.format(digits_only[1:4]))  # debug only
             #  NPA validation
             if npa[0] <= int(digits_only[1:4]) <= npa[1]:
-                print('Exchange code: {0}'.format(digits_only[4]))  # debug only
+                # print('Exchange code: {0}'.format(digits_only[4]))  # debug only
                 # exchange code validation
                 if int(digits_only[4]) > 1:
                     self.number = digits_only[1:]
                     self.area_code = digits_only[1:4]
                 else:
-                    ValueError('Invalid exchange code')
+                    raise ValueError('Invalid exchange code')
             else:
                 raise ValueError('Invalid NPA')
         else:
