@@ -3,7 +3,7 @@ class Phone(object):
     def __init__(self, phone_number):
         digits_only = ''.join(n for n in phone_number if n.isdigit())
 
-        if self.__get_country_code__(digits_only):
+        if self.__country_code__(digits_only):
             if self.__npa__(digits_only):
                 if self.__exchange_code__(digits_only):
                     self.number = digits_only if len(digits_only) == 10 else digits_only[1:]
@@ -27,12 +27,11 @@ class Phone(object):
                                           self.number[7:])
 
     # Country code validation:
-    def __get_country_code__(self, digits_only: str):
-
+    def __country_code__(self, digits_only: str):
         if len(digits_only) == 10:
-            return digits_only[0:3]
+            return True
         elif digits_only[0] == '1' and len(digits_only[1:]) == 10:
-            return digits_only[1:4]
+            return True
         else:
             return False
 
