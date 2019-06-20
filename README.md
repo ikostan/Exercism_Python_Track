@@ -17,6 +17,9 @@ Exercism is designed to be fun and friendly, and we place a strong emphasis on e
 Sign up and have fun. Exercism is 100% free :)
 
 
+### Getting Started
+We know using a new product can be daunting, and Exercism is a little complicated. So here's a really simple set of instructions to get you started. [Click here for help](https://exercism.io/getting-started)
+
 ### Testing
 
 All exercises must be compatible with Python versions 2.7 and 3.4 upwards.
