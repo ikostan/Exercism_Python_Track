@@ -10,6 +10,12 @@ install:
     - "pip install pytest-cov" #This plugin produces coverage reports
     #- "pip install pytest-xdist" #For distributed testing support install pytest-xdist
 script:
-  # Problem 1
-  #- python -m pytest Problem_1/tests/ # run unit tests with pytest
+  # Hello World
   - pytest --cov-report term-missing --cov=hello-world hello-world/hello_world_test.py  # check test coverage with pytest-cov
+  # Two Fer
+  - pytest --cov-report term-missing --cov=two-fer two-fet/two_fer_test.py  # check test coverage with pytest-cov
+  # High Scores
+  - pytest --cov-report term-missing --cov=high-scores high-scores/high_scores_test.py  # check test coverage with pytest-cov
+  # Matrix
+  - pytest --cov-report term-missing --cov=matrix matrix/matrix_test.py  # check test coverage with pytest-cov
+
