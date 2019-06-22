@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ikostan/Exercism_Python_Track.svg?branch=master)](https://travis-ci.org/ikostan/Exercism_Python_Track)
+
 # Exercism Python Track
 
 ## Exercism exercises in Python
