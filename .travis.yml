@@ -12,4 +12,4 @@ install:
 script:
   # Problem 1
   #- python -m pytest Problem_1/tests/ # run unit tests with pytest
-  - pytest --cov-report term-missing --cov=hello-world hello_world_test.py  # check test coverage with pytest-cov
+  - pytest --cov-report term-missing --cov=hello-world hello-world/hello_world_test.py  # check test coverage with pytest-cov
