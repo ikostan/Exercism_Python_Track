@@ -10,12 +10,24 @@ install:
     - "pip install pytest-cov" #This plugin produces coverage reports
     #- "pip install pytest-xdist" #For distributed testing support install pytest-xdist
 script:
-  # Hello World
+  # Hello World exercise:
   - pytest --cov-report term-missing --cov=hello-world hello-world/hello_world_test.py  # check test coverage with pytest-cov
-  # Two Fer
+  #Side exercises:
+  - # Leap
+  - pytest --cov-report term-missing --cov=leap leap/leap_test.py  # check test coverage with pytest-cov
+  # Reverse String:
+  - pytest --cov-report term-missing --cov=reverse-string reverse-string/reverse_string_test.py  # check test coverage with pytest-cov
+  # RNA Transcription:
+  - pytest --cov-report term-missing --cov=rna-transcription rna-transcription/rna_transcription_test.py  # check test coverage with pytest-cov
+  # Pangram:
+  - pytest --cov-report term-missing --cov=pangram pangram/pangram_test.py  # check test coverage with pytest-cov
+  # Robot Name:
+  - pytest --cov-report term-missing --cov=robot-name robot-name/robot_name_test.py  # check test coverage with pytest-cov
+
+  # Two Fer exercise:
   - pytest --cov-report term-missing --cov=two-fer two-fer/two_fer_test.py  # check test coverage with pytest-cov
-  # High Scores
+  # High Scores exercise:
   - pytest --cov-report term-missing --cov=high-scores high-scores/high_scores_test.py  # check test coverage with pytest-cov
-  # Matrix
+  # Matrix exercise:
   - pytest --cov-report term-missing --cov=matrix matrix/matrix_test.py  # check test coverage with pytest-cov
 
