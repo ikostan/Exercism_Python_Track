@@ -12,8 +12,8 @@ install:
 script:
   # Hello World exercise:
   - pytest --cov-report term-missing --cov=hello-world hello-world/hello_world_test.py  # check test coverage with pytest-cov
-  #Side exercises:
-  - # Leap
+  # Side exercises
+  # Leap:
   - pytest --cov-report term-missing --cov=leap leap/leap_test.py  # check test coverage with pytest-cov
   # Reverse String:
   - pytest --cov-report term-missing --cov=reverse-string reverse-string/reverse_string_test.py  # check test coverage with pytest-cov
@@ -26,8 +26,19 @@ script:
 
   # Two Fer exercise:
   - pytest --cov-report term-missing --cov=two-fer two-fer/two_fer_test.py  # check test coverage with pytest-cov
+  # Side exercises
+  # Armstrong Numbers:
+  - pytest --cov-report term-missing --cov=armstrong-numbers armstrong-numbers/armstrong_numbers_test.py  # check test coverage with pytest-cov
+  # Protein Translation:
+  - pytest --cov-report term-missing --cov=protein-translation protein-translation/protein_translation_test.py  # check test coverage with pytest-cov
+
   # High Scores exercise:
   - pytest --cov-report term-missing --cov=high-scores high-scores/high_scores_test.py  # check test coverage with pytest-cov
+  #Side exercises
+  # Series:
+  # Phone Number:
+
   # Matrix exercise:
   - pytest --cov-report term-missing --cov=matrix matrix/matrix_test.py  # check test coverage with pytest-cov
+  #Side exercises:
 
