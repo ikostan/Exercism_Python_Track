@@ -36,7 +36,9 @@ script:
   - pytest --cov-report term-missing --cov=high-scores high-scores/high_scores_test.py  # check test coverage with pytest-cov
   #Side exercises
   # Series:
+  - pytest --cov-report term-missing --cov=series series/series_test.py  # check test coverage with pytest-cov
   # Phone Number:
+  - pytest --cov-report term-missing --cov=phone-number phone-number/phone_number_test.py  # check test coverage with pytest-cov
 
   # Matrix exercise:
   - pytest --cov-report term-missing --cov=matrix matrix/matrix_test.py  # check test coverage with pytest-cov
