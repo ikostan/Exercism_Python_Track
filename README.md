@@ -4,13 +4,13 @@
     <table style="width:100%">
       <tr>
         <td>
-            <h3>
+            <h1>
                 <img width="10%" height="10%" src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/exercism-logo.png">
             Exercism
             </h3>
         </td>
         <td>
-            <h3>
+            <h1>
                 <img width="10%" height="10%" src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/python-track.png">
             Python Track
             </h3>
