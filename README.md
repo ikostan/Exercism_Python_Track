@@ -3,7 +3,7 @@
 # Exercism Python Track
 
 <p align="center"> 
-<img width="90%" height="90%" src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/exercism-logo.png">
+<img width="50%" height="50%" src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/exercism-logo.png">
 <img src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/python-track.png">
 </p>
 
