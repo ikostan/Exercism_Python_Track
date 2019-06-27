@@ -1,15 +1,19 @@
 [![Build Status](https://travis-ci.org/ikostan/Exercism_Python_Track.svg?branch=master)](https://travis-ci.org/ikostan/Exercism_Python_Track)
 
-# Exercism Python Track
-
 <div align="center"> 
     <table style="width:100%">
       <tr>
         <td>
-            <img width="10%" height="10%" src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/exercism-logo.png">
+            <h3>
+                <img width="10%" height="10%" src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/exercism-logo.png">
+            Exercism
+            </h3>
         </td>
         <td>
-            <img width="10%" height="10%" src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/python-track.png">
+            <h3>
+                <img width="10%" height="10%" src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/python-track.png">
+            Python Track
+            </h3>
         </td>
       </tr>
     </table>
