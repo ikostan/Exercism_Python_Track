@@ -8,7 +8,6 @@
         <img width="10%" height="10%" src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/exercism-logo.png">
       </tr>
       <tr>
-        <br/>
         <img width="10%" height="10%" src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/python-track.png">
       </tr>
     </table>
