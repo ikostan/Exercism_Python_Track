@@ -4,16 +4,16 @@
     <table style="width:100%">
       <tr>
         <td>
-            <h1>
-                <img width="10%" height="10%" src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/exercism-logo.png">
-            Exercism
-            </h3>
+            <img width="10%" height="10%" src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/exercism-logo.png">
         </td>
         <td>
-            <h1>
-                <img width="10%" height="10%" src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/python-track.png">
-            Python Track
-            </h3>
+            <h1>Exercism</h1>
+        </td>
+        <td>
+            <img width="10%" height="10%" src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/python-track.png">
+        </td>
+        <td>
+            <h1>Python Track</h1>
         </td>
       </tr>
     </table>
