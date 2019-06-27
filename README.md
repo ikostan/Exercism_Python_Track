@@ -3,8 +3,8 @@
 # Exercism Python Track
 
 <p align="center"> 
-<img width="25%" height="25%" src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/exercism-logo.png" hspace="20">
-<img src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/python-track.png">
+<img width="25%" height="25%" src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/exercism-logo.png" hspace="10">
+<img src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/python-track.png" hspace="10">
 </p>
 
 ## Exercism exercises in Python
