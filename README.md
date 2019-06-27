@@ -5,10 +5,14 @@
 <div align="center"> 
     <table style="width:100%">
       <tr>
-        <img width="10%" height="10%" src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/exercism-logo.png">
+        <td>
+            <img width="10%" height="10%" src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/exercism-logo.png">
+        </td>
       </tr>
       <tr>
-        <img width="10%" height="10%" src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/python-track.png">
+        <td>
+            <img width="10%" height="10%" src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/python-track.png">
+        </td>
       </tr>
     </table>
 </div>
