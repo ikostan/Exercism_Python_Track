@@ -23,6 +23,8 @@ script:
   - pytest --cov-report term-missing --cov=pangram pangram/pangram_test.py  # check test coverage with pytest-cov
   # Robot Name:
   - pytest --cov-report term-missing --cov=robot-name robot-name/robot_name_test.py  # check test coverage with pytest-cov
+  # Yacht:
+  - pytest --cov-report term-missing --cov=yacht yacht/yacht_test.py
 
   # Two Fer exercise:
   - pytest --cov-report term-missing --cov=two-fer two-fer/two_fer_test.py  # check test coverage with pytest-cov
