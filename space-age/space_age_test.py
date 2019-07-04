@@ -1,5 +1,4 @@
 import unittest
-
 from space_age import SpaceAge
 
 
