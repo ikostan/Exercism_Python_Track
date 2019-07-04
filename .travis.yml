@@ -1,48 +1,60 @@
+dist: xenial   # required for Python >= 3.7
+
 language: python
+
 python:
   #- "3.0.1"
   #- "3.1"
   #- "3.4.10"
-  - "3.5"
+  #- "3.5"
   - "3.6"
+
 install:
     - "pip install pytest"
     - "pip install pytest-cov" #This plugin produces coverage reports
-    #- "pip install pytest-xdist" #For distributed testing support install pytest-xdist
+    - "pip install codecov" #install codecov
+
 script:
+  - pytest --cov-report term-missing
   # Hello World exercise:
-  - pytest --cov-report term-missing --cov=hello-world hello-world/hello_world_test.py  # check test coverage with pytest-cov
+  #- pytest --cov-report term-missing --cov=hello-world hello-world/hello_world_test.py  # check test coverage with pytest-cov
   # Side exercises
   # Leap:
-  - pytest --cov-report term-missing --cov=leap leap/leap_test.py  # check test coverage with pytest-cov
+  #- pytest --cov-report term-missing --cov=leap leap/leap_test.py  # check test coverage with pytest-cov
   # Reverse String:
-  - pytest --cov-report term-missing --cov=reverse-string reverse-string/reverse_string_test.py  # check test coverage with pytest-cov
+  #- pytest --cov-report term-missing --cov=reverse-string reverse-string/reverse_string_test.py  # check test coverage with pytest-cov
   # RNA Transcription:
-  - pytest --cov-report term-missing --cov=rna-transcription rna-transcription/rna_transcription_test.py  # check test coverage with pytest-cov
+  #- pytest --cov-report term-missing --cov=rna-transcription rna-transcription/rna_transcription_test.py  # check test coverage with pytest-cov
   # Pangram:
-  - pytest --cov-report term-missing --cov=pangram pangram/pangram_test.py  # check test coverage with pytest-cov
+  #- pytest --cov-report term-missing --cov=pangram pangram/pangram_test.py  # check test coverage with pytest-cov
   # Robot Name:
-  - pytest --cov-report term-missing --cov=robot-name robot-name/robot_name_test.py  # check test coverage with pytest-cov
+  #- pytest --cov-report term-missing --cov=robot-name robot-name/robot_name_test.py  # check test coverage with pytest-cov
   # Yacht:
-  - pytest --cov-report term-missing --cov=yacht yacht/yacht_test.py
+  #- pytest --cov-report term-missing --cov=yacht yacht/yacht_test.py
 
   # Two Fer exercise:
-  - pytest --cov-report term-missing --cov=two-fer two-fer/two_fer_test.py  # check test coverage with pytest-cov
+  #- pytest --cov-report term-missing --cov=two-fer two-fer/two_fer_test.py  # check test coverage with pytest-cov
   # Side exercises
   # Armstrong Numbers:
-  - pytest --cov-report term-missing --cov=armstrong-numbers armstrong-numbers/armstrong_numbers_test.py  # check test coverage with pytest-cov
+  #- pytest --cov-report term-missing --cov=armstrong-numbers armstrong-numbers/armstrong_numbers_test.py  # check test coverage with pytest-cov
   # Protein Translation:
-  - pytest --cov-report term-missing --cov=protein-translation protein-translation/protein_translation_test.py  # check test coverage with pytest-cov
+  #- pytest --cov-report term-missing --cov=protein-translation protein-translation/protein_translation_test.py  # check test coverage with pytest-cov
 
   # High Scores exercise:
-  - pytest --cov-report term-missing --cov=high-scores high-scores/high_scores_test.py  # check test coverage with pytest-cov
+  #- pytest --cov-report term-missing --cov=high-scores high-scores/high_scores_test.py  # check test coverage with pytest-cov
   #Side exercises
   # Series:
-  - pytest --cov-report term-missing --cov=series series/series_test.py  # check test coverage with pytest-cov
+  #- pytest --cov-report term-missing --cov=series series/series_test.py  # check test coverage with pytest-cov
   # Phone Number:
-  - pytest --cov-report term-missing --cov=phone-number phone-number/phone_number_test.py  # check test coverage with pytest-cov
+  #- pytest --cov-report term-missing --cov=phone-number phone-number/phone_number_test.py  # check test coverage with pytest-cov
 
   # Matrix exercise:
-  - pytest --cov-report term-missing --cov=matrix matrix/matrix_test.py  # check test coverage with pytest-cov
+  #- pytest --cov-report term-missing --cov=matrix matrix/matrix_test.py  # check test coverage with pytest-cov
   #Side exercises:
+env:
+  #- CODECOV_TOKEN=<token>#IF ONLY YOU HAVE A PRIVATE REPOSITORY
 
+after_success:
+  # Generates coverage report, public repo using Travis:
+  # Source: https://dev.to/j0nimost/using-codecov-with-travis-ci-pytest-cov-1dfj
+  - codecov
