@@ -16,7 +16,7 @@ install:
     - "pip install codecov" #install codecov
 
 script:
-  - pytest --cov-report term-missing
+  - pytest --cov-report term-missing --cov=hello-world hello-world/hello_world_test.py  # check test coverage with pytest-cov
   # Hello World exercise:
   #- pytest --cov-report term-missing --cov=hello-world hello-world/hello_world_test.py  # check test coverage with pytest-cov
   # Side exercises
