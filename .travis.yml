@@ -3,9 +3,6 @@ dist: xenial   # required for Python >= 3.7
 language: python
 
 python:
-  #- "3.0.1"
-  #- "3.1"
-  #- "3.4.10"
   - "3.5"
   - "3.6"
   - "3.7"
@@ -16,7 +13,8 @@ install:
     - "pip install codecov" #install codecov
 
 script:
-  - pytest --ignore=/home/travis --cov-report term-missing --cov  # check test coverage with pytest-cov
+  - pytest --cov-config=.coveragerc --cov-report term-missing --cov  # check test coverage with pytest-cov
+
 env:
   #- CODECOV_TOKEN=<token>#IF ONLY YOU HAVE A PRIVATE REPOSITORY
 
