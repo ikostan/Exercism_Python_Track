@@ -34,7 +34,3 @@ class SpaceAgeTest(unittest.TestCase):
 
     def test_age_in_seconds(self):
         self.assertEqual(SpaceAge(1e6).seconds, 1e6)
-
-
-if __name__ == '__main__':
-    unittest.main()

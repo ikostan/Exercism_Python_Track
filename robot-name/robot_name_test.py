@@ -48,7 +48,3 @@ class RobotNameTest(unittest.TestCase):
         print(name + " : " + name2)
         self.assertNotEqual(name, name2)
         self.assertRegex(name2, self.name_re)
-
-
-if __name__ == '__main__':
-    unittest.main()

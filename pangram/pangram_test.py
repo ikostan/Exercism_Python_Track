@@ -65,7 +65,3 @@ class PangramTest(unittest.TestCase):
     def test_basic2_negative(self):
         sentence = 'Two driven jocks hel fax my big quiz'
         self.assertEqual(False, is_pangram(sentence))
-
-
-if __name__ == '__main__':
-    unittest.main()

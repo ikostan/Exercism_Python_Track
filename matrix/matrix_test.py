@@ -37,7 +37,3 @@ class MatrixTest(unittest.TestCase):
     def test_extract_column_where_numbers_have_different_widths(self):
         matrix = Matrix("89 1903 3\n18 3 1\n9 4 800")
         self.assertEqual(matrix.column(2), [1903, 3, 4])
-
-
-if __name__ == '__main__':
-    unittest.main()

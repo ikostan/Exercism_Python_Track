@@ -42,7 +42,3 @@ class HighScoreTest(unittest.TestCase):
         scores = [40]
         expected = [40]
         self.assertEqual(personal_top_three(scores), expected)
-
-
-if __name__ == "__main__":
-    unittest.main()
