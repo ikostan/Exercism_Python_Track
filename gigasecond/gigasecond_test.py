@@ -37,7 +37,3 @@ class GigasecondTest(unittest.TestCase):
         your_gigasecond = datetime(2001, 9, 9, 1, 46, 40)
 
         self.assertEqual(add(your_birthday), your_gigasecond)
-
-
-if __name__ == '__main__':
-    unittest.main()
