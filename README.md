@@ -26,8 +26,19 @@ Exercism is designed to be fun and friendly, and we place a strong emphasis on e
 Sign up and have fun. Exercism is 100% free :)
 
 
-### Getting Started
+## Getting Started
 We know using a new product can be daunting, and Exercism is a little complicated. So here's a really simple set of instructions to get you started. [Click here for help](https://exercism.io/getting-started)
+
+### Download exercise
+- You should now have the CLI installed.
+- Download the exercise using:<br/>
+    ```exercism download --exercise=<exercise name> --track=python```
+
+### Submit your solution
+- You should now have the CLI installed and the exercise downloaded to your computer. 
+- Solve the exercise and then upload it using:<br/> 
+    ```exercism submit /PATH/TO/SOLUTION```
+- In your web-browser, go back to the language tracks page, choose your exercise and the exercise you've just worked on. You will now see your solution online and notice that it is awaiting a mentor.
 
 ### Testing
 
