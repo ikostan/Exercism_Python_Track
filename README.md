@@ -29,6 +29,13 @@ Sign up and have fun. Exercism is 100% free :)
 ## Getting Started
 We know using a new product can be daunting, and Exercism is a little complicated. So here's a really simple set of instructions to get you started. [Click here for help](https://exercism.io/getting-started)
 
+### [Exercism installation guide](https://exercism.io/cli-walkthrough)<br/>
+This guide was created in order to help you get started learning with Exercism. Answer a few questions, follow a few instructions, and you should be ready in no time!
+
+### [Installer for the Latest Exercism Windows CLI](https://github.com/exercism/windows-installer/releases/tag/v1.5.3)
+
+### [Configuring the CLI](https://exercism.io/cli-walkthrough)
+
 ### Download exercise
 - You should now have the CLI installed.
 - Download the exercise using:<br/>
