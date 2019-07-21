@@ -76,7 +76,3 @@ class SaddlePointsTest(unittest.TestCase):
 
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
-
-
-if __name__ == '__main__':
-    unittest.main()
