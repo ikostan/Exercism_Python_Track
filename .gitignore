@@ -70,4 +70,7 @@ gigasecond/.exercism/metadata.json
 hamming/.exercism/metadata.json
 isbn-verifier/.exercism/metadata.json
 anagram/.exercism/metadata.json
-saddle-points/.exercism/metadata.json
+<<<<<<< HEAD
+=======
+venv/
+>>>>>>> 01b109ccefa2eb3627eaed0f83cfbb7549afd2da
