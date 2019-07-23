@@ -73,6 +73,11 @@ def get_products(min_factor, max_factor, is_smallest):
             m = min_f
             while m <= max_factor:
                 n = min_factor * m
+
+                # break the loop since all next numbers will be bigger
+                if len(nums.keys()) != 0 and n > min(nums.keys()):
+                    break
+
                 # Test if a result is palindrome
                 if is_palindrome(n):
 
@@ -85,7 +90,7 @@ def get_products(min_factor, max_factor, is_smallest):
                             if [min_factor, m] not in nums[n]:
                                 nums[n].append([min_factor, m])
                         else:
-                            return nums
+                            break
 
                 m += 1
             min_factor += 1
