@@ -29,6 +29,7 @@ def main_func(min_factor, max_factor, is_smallest):
     if not products:
         return None, []
 
+    # This flag indicates if we looking for smallest/largest palindrome
     if is_smallest:
         palindrome = min(products.keys())
     else:
@@ -41,7 +42,12 @@ def main_func(min_factor, max_factor, is_smallest):
 
 def get_products(min_factor, max_factor, is_smallest):
     '''
-    Generate a list of factors between specified range
+    Generate a dictionaries where:
+        KEY - palindrome
+        VALUES - products that creates KEY
+
+    In order to optimize the solution is_smallest flag implemented.
+    This flag indicates if we looking for smallest/largest palindrome
 
     :param min_factor:
     :param max_factor:
@@ -53,6 +59,7 @@ def get_products(min_factor, max_factor, is_smallest):
     if min_factor > max_factor:
         raise ValueError(".+")
 
+    # Return None in case min == max
     if min_factor == max_factor:
         return None
 
@@ -62,10 +69,12 @@ def get_products(min_factor, max_factor, is_smallest):
         m = min_f
         while m <= max_factor:
             n = min_factor * m
+            # Test if a result is palindrome
             if is_palindrome(n):
                 if not nums:
                     nums[n] = [[min_factor, m]]
                 else:
+                    # This flag indicates if we looking for smallest/largest palindrome
                     if is_smallest:
                         if n < min(nums.keys()):
                             nums[n] = [[min_factor, m]]
