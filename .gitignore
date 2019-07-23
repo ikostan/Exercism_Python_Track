@@ -77,3 +77,4 @@ venv/
 .idea/Exercism_Python_Track.iml
 saddle-points/.exercism/metadata.json
 palindrome-products/.exercism/metadata.json
+exercism.exe
