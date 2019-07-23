@@ -37,6 +37,7 @@ def main_func(min_factor, max_factor, is_smallest):
 
     factors = products[palindrome]
 
+    print('{} : {}'.format(palindrome, factors))
     return palindrome, factors
 
 
@@ -64,18 +65,20 @@ def get_products(min_factor, max_factor, is_smallest):
         return None
 
     nums = dict()
-    min_f = min_factor
-    while min_factor <= max_factor:
-        m = min_f
-        while m <= max_factor:
-            n = min_factor * m
-            # Test if a result is palindrome
-            if is_palindrome(n):
-                if not nums:
-                    nums[n] = [[min_factor, m]]
-                else:
-                    # This flag indicates if we looking for smallest/largest palindrome
-                    if is_smallest:
+
+    if is_smallest:
+        min_f = min_factor
+
+        while min_factor <= max_factor:
+            m = min_f
+            while m <= max_factor:
+                n = min_factor * m
+                # Test if a result is palindrome
+                if is_palindrome(n):
+
+                    if not nums:
+                        nums[n] = [[min_factor, m]]
+                    else:
                         if n < min(nums.keys()):
                             nums[n] = [[min_factor, m]]
                         elif n == min(nums.keys()):
@@ -83,15 +86,38 @@ def get_products(min_factor, max_factor, is_smallest):
                                 nums[n].append([min_factor, m])
                         else:
                             return nums
+
+                m += 1
+            min_factor += 1
+
+    if not is_smallest:
+        max_f = max_factor
+
+        while max_factor >= min_factor:
+            m = max_f
+            while m >= min_factor:
+                n = max_factor * m
+
+                # break the loop since all next numbers will be smaller
+                if len(nums.keys()) != 0 and n < max(nums.keys()):
+                    break
+
+                # Test if a result is palindrome
+                if is_palindrome(n):
+
+                    if not nums:
+                        nums[n] = [[max_factor, m]]
                     else:
                         if n > max(nums.keys()):
-                            nums[n] = [[min_factor, m]]
+                            nums[n] = [[max_factor, m]]
                         elif n == max(nums.keys()):
-                            if [min_factor, m] not in nums[n]:
-                                nums[n].append([min_factor, m])
+                            if [max_factor, m] not in nums[n]:
+                                nums[n].append([max_factor, m])
+                        else:
+                            break
 
-            m += 1
-        min_factor += 1
+                m -= 1
+            max_factor -= 1
 
     return nums
 
