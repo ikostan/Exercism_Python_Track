@@ -78,5 +78,9 @@ venv/
 saddle-points/.exercism/metadata.json
 palindrome-products/.exercism/metadata.json
 exercism.exe
+<<<<<<< HEAD
 python/collatz-conjecture/.exercism/metadata.json
 collatz-conjecture/.exercism/metadata.json
+=======
+triangle/.exercism/metadata.json
+>>>>>>> 768e7524057e340cd7fa84416d04153259fcb2da
