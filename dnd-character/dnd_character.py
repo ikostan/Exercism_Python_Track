@@ -114,4 +114,4 @@ def roll_dice():
     for i in range(4):
         results.append(random.randint(1, 6))
 
-    return sum(sorted(results)[:3])
+    return sum(sorted(results)[1:])
