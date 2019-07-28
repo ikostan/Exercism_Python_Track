@@ -87,3 +87,4 @@ triangle/.exercism/metadata.json
 rational-numbers/.exercism/metadata.json
 .idea/inspectionProfiles/Project_Default.xml
 darts/.exercism/metadata.json
+*.xml
