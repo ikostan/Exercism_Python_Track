@@ -27,6 +27,16 @@ def colors():
     Mnemonics map the colors to the numbers, that, when stored as an array,
     happen to map to their index in the array:
     Better Be Right Or Your Great Big Values Go Wrong.
+    ['black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'grey', 'white',]
     :return:
     '''
-    return list(encoded_colors.keys())
+    result = []
+    indexes = sorted(list(encoded_colors.values()))
+
+    for i in indexes:
+        for key, value in encoded_colors.items():
+            if value == i:
+                result.append(key)
+                break
+
+    return result
