@@ -26,6 +26,6 @@ class ResistorColorTest(unittest.TestCase):
             'blue',
             'violet',
             'grey',
-            'white'
+            'white',
         ]
         self.assertEqual(colors(), expected)
