@@ -19,6 +19,9 @@ def color_code(color):
     :param color:
     :return:
     '''
+    if color not in encoded_colors.keys():
+        raise Exception('Invalid color: {}'.format(color))
+
     return encoded_colors[color]
 
 
