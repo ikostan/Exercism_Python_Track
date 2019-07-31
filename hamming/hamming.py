@@ -8,7 +8,7 @@ def distance(strand_a, strand_b):
 
     # Return error if DNA strands have different length:
     if len(strand_a) != len(strand_b):
-        raise ValueError('.+')
+        raise ValueError('ERROR: DNA strands have different length.')
 
     # Calculate Hamming Distance:
     hamming_distance = 0
