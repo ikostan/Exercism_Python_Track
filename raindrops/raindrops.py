@@ -10,7 +10,7 @@ def convert(number: int):
     :return:
     '''
 
-    nub_slr_converter = {
+    nub_str_converter = {
         3: 'Pling',
         5: 'Plang',
         7: 'Plong'
@@ -24,7 +24,7 @@ def convert(number: int):
 
     result = ''
     for f in factors:
-        result += nub_slr_converter[f]
+        result += nub_str_converter[f]
 
     return result
 
