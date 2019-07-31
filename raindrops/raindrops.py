@@ -18,7 +18,7 @@ def convert(number: int):
 
     factors = find_factors(number)
     # If the number does not have 3, 5, or 7 as a factor, just pass the number's digits straight through.
-    print(type(factors))
+    # print(type(factors))  # debug only
     if type(factors) != list:
         return str(factors)
 
