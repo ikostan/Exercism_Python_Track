@@ -30,6 +30,7 @@ class BankAccount(object):
             self._is_opened = True
         else:
             raise ValueError("ERROR: account already opened")
+        return None
 
     def deposit(self, amount):
         '''
@@ -43,6 +44,7 @@ class BankAccount(object):
 
         with self._lock:
             self._balance += amount
+        return None
 
     def withdraw(self, amount):
         '''
@@ -59,6 +61,7 @@ class BankAccount(object):
                 self._balance = self._balance - amount
             else:
                 raise ValueError("ERROR: insufficient balance")
+        return None
 
     def close(self):
         '''
@@ -69,6 +72,7 @@ class BankAccount(object):
         self._check_is_account_opened()
         self._is_opened = False
         self._balance = 0.0
+        return None
 
     def _check_is_account_opened(self):
         '''
