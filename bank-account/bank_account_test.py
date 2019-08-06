@@ -2,11 +2,11 @@ import sys
 import threading
 import time
 import unittest
-
 from bank_account import BankAccount
 
 
 class BankAccountTest(unittest.TestCase):
+
     def test_newly_opened_account_has_zero_balance(self):
         account = BankAccount()
         account.open()
