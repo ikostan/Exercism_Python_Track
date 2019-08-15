@@ -19,8 +19,8 @@ def convert(number: int) -> str:
     factors = find_factors(number)
     # If the number does not have 3, 5, or 7 as a factor, just pass the number's digits straight through.
     # print(type(factors))  # debug only
-    if len(factors) == 0:
-        return str(factors)
+    if factors is None:
+        return str(number)
 
     result = ''
     for f in factors:
@@ -44,6 +44,6 @@ def find_factors(number: int):
             results.append(f)
 
     if not results:
-        return number
+        return None
 
     return results
