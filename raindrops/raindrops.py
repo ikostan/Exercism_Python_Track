@@ -1,4 +1,4 @@
-def convert(number: int):
+def convert(number: int) -> str:
     '''
     Convert a number to a string, the contents of which depend on the number's factors.
 
@@ -19,7 +19,7 @@ def convert(number: int):
     factors = find_factors(number)
     # If the number does not have 3, 5, or 7 as a factor, just pass the number's digits straight through.
     # print(type(factors))  # debug only
-    if type(factors) != list:
+    if len(factors) == 0:
         return str(factors)
 
     result = ''
@@ -43,7 +43,7 @@ def find_factors(number: int):
         if number % f == 0:
             results.append(f)
 
-    if results is None or results == []:
+    if not results:
         return number
 
     return results
