@@ -20,10 +20,10 @@ def is_isogram(string):
     counter = 0
 
     # 1. spaces allowed to appear multiple times
-    counter += string.count('-')
+    counter += string.count(' ')
 
     # 2. hyphens are allowed to appear multiple times
-    counter += string.count(' ')
+    counter += string.count('-')
 
     # 3. No repeating letters
     unique_letters_only = set([char for char in string if char.isalpha()])
