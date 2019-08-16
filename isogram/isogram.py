@@ -26,7 +26,7 @@ def is_isogram(string) -> bool:
     counter += string.count('-')
 
     # 3. No repeating letters
-    unique_letters_only = set([char for char in string if char.isalpha()])
+    unique_letters_only = set([char.lower() for char in string if char.isalpha()])
     counter += len(unique_letters_only)
 
     return counter == len(string)
