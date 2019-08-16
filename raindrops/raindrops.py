@@ -1,3 +1,10 @@
+nub_str_converter = {
+        3: 'Pling',
+        5: 'Plang',
+        7: 'Plong'
+    }
+
+
 def convert(number: int) -> str:
     '''
     Convert a number to a string, the contents of which depend on the number's factors.
@@ -9,12 +16,6 @@ def convert(number: int) -> str:
     :param number:
     :return:
     '''
-
-    nub_str_converter = {
-        3: 'Pling',
-        5: 'Plang',
-        7: 'Plong'
-    }
 
     factors = find_factors(number)
     # If the number does not have 3, 5, or 7 as a factor, just pass the number's digits straight through.
@@ -31,13 +32,14 @@ def convert(number: int) -> str:
 
 def find_factors(number: int):
     '''
-    If the number does not have 3, 5, or 7 as a factor, just pass the number's digits straight through.
+    Checks if number has factors: 3, 5, 7
+    If the number does not have any factors, returns number straight through.
     :param number:
     :return:
     '''
 
     results = []
-    factors = [3, 5, 7]
+    factors = list(nub_str_converter.keys())
 
     for f in factors:
         if number % f == 0:
