@@ -39,9 +39,8 @@ def find_factors(number: int):
     '''
 
     results = []
-    factors = list(nub_str_converter.keys())
 
-    for f in factors:
+    for f in nub_str_converter.keys():
         if number % f == 0:
             results.append(f)
 
