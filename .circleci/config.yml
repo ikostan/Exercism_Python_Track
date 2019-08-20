@@ -5,8 +5,5 @@ jobs:
       - image: circleci/python:3.6.4  # primary container for the build job
     steps:
       - run:
-        name: "Exercism Python Track"
-        command: |  # use pipenv to install dependencies
-          sudo pip install pipenv
-          pipenv install
-          pipenv run pytest
+        command: # use pipenv to install dependencies
+          sudo pip install requirements.txt
