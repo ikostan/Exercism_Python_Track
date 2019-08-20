@@ -18,7 +18,6 @@ jobs: # A basic unit of work in a run
           command: |
             sudo pip install --upgrade pip
             sudo pip install pipenv
-            sudo mkdir test-results
             pipenv install -r requirements.txt
 
       - save_cache: # cache Python dependencies using checksum of Pipfile as the cache-key
