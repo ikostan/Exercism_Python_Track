@@ -31,7 +31,6 @@ jobs: # A basic unit of work in a run
       - run:
           name: run tests
           command: |
-            . venv/bin/activate
             pipenv mkdir test-reports
             pipenv mkdir test-results
             pipenv pytest --junitxml=test-reports/junit.xml
