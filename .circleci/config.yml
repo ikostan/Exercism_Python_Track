@@ -15,13 +15,6 @@ jobs: # A basic unit of work in a run
             sudo pip install pipenv
             pipenv install -r requirements.txt
 
-      - run:
-          name: run tests
-          command: |
-            . venv/bin/activate
-            mkdir test-reports
-            pytest --junitxml=test-reports/junit.xml
-
       - store_test_results:
           path: test-reports
 
@@ -36,6 +29,14 @@ jobs: # A basic unit of work in a run
           destination: tr1
 
       - run:
+          name: run tests
           command: |
-            pipenv run pytest
+            . venv/bin/activate
+            pipenv mkdir test-reports
+            pipenv mkdir test-results
+            pipenv pytest --junitxml=test-reports/junit.xml
+
+
+
+
 
