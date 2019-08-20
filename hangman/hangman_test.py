@@ -101,3 +101,4 @@ class HangmanTests(unittest.TestCase):
 
     def assertRaisesWithMessage(self, exception):
         return self.assertRaisesRegex(exception, r".+")
+
