@@ -13,6 +13,8 @@ jobs: # A basic unit of work in a run
           command: |
             sudo pip install --upgrade pip
             sudo pip install pipenv
+            sudo mkdir test-reports
+            sudo mkdir test-results
             pipenv install -r requirements.txt
 
       - store_test_results:
@@ -31,8 +33,6 @@ jobs: # A basic unit of work in a run
       - run:
           name: run tests
           command: |
-            sudo mkdir test-reports
-            sudo mkdir test-results
             pytest --junitxml=test-reports/junit.xml
 
 
