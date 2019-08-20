@@ -5,5 +5,5 @@ jobs:
       - image: circleci/python:3.6.4  # primary container for the build job
     steps:
       - run:
-        command: # use pipenv to install dependencies
+        command: |# use pipenv to install dependencies
           sudo pip install requirements.txt
