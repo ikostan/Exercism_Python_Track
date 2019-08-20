@@ -33,7 +33,7 @@ jobs: # A basic unit of work in a run
           command: |
             sudo mkdir test-reports
             sudo mkdir test-results
-            pipenv pytest --junitxml=test-reports/junit.xml
+            pytest --junitxml=test-reports/junit.xml
 
 
 
