@@ -33,17 +33,15 @@ class Hangman(object):
                 else:
                     masked += self.masked_word[i]
             self.masked_word = masked
+
+            if self.masked_word == self.word:
+                self.status = STATUS_WIN
+
         else:
             self.remaining_guesses -= 1
 
-        if self.masked_word == self.word:
-            self.status = STATUS_WIN
-
-        if self.remaining_guesses < 0:
-            self.status = STATUS_LOSE
-
-        if self.remaining_guesses > 0:
-            self.status = STATUS_ONGOING
+            if self.remaining_guesses < 0:
+                self.status = STATUS_LOSE
 
         print("{} : {}".format(self.masked_word, self.word))
 
@@ -51,6 +49,4 @@ class Hangman(object):
         return self.masked_word
 
     def get_status(self):
-        if self.masked_word == self.word:
-            self.status = STATUS_WIN
         return self.status
