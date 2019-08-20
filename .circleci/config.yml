@@ -13,7 +13,7 @@ jobs: # A basic unit of work in a run
           command: |
             sudo pip install --upgrade pip
             sudo pip install pipenv
-            pipenv install
+            pipenv install -r requirements.txt
       - run:
           command: |
             pipenv run pytest
