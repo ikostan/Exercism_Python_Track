@@ -3,7 +3,3 @@ jobs:
   build:
     docker:
       - image: circleci/python:3.6.4  # primary container for the build job
-    steps:
-      - run:
-        command: |
-          sudo pip install requirements.txt
