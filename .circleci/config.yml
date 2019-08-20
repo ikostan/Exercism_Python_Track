@@ -33,7 +33,7 @@ jobs: # A basic unit of work in a run
       - run:
           name: run tests
           command: |
-            pytest --junitxml=test-reports/junit.xml
+            pipenv run pytest --junitxml=test-reports/junit.xml
 
 
 
