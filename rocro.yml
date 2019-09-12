@@ -1,5 +1,6 @@
 inspecode:
   pylint: default
+  pytest: default
   experimental:
     runtime:
       python: 3.7.0
