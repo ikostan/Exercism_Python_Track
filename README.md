@@ -1,6 +1,7 @@
 [![CircleCI](https://circleci.com/gh/ikostan/Exercism_Python_Track.svg?style=svg)](https://circleci.com/gh/ikostan/Exercism_Python_Track)
 [![Build Status](https://travis-ci.org/ikostan/Exercism_Python_Track.svg?branch=master)](https://travis-ci.org/ikostan/Exercism_Python_Track)
 [![codecov](https://codecov.io/gh/ikostan/Exercism_Python_Track/branch/master/graph/badge.svg)](https://codecov.io/gh/ikostan/Exercism_Python_Track)
+[![Job Status](https://inspecode.rocro.com/badges/github.com/ikostan/Exercism_Python_Track/status?token=m0eYpjTUxX925VcRlQXn7tGTHPWThTe6gwiorkGYrIQ)](https://inspecode.rocro.com/jobs/github.com/ikostan/Exercism_Python_Track/latest?completed=true)
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 
 # Exercism Python Track
