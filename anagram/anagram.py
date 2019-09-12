@@ -1,5 +1,5 @@
 def find_anagrams(word, candidates):
-    '''
+    """
     Given a word and a list of possible anagrams, select the correct sublist.
 
     EXAMPLE:
@@ -8,7 +8,7 @@ def find_anagrams(word, candidates):
     :param word:
     :param candidates:
     :return:
-    '''
+    """
 
     # create a sorted chars list:
     sorted_word = sorted([w.lower() for w in word])
@@ -18,14 +18,14 @@ def find_anagrams(word, candidates):
 
 
 def is_anagram(word, sorted_word, candidate):
-    '''
+    """
     Compare between two strings and return True in case <candidate> is anagram of <word>.
     Otherwise return False.
     :param word:
     :param sorted_word:
     :param candidate:
     :return:
-    '''
+    """
 
     # filter identical words:
     if word.lower() != candidate.lower():
