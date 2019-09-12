@@ -2,9 +2,10 @@
 [![Build Status](https://travis-ci.org/ikostan/Exercism_Python_Track.svg?branch=master)](https://travis-ci.org/ikostan/Exercism_Python_Track)
 [![codecov](https://codecov.io/gh/ikostan/Exercism_Python_Track/branch/master/graph/badge.svg)](https://codecov.io/gh/ikostan/Exercism_Python_Track)
 [![Job Status](https://inspecode.rocro.com/badges/github.com/ikostan/Exercism_Python_Track/status?token=m0eYpjTUxX925VcRlQXn7tGTHPWThTe6gwiorkGYrIQ)](https://inspecode.rocro.com/jobs/github.com/ikostan/Exercism_Python_Track/latest?completed=true)
+[![Report](https://inspecode.rocro.com/badges/github.com/ikostan/Exercism_Python_Track/report?token=m0eYpjTUxX925VcRlQXn7tGTHPWThTe6gwiorkGYrIQ&branch=master)](https://inspecode.rocro.com/reports/github.com/ikostan/Exercism_Python_Track/branch/master/summary)
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 
-# Exercism Python Track
+# [Exercism Python Track](https://exercism.io/my/tracks/python)
 
 <div align="center"> 
 <img width="10%" height="10%" src="https://github.com/ikostan/Exercism_Python_Track/blob/master/img/exercism-logo.png" hspace="20">
