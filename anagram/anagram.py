@@ -1,10 +1,10 @@
-def find_anagrams(word, candidates):
+def find_anagrams(word: str, candidates: list):
     """
     Given a word and a list of possible anagrams, select the correct sublist.
 
     EXAMPLE:
-    Given "listen" and a list of candidates like "enlists" "google" "inlets" "banana"
-    the program should return a list containing "inlets".
+    Given 'listen' and a list of candidates like 'enlists', 'google', 'inlets', 'banana'.
+    The program should return a list containing 'inlets'.
     :param word:
     :param candidates:
     :return:
@@ -17,7 +17,7 @@ def find_anagrams(word, candidates):
     return [candidate for candidate in candidates if is_anagram(word, sorted_word, candidate)]
 
 
-def is_anagram(word, sorted_word, candidate):
+def is_anagram(word: str, sorted_word, candidate):
     """
     Compare between two strings and return True in case <candidate> is anagram of <word>.
     Otherwise return False.
