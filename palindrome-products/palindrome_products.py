@@ -1,23 +1,23 @@
 def largest(min_factor, max_factor):
-    '''
+    """
     Returns the largest palindrome product and its factors
 
     :param min_factor:
     :param max_factor:
     :return:
-    '''
+    """
 
     return main_func(min_factor, max_factor, False)
 
 
 def smallest(min_factor, max_factor):
-    '''
+    """
     Returns the smallest palindrome product and its factors
 
     :param min_factor:
     :param max_factor:
     :return:
-    '''
+    """
 
     return main_func(min_factor, max_factor, True)
 
@@ -42,7 +42,7 @@ def main_func(min_factor, max_factor, is_smallest):
 
 
 def get_products(min_factor, max_factor, is_smallest):
-    '''
+    """
     Generate a dictionaries where:
         KEY - palindrome
         VALUES - products that creates KEY
@@ -54,7 +54,7 @@ def get_products(min_factor, max_factor, is_smallest):
     :param max_factor:
     :param is_smallest:
     :return:
-    '''
+    """
 
     # Raise an error in case min > max
     if min_factor > max_factor:
