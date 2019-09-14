@@ -31,7 +31,8 @@ class Character:
         self._set_character_hitpoints()
 
     def _set_character_hitpoints(self):
-        self.character_hitpoints = Character.character_initial_hitpoints + self.character_constitution_modifier
+        self.character_hitpoints = Character.character_initial_hitpoints + \
+                                   self.character_constitution_modifier
         return None
 
     def _set_character_constitution_modifier(self):
