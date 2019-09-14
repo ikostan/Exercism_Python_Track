@@ -38,7 +38,8 @@ class Rational:
         :return:
         """
 
-        return Rational((self.numer * other.denom + other.numer * self.denom), (self.denom * other.denom))
+        return Rational((self.numer * other.denom + other.numer * self.denom),
+                        (self.denom * other.denom))
 
     def __sub__(self, other):
         """
@@ -48,7 +49,8 @@ class Rational:
         :return:
         """
 
-        return Rational((self.numer * other.denom - other.numer * self.denom), (self.denom * other.denom))
+        return Rational((self.numer * other.denom - other.numer * self.denom),
+                        (self.denom * other.denom))
 
     def __mul__(self, other):
         """
@@ -57,7 +59,8 @@ class Rational:
         :param other:
         :return:
         """
-        return Rational((self.numer * other.numer), (self.denom * other.denom))
+        return Rational((self.numer * other.numer),
+                        (self.denom * other.denom))
 
     def __truediv__(self, other):
         """
@@ -67,12 +70,14 @@ class Rational:
         :return:
         """
         if self.denom * other.numer != 0:
-            return Rational((self.numer * other.denom), (self.denom * other.numer))
+            return Rational((self.numer * other.denom),
+                            (self.denom * other.numer))
         else:
             raise ValueError('ERROR: denominator can not be zero')
 
     def __abs__(self):
-        return Rational(abs(self.numer), abs(self.denom))
+        return Rational(abs(self.numer),
+                        abs(self.denom))
 
     def __pow__(self, power):
         """
@@ -83,21 +88,25 @@ class Rational:
         # Exponentiation of a rational number r = a/b
         # to a non-negative integer power n is r^n = (a^n)/(b^n).
         if power >= 0 and type(power) == int:
-            return Rational((self.numer ** power), (self.denom ** power))
+            return Rational((self.numer ** power),
+                            (self.denom ** power))
         # Exponentiation of a rational number r = a/b
         # to a negative integer power n is r^n = (b^m)/(a^m), where m = |n|.
         elif power < 0 and type(power) == int:
-            return Rational((self.denom ** abs(power)), (self.numer ** abs(power)))
+            return Rational((self.denom ** abs(power)),
+                            (self.numer ** abs(power)))
         # Exponentiation of a rational number r = a/b to a
         # real (floating-point) number x is
         # the quotient (a^x)/(b^x), which is a real number.
         elif power >= 0 and type(power) == float:
-            return Rational((self.numer ** power), (self.denom ** power))
+            return Rational((self.numer ** power),
+                            (self.denom ** power))
         # Exponentiation of a rational number r = a/b to a
         # negative real (floating-point) number x is
         # the quotient (a^x)/(b^x), which is a real number.
         elif power < 0 and type(power) == float:
-            return Rational((self.denom ** abs(power)), (self.numer ** abs(power)))
+            return Rational((self.denom ** abs(power)),
+                            (self.numer ** abs(power)))
 
     def __rpow__(self, base):
         """
