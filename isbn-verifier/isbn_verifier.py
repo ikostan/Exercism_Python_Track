@@ -1,9 +1,11 @@
 def is_valid(isbn):
-    '''
-    Given a string the program will check if the provided string is a valid ISBN-10.
+    """
+    Given a string the program will check if
+    the provided string is a valid ISBN-10.
+
     :param isbn:
     :return:
-    '''
+    """
 
     # ISBN is invalid in case input string is empty
     if not isbn or isbn == '':
