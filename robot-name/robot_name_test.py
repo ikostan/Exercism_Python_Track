@@ -14,7 +14,7 @@ class RobotNameTest(unittest.TestCase):
 
     def test_has_name(self):
         actual = Robot().name
-        #print('Robot name: ' + actual)
+        # print('Robot name: ' + actual)
         self.assertRegex(actual, self.name_re)
 
     def test_name_sticks(self):
