@@ -26,7 +26,8 @@ def saddle_points(matrix):
             if c > min(column):
                 continue
             # It's called a "saddle point" because it is greater than or equal
-            # to every element in its row and less than or equal to every element in its column.
+            # to every element in its row and less than or equal to
+            # every element in its column.
             else:
                 if max(matrix[i]) == c:
                     answer.append({"row": i + 1, "column": col_i + 1})
