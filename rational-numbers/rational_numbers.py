@@ -19,7 +19,6 @@ class Rational:
             else:
                 self.numer = abs(int(numer / gcd(numer, denom))) * (-1)
             self.denom = abs(int(denom / gcd(numer, denom)))
-        # print('numer: {}, denom: {}, self: {}'.format(numer, denom, self))  # debug only
 
     def __eq__(self, other):
         if self.numer != 0:

@@ -13,12 +13,12 @@ encoded_colors = {
 
 
 def color_code(color):
-    '''
+    """
     Resistors have color coded bands, where each color maps to a number.
     The first 2 bands of a resistor have a simple encoding scheme: each color maps to a single number.
     :param color:
     :return:
-    '''
+    """
     if color not in encoded_colors.keys():
         raise Exception('Invalid color: {}'.format(color))
 
@@ -26,7 +26,7 @@ def color_code(color):
 
 
 def colors():
-    '''
+    """
     Mnemonics map the colors to the numbers, that, when stored as an array,
     happen to map to their index in the array:
     Better Be Right Or Your Great Big Values Go Wrong.
@@ -35,7 +35,7 @@ def colors():
     'green', 'blue', 'violet', 'grey', 'white']
 
     :return:
-    '''
+    """
     result = []
     indexes = sorted(list(encoded_colors.values()))
 
