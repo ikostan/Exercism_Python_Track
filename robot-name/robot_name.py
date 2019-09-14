@@ -4,7 +4,7 @@ class Robot(object):
         self.reset()
 
     def reset(self):
-        '''
+        """
         Every once in a while we need to reset a robot
         to its factory settings, which means that their
         name gets wiped. The next time you ask,
@@ -14,7 +14,7 @@ class Robot(object):
         the format of two uppercase letters followed by three digits,
         such as RX837 or BC811.
         :return:
-        '''
+        """
         import string
         import random
         old_name = self.name
