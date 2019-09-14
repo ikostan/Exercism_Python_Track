@@ -10,4 +10,5 @@ def is_armstrong_number(number):
     :return:
     """
     power = len(str(number))
-    return number == eval(' + '.join([str((int(n) ** power)) for n in str(number)]))
+    return number == eval(' + '.join([str((int(n) ** power))
+                                      for n in str(number)]))

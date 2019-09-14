@@ -5,7 +5,8 @@ def classify(number):
 
     Categories of perfect, abundant, or deficient based on their aliquot sum.
 
-    The aliquot sum is defined as the sum of the factors of a number not including the number itself.
+    The aliquot sum is defined as the sum of the factors of a number
+    not including the number itself.
     For example, the aliquot sum of 15 is (1 + 3 + 5) = 9
 
     :param number:

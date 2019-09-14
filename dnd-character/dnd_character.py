@@ -39,18 +39,22 @@ class Character:
         """
         You find your character's constitution modifier by subtracting 10
         from your character's constitution, divide by 2 and round down.
+
         :return:
         """
         import math
         self.character_constitution_modifier = int(math.floor(
-            (self.abilities['constitution'] - Character.character_initial_hitpoints) / 2))
+            (self.abilities['constitution'] -
+             Character.character_initial_hitpoints) / 2))
         return None
 
     def _set_abilities(self):
         """
         These six abilities have scores that are determined randomly.
-        You do this by rolling four 6-sided dice and record the sum of the largest three dice.
+        You do this by rolling four 6-sided dice and
+        record the sum of the largest three dice.
         You do this six times, once for each ability.
+
         :return:
         """
         for key in self.abilities.keys():
@@ -99,11 +103,13 @@ def modifier(constitution: int):
     """
     You find your character's constitution modifier by subtracting 10
     from your character's constitution, divide by 2 and round down.
+
     :param constitution:
     :return:
     """
 
-    return int(math.floor((constitution - Character.character_initial_hitpoints) / 2))
+    return int(math.floor((constitution -
+                           Character.character_initial_hitpoints) / 2))
 
 
 def roll_dice():
