@@ -5,6 +5,7 @@ def find_anagrams(word: str, candidates: list):
     EXAMPLE:
     Given 'listen' and a list of candidates like 'enlists', 'google', 'inlets', 'banana'.
     The program should return a list containing 'inlets'.
+
     :param word:
     :param candidates:
     :return:
@@ -14,13 +15,16 @@ def find_anagrams(word: str, candidates: list):
     sorted_word = sorted([w.lower() for w in word])
 
     # return the results
-    return [candidate for candidate in candidates if is_anagram(word, sorted_word, candidate)]
+    return [candidate for candidate in candidates
+            if is_anagram(word, sorted_word, candidate)]
 
 
 def is_anagram(word: str, sorted_word, candidate):
     """
-    Compare between two strings and return True in case <candidate> is anagram of <word>.
+    Compare between two strings and return True
+    in case <candidate> is anagram of <word>.
     Otherwise return False.
+
     :param word:
     :param sorted_word:
     :param candidate:
