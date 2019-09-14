@@ -1,10 +1,11 @@
 def score(x, y):
-    '''
-    returns the earned points in a single toss of a Darts game
+    """
+    Returns the earned points in a single toss of a Darts game
+
     :param x:
     :param y:
     :return:
-    '''
+    """
 
     radius = 10  # The outer circle has a radius of 10 units.
     landing_point = (x - 0)**2 + (y - 0)**2
