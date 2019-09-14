@@ -6,7 +6,9 @@ class Phone(object):
         if self._country_code(digits_only):
             if self._npa(digits_only):
                 if self._exchange_code(digits_only):
-                    self.number = digits_only if len(digits_only) == 10 else digits_only[1:]
+                    self.number = digits_only \
+                        if len(digits_only) == 10 \
+                        else digits_only[1:]
                     self.area_code = self._npa(digits_only)
                 else:
                     raise ValueError('Invalid exchange code')
@@ -39,18 +41,22 @@ class Phone(object):
     def _npa(self, digits_only: str):
         npa = [200, 999]
 
-        if npa[0] <= int(digits_only[0:3]) <= npa[1] and len(digits_only) == 10:
+        if npa[0] <= int(digits_only[0:3]) <= npa[1] \
+                and len(digits_only) == 10:
             return digits_only[0:3]
-        elif npa[0] <= int(digits_only[1:4]) <= npa[1] and len(digits_only) == 11:
+        elif npa[0] <= int(digits_only[1:4]) <= npa[1] \
+                and len(digits_only) == 11:
             return digits_only[1:4]
         else:
             return False
 
     # Exchange code validation:
     def _exchange_code(self, digits_only: str):
-        if int(digits_only[3]) > 1 and len(digits_only) == 10:
+        if int(digits_only[3]) > 1 \
+                and len(digits_only) == 10:
             return True
-        elif int(digits_only[4]) > 1 and len(digits_only) == 11:
+        elif int(digits_only[4]) > 1 \
+                and len(digits_only) == 11:
             return True
         else:
             return False

@@ -3,7 +3,9 @@ def find_anagrams(word: str, candidates: list):
     Given a word and a list of possible anagrams, select the correct sublist.
 
     EXAMPLE:
-    Given 'listen' and a list of candidates like 'enlists', 'google', 'inlets', 'banana'.
+    Given 'listen' and a list of candidates like 'enlists',
+    'google', 'inlets', 'banana'.
+    
     The program should return a list containing 'inlets'.
 
     :param word:
