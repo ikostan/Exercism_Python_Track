@@ -1,12 +1,15 @@
 def value(colors: list):
-    '''
+    """
     Each resistor has a resistance value.
-    Manufacturers print color-coded bands onto the resistors to denote their resistance values.
+    Manufacturers print color-coded bands onto
+    the resistors to denote their resistance values.
     Each band acts as a digit of a number.
-    The program will take two colors as input, and output the correct number.
+    The program will take two colors as input,
+    and output the correct number.
+
     :param colors:
     :return:
-    '''
+    """
 
     encoded_colors = {
         'black': 0,
