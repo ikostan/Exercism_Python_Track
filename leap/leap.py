@@ -15,4 +15,3 @@ def leap_year(year: int):
             return True
 
     return False
-
