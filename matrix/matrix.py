@@ -23,4 +23,3 @@ class Matrix:
         :return:
         """
         return [m[index - 1] for m in self.matrix]
-
