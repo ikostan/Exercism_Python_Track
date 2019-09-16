@@ -5,5 +5,3 @@ def to_rna(dna_strand):
            'A': 'U'}
 
     return ''.join(dna[char] for char in dna_strand.upper())
-
-
