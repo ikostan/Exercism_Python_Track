@@ -86,6 +86,16 @@ pip install virtualenv
 virtualenv venv --python=python
 ```
 
+### Python3 virtual environment activation on Windows machine:<br/> 
+
+On Windows, the equivalent activate script is in the Scripts folder.<br/> 
+```python
+> \path\to\env\Scripts\activate
+```
+And type 'deactivate' to undo the changes.<br/>
+
+Source: https://virtualenv.pypa.io/en/stable/userguide/<br/>
+
 ### How to delete multiples files in Git:
 
 - In the command-line, navigate to your local repository.
