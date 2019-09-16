@@ -49,4 +49,3 @@ def get_acids(strand_temp: list, codons: list, amino_acids: dict):
                 result += amino_acids[c]
 
     return result
-
