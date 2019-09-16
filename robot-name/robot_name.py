@@ -26,5 +26,3 @@ class Robot(object):
 
             for n in range(0, 3):
                 self.name += str(random.randint(0, 9))
-
-
