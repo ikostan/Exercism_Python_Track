@@ -44,4 +44,3 @@ class IsogramTest(unittest.TestCase):
 
     def test_same_first_and_last_characters(self):
         self.assertIs(is_isogram("angola"), False)
-
