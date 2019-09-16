@@ -15,7 +15,9 @@ encoded_colors = {
 def color_code(color):
     """
     Resistors have color coded bands, where each color maps to a number.
-    The first 2 bands of a resistor have a simple encoding scheme: each color maps to a single number.
+    The first 2 bands of a resistor have a simple encoding scheme:
+    each color maps to a single number.
+
     :param color:
     :return:
     """
