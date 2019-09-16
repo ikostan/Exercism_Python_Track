@@ -12,7 +12,3 @@ def distance(strand_a, strand_b):
 
     # Calculate Hamming Distance and return it:
     return sum([1 for z in zip(strand_a, strand_b) if z[0] != z[1]])
-
-
-
-
