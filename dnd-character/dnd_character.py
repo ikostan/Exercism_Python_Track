@@ -4,7 +4,9 @@ import math
 
 class Character:
     """
-    For a game of Dungeons & Dragons, each player starts by generating a character they can play with.
+    For a game of Dungeons & Dragons, each player starts
+    by generating a character they can play with.
+
     This character has, among other things, six abilities:
     strength, dexterity, constitution, intelligence, wisdom and charisma.
     """
