@@ -13,4 +13,3 @@ def personal_best(scores):
 
 def personal_top_three(scores):
     return heapq.nlargest(3, scores)
-
