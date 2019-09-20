@@ -5,15 +5,15 @@ Nicomachus' (60 - 120 CE) classification scheme for natural numbers.
 
 The Greek mathematician [Nicomachus](https://en.wikipedia.org/wiki/Nicomachus) devised a classification scheme for natural numbers, identifying each as belonging uniquely to the categories of **perfect**, **abundant**, or **deficient** based on their [aliquot sum](https://en.wikipedia.org/wiki/Aliquot_sum). The aliquot sum is defined as the sum of the factors of a number not including the number itself. For example, the aliquot sum of 15 is (1 + 3 + 5) = 9
 
-- **Perfect**: aliquot sum = number
-  - 6 is a perfect number because (1 + 2 + 3) = 6
-  - 28 is a perfect number because (1 + 2 + 4 + 7 + 14) = 28
-- **Abundant**: aliquot sum > number
-  - 12 is an abundant number because (1 + 2 + 3 + 4 + 6) = 16
-  - 24 is an abundant number because (1 + 2 + 3 + 4 + 6 + 8 + 12) = 36
-- **Deficient**: aliquot sum < number
-  - 8 is a deficient number because (1 + 2 + 4) = 7
-  - Prime numbers are deficient
+- **Perfect**: aliquot sum = number<br/>
+  - 6 is a perfect number because (1 + 2 + 3) = 6<br/>
+  - 28 is a perfect number because (1 + 2 + 4 + 7 + 14) = 28<br/>
+- **Abundant**: aliquot sum > number<br/>
+  - 12 is an abundant number because (1 + 2 + 3 + 4 + 6) = 16<br/>
+  - 24 is an abundant number because (1 + 2 + 3 + 4 + 6 + 8 + 12) = 36<br/>
+- **Deficient**: aliquot sum < number<br/>
+  - 8 is a deficient number because (1 + 2 + 4) = 7<br/>
+  - Prime numbers are deficient<br/>
 
 Implement a way to determine whether a given number is **perfect**. Depending on your language track, you may also need to implement a way to determine whether a given number is **abundant** or **deficient**.
 
@@ -35,17 +35,17 @@ raise Exception("Meaningful message indicating the source of the error")
 
 To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
 
-- Python 2.7: `py.test perfect_numbers_test.py`
-- Python 3.4+: `pytest perfect_numbers_test.py`
+- Python 2.7: `py.test perfect_numbers_test.py`<br/>
+- Python 3.4+: `pytest perfect_numbers_test.py`<br/>
 
 Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
 `python -m pytest perfect_numbers_test.py`
 
 ### Common `pytest` options
 
-- `-v` : enable verbose output
-- `-x` : stop running tests on first failure
-- `--ff` : run failures from previous test before running other test cases
+- `-v` : enable verbose output<br/>
+- `-x` : stop running tests on first failure<br/>
+- `--ff` : run failures from previous test before running other test cases<br/>
 
 For other options, see `python -m pytest -h`
 
