@@ -44,7 +44,6 @@ class Character:
 
         :return:
         """
-        import math
         self.character_constitution_modifier = int(math.floor(
             (self.abilities['constitution'] -
              Character.character_initial_hitpoints) / 2))
