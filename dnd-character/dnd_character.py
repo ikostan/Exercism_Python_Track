@@ -95,7 +95,15 @@ class Character:
         Returns random ability
         :return:
         """
-        random_key_index = random.randint(0, len(self.abilities.keys()) - 1)
+
+        # random_key_index = random.randint(0, len(self.abilities.keys()) - 1)
+
+        # create a random number that is cryptographically secure
+        # Source: https://stackoverflow.com/questions/20936993/
+        # how-can-i-create-a-random-number-that-is-cryptographically-secure-in-python
+        from random import SystemRandom
+        crypto = SystemRandom()
+        random_key_index = crypto.randrange(len(self.abilities.keys()))
         random_key = list(self.abilities.keys())[random_key_index]
         return self.abilities[random_key]
 
