@@ -38,8 +38,8 @@ Now, it's even trickier since the check digit of an ISBN-10 may be 'X' (represen
 ## Bonus tasks
 
 * Generate a valid ISBN-13 from the input ISBN-10 (and maybe verify it again with a derived verifier).
-
 * Generate valid ISBN, maybe even from a given starting ISBN.
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
@@ -58,17 +58,17 @@ raise Exception("Meaningful message indicating the source of the error")
 
 To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
 
-- Python 2.7: `py.test isbn_verifier_test.py`
-- Python 3.4+: `pytest isbn_verifier_test.py`
+- Python 2.7: `py.test isbn_verifier_test.py`<br/>
+- Python 3.4+: `pytest isbn_verifier_test.py`<br/>
 
 Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
 `python -m pytest isbn_verifier_test.py`
 
 ### Common `pytest` options
 
-- `-v` : enable verbose output
-- `-x` : stop running tests on first failure
-- `--ff` : run failures from previous test before running other test cases
+- `-v` : enable verbose output<br/>
+- `-x` : stop running tests on first failure<br/>
+- `--ff` : run failures from previous test before running other test cases<br/>
 
 For other options, see `python -m pytest -h`
 
