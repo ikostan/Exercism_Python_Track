@@ -13,5 +13,5 @@ def is_armstrong_number(number):
     :return:
     """
     power = len(str(number))
-    return number == ast.literal_eval(' + '.join([str((int(n) ** power))
-                                                  for n in str(number)]))
+    string_form = ' + '.join([str((int(n) ** power)) for n in str(number)])
+    return number == ast.literal_eval(string_form)
