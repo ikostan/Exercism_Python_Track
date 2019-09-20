@@ -29,8 +29,8 @@ Because constitution is 3, the constitution modifier is -4 and the hitpoints are
 Most programming languages feature (pseudo-)random generators, but few
 programming languages are designed to roll dice. One such language is [Troll].
 
-[DND]: https://en.wikipedia.org/wiki/Dungeons_%26_Dragons
-[Troll]: http://hjemmesider.diku.dk/~torbenm/Troll/
+[DND](https://en.wikipedia.org/wiki/Dungeons_%26_Dragons)
+[Troll](http://hjemmesider.diku.dk/~torbenm/Troll/)
 
 ## Exception messages
 

@@ -14,8 +14,8 @@ Implement the basic logic behind hangman using functional reactive
 programming.  You'll need to install an FRP library for this, this will
 be described in the language/track specific files of the exercise.
 
-[Hangman]: https://en.wikipedia.org/wiki/Hangman_%28game%29
-[frp]: https://en.wikipedia.org/wiki/Functional_reactive_programming
+[Hangman](https://en.wikipedia.org/wiki/Hangman_%28game%29)
+[frp](https://en.wikipedia.org/wiki/Functional_reactive_programming)
 
 ## Hints
 
