@@ -13,16 +13,16 @@ Given a number n, return the number of steps required to reach 1.
 
 Starting with n = 12, the steps would be as follows:
 
-0. 12
-1. 6
-2. 3
-3. 10
-4. 5
-5. 16
-6. 8
-7. 4
-8. 2
-9. 1
+1. 12
+2. 6
+3. 3
+4. 10
+5. 5
+6. 16
+7. 8
+8. 4
+9. 2
+10. 1
 
 Resulting in 9 steps. So for input n = 12, the return value would be 9.
 
@@ -74,7 +74,7 @@ please see [Running the Tests](http://exercism.io/tracks/python/tests).
 
 ## Source
 
-An unsolved problem in mathematics named after mathematician Lothar Collatz [https://en.wikipedia.org/wiki/3x_%2B_1_problem](https://en.wikipedia.org/wiki/3x_%2B_1_problem)
+An unsolved problem in mathematics named after mathematician [Lothar Collatz](https://en.wikipedia.org/wiki/3x_%2B_1_problem)
 
 ## Submitting Incomplete Solutions
 
