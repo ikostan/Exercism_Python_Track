@@ -24,28 +24,27 @@ representing this matrix:
 your code should be able to spit out:
 
 - A list of the rows, reading each row left-to-right while moving
-  top-to-bottom across the rows,
+  top-to-bottom across the rows.<br/>
 - A list of the columns, reading each column top-to-bottom while moving
-  from left-to-right.
+  from left-to-right.<br/>
 
 The rows for our example matrix:
 
-- 9, 8, 7
-- 5, 3, 2
-- 6, 6, 7
+- 9, 8, 7<br/>
+- 5, 3, 2<br/>
+- 6, 6, 7<br/>
 
 And its columns:
 
-- 9, 5, 6
-- 8, 3, 6
-- 7, 2, 7
+- 9, 5, 6<br/>
+- 8, 3, 6<br/>
+- 7, 2, 7<br/>
 
 In this exercise you're going to create a **class**.  _Don't worry, it's not as complicated as you think!_ 
 
--   [**A First Look at Classes**](https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes) from the Python 3 documentation. 
--   [**How to Define a Class in Python**](https://realpython.com/python3-object-oriented-programming/#how-to-define-a-class-in-python) from the Real Python website.  
--   [**Data Structures in Python**](https://docs.python.org/3/tutorial/datastructures.html) from the Python 3 documentation.
-
+-   [**A First Look at Classes**](https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes) from the Python 3 documentation.<br/>
+-   [**How to Define a Class in Python**](https://realpython.com/python3-object-oriented-programming/#how-to-define-a-class-in-python) from the Real Python website.<br/> 
+-   [**Data Structures in Python**](https://docs.python.org/3/tutorial/datastructures.html) from the Python 3 documentation.<br/>
 
 
 ## Exception messages
@@ -66,17 +65,17 @@ raise Exception("Meaningful message indicating the source of the error")
 
 To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
 
-- Python 2.7: `py.test matrix_test.py`
-- Python 3.4+: `pytest matrix_test.py`
+- Python 2.7: `py.test matrix_test.py`<br/>
+- Python 3.4+: `pytest matrix_test.py`<br/>
 
 Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
 `python -m pytest matrix_test.py`
 
 ### Common `pytest` options
 
-- `-v` : enable verbose output
-- `-x` : stop running tests on first failure
-- `--ff` : run failures from previous test before running other test cases
+- `-v` : enable verbose output<br/>
+- `-x` : stop running tests on first failure<br/>
+- `--ff` : run failures from previous test before running other test cases<br/>
 
 For other options, see `python -m pytest -h`
 
