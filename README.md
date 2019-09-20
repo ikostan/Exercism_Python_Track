@@ -49,10 +49,13 @@ exercism download --exercise=<exercise name> --track=python
 <br/>
 
 ### Submit your solution
-- You should now have the CLI installed and the exercise downloaded to your computer. 
+- You should now have the CLI installed and the exercise downloaded to your computer. <br/>
 - Solve the exercise and then upload it using:<br/> 
-    ```exercism submit /PATH/TO/SOLUTION```
-- In your web-browser, go back to the language tracks page, choose your exercise and the exercise you've just worked on. You will now see your solution online and notice that it is awaiting a mentor.
+```bash
+exercism submit /PATH/TO/SOLUTION
+```
+<br/>
+- In your web-browser, go back to the language tracks page, choose your exercise and the exercise you've just worked on. You will now see your solution online and notice that it is awaiting a mentor.<br/>
 
 ### Testing
 
