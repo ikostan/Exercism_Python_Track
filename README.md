@@ -73,7 +73,7 @@ python3 test/check-exercises.py
 
 ### Code Style
 
-The Python code in this repo is meant to follow the [PEP8 style guide](https://www.python.org/dev/peps/pep-0008/) (a stylized version http://pep8.org).
+The Python code in this repo is meant to follow the [PEP8 style guide](https://www.python.org/dev/peps/pep-0008/) ([a stylized version](http://pep8.org)).
 
 This repo uses [flake8](http://flake8.readthedocs.org/en/latest/) with default settings to enforce the coding standard.
 
@@ -101,7 +101,7 @@ On Windows, the equivalent activate script is in the Scripts folder.<br/>
 ```
 And type 'deactivate' to undo the changes.<br/>
 
-Source: https://virtualenv.pypa.io/en/stable/userguide/<br/>
+[Source](https://virtualenv.pypa.io/en/stable/userguide/)<br/>
 
 ### How to delete multiples files in Git:
 
