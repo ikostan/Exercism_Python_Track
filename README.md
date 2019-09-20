@@ -56,12 +56,12 @@ This guide was created in order to help you get started learning with Exercism. 
 All exercises must be compatible with Python versions 2.7 and 3.4 upwards.
 
 To test a single exercise (e.g., with Python 2.7):
-```
+```python
 python2.7 test/check-exercises.py [exercise-name]
 ```
 
 To test all exercises (e.g., with Python 3):
-```
+```python
 python3 test/check-exercises.py
 ```
 
