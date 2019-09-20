@@ -16,7 +16,7 @@
 ## Exercism exercises in Python
 
 
-### What is Exercism?
+### About Exercism
 Exercism is an online platform designed to help you improve your coding skills through practice and mentorship.
 
 Exercism provides you with thousands of exercises spread across numerous language tracks. Once you start a language track you are presented with a core set of exercises to complete. Each one is a fun and interesting challenge designed to teach you a little more about the features of a language.
