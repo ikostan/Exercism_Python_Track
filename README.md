@@ -73,16 +73,16 @@ This repo uses [flake8](http://flake8.readthedocs.org/en/latest/) with default s
 
 ### Setting up Python3 virtual environment on Windows machine:
 
-1. open CMD
-2. navigate to project directory, for example:<br/> 
+ 1. open CMD
+ 2. navigate to project directory, for example:<br/> 
 ```bash
 cd C:\Users\superadmin\Desktop\Python\CodinGame
 ```
-3. run following command:<br/> 
+ 3. run following command:<br/> 
 ```bash 
 pip install virtualenv
 ```
-4. run following command:<br/> 
+ 4. run following command:<br/> 
 ```bash 
 virtualenv venv --python=python
 ```
