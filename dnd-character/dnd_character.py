@@ -96,7 +96,8 @@ class Character:
         Returns random ability
         :return:
         """
-
+        # Standard pseudo-random generators are not
+        # suitable for security/cryptographic purposes.
         # random_key_index = random.randint(0, len(self.abilities.keys()) - 1)
 
         # create a random number that is cryptographically secure
@@ -129,6 +130,8 @@ def roll_dice():
 
     results = list()
     while len(results) != 4:
+        # Standard pseudo-random generators are not
+        # suitable for security/cryptographic purposes.
         # results.append(random.randint(1, 6))
         crypto = SystemRandom()
         random_key_index = crypto.randrange(1, 6)
