@@ -120,7 +120,7 @@ def roll_dice():
     """
 
     results = list()
-    for i in range(4):
+    while len(results) != 4:
         results.append(random.randint(1, 6))
 
     return sum(sorted(results)[1:])
