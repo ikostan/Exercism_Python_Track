@@ -5,6 +5,27 @@ import unittest
 from bank_account import BankAccount
 
 
+def adjust_balance_concurrently(account):
+    def transact():
+        account.deposit(5)
+        time.sleep(0.001)
+        account.withdraw(5)
+
+    # Greatly improve the chance of an operation being interrupted
+    # by thread switch, thus testing synchronization effectively
+    try:
+        sys.setswitchinterval(1e-12)
+    except AttributeError:
+        # For Python 2 compatibility
+        sys.setcheckinterval(1)
+
+    threads = [threading.Thread(target=transact) for _ in range(1000)]
+    for thread in threads:
+        thread.start()
+    for thread in threads:
+        thread.join()
+
+
 class BankAccountTest(unittest.TestCase):
 
     def test_newly_opened_account_has_zero_balance(self):
@@ -114,29 +135,9 @@ class BankAccountTest(unittest.TestCase):
         account.open()
         account.deposit(1000)
 
-        self.adjust_balance_concurrently(account)
+        adjust_balance_concurrently(account)
 
         self.assertEqual(account.get_balance(), 1000)
-
-    def adjust_balance_concurrently(self, account):
-        def transact():
-            account.deposit(5)
-            time.sleep(0.001)
-            account.withdraw(5)
-
-        # Greatly improve the chance of an operation being interrupted
-        # by thread switch, thus testing synchronization effectively
-        try:
-            sys.setswitchinterval(1e-12)
-        except AttributeError:
-            # For Python 2 compatibility
-            sys.setcheckinterval(1)
-
-        threads = [threading.Thread(target=transact) for _ in range(1000)]
-        for thread in threads:
-            thread.start()
-        for thread in threads:
-            thread.join()
 
     # Utility functions
     def setUp(self):
