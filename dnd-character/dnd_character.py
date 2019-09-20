@@ -1,5 +1,6 @@
 import random
 import math
+from random import SystemRandom
 
 
 class Character:
@@ -101,7 +102,6 @@ class Character:
         # create a random number that is cryptographically secure
         # Source: https://stackoverflow.com/questions/20936993/
         # how-can-i-create-a-random-number-that-is-cryptographically-secure-in-python
-        from random import SystemRandom
         crypto = SystemRandom()
         random_key_index = crypto.randrange(len(self.abilities.keys()))
         random_key = list(self.abilities.keys())[random_key_index]
@@ -129,6 +129,9 @@ def roll_dice():
 
     results = list()
     while len(results) != 4:
-        results.append(random.randint(1, 6))
+        # results.append(random.randint(1, 6))
+        crypto = SystemRandom()
+        random_key_index = crypto.randrange(1, 6)
+        results.append(random_key_index)
 
     return sum(sorted(results)[1:])
