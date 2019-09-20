@@ -5,9 +5,9 @@ The classical introductory exercise. Just say "Hello, World!".
 
 ### The objectives are simple:
 
-- Write a function that returns the string "Hello, World!".
-- Run the test suite and make sure that it succeeds.
-- Submit your solution and check it at the website.
+- Write a function that returns the string "Hello, World!".<br/>
+- Run the test suite and make sure that it succeeds.<br/>
+- Submit your solution and check it at the website.<br/>
 If everything goes well, you will be ready to fetch your first real exercise.
 
 ### Exception messages
