@@ -16,13 +16,18 @@ class Robot(object):
         :return:
         """
         import string
-        import random
+        # import random
+        from random import SystemRandom
         old_name = self.name
 
         while old_name == self.name:
             self.name = ''
             for n in range(0, 2):
-                self.name += string.ascii_uppercase[random.randint(0, 25)]
+                # Standard pseudo-random generators are not
+                # suitable for security/cryptographic purposes.
+                # self.name += string.ascii_uppercase[random.randint(0, 25)]
+                rnd = SystemRandom()
+                self.name += string.ascii_uppercase[rnd.randrange(0, 25)]
 
             for n in range(0, 3):
-                self.name += str(random.randint(0, 9))
+                self.name += str(rnd.randrange(0, 9))
