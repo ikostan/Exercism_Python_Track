@@ -5,10 +5,13 @@ The classical introductory exercise. Just say "Hello, World!".
 
 ### The objectives are simple:
 
-- Write a function that returns the string "Hello, World!".<br/>
-- Run the test suite and make sure that it succeeds.<br/>
-- Submit your solution and check it at the website.<br/>
-If everything goes well, you will be ready to fetch your first real exercise.
+- Write a function that returns the string "Hello, World!".
+
+- Run the test suite and make sure that it succeeds.
+
+- Submit your solution and check it at the website.
+
+If everything goes well, you will be ready to fetch your first real exercise.<br/>
 
 ### Exception messages
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to indicate what the source of the error is. This makes your code more readable and helps significantly with debugging. Not every exercise will require you to raise an exception, but for those that do, the tests will only pass if you include a message.
