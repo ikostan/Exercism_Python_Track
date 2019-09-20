@@ -72,11 +72,13 @@ class PalindromeProductsTest(unittest.TestCase):
 
     def test_error_for_smallest_palindrome_if_min_is_more_than_max(self):
         with self.assertRaisesWithMessage(ValueError):
-            value, factors = smallest(min_factor=10000, max_factor=1)
+            # value, factors = smallest(min_factor=10000, max_factor=1)
+            smallest(min_factor=10000, max_factor=1)
 
     def test_error_for_largest_palindrome_if_min_is_more_than_max(self):
         with self.assertRaisesWithMessage(ValueError):
-            value, factors = largest(min_factor=2, max_factor=1)
+            # value, factors = largest(min_factor=2, max_factor=1)
+            largest(min_factor=2, max_factor=1)
 
     # Utility functions
     def setUp(self):
