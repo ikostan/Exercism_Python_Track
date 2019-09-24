@@ -1,3 +1,6 @@
+from collections import Counter
+
+
 def is_isogram(string) -> bool:
     """
     Determine if a word or phrase is an isogram.
@@ -19,17 +22,16 @@ def is_isogram(string) -> bool:
     :return:
     """
 
-    counter = 0
+    counter = Counter(string.lower())
 
     # 1. spaces allowed to appear multiple times
-    counter += string.count(' ')
+    spaces = 0
+    if ' ' in counter:
+        spaces = counter[' '] - 1
 
     # 2. hyphens are allowed to appear multiple times
-    counter += string.count('-')
+    hyphens = 0
+    if '-' in counter:
+        hyphens = counter['-'] - 1
 
-    # 3. No repeating letters
-    unique_letters_only = set([char.lower()
-                               for char in string if char.isalpha()])
-    counter += len(unique_letters_only)
-
-    return counter == len(string)
+    return len(string) == len(counter.items()) + spaces + hyphens
