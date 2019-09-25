@@ -23,15 +23,9 @@ def is_isogram(string) -> bool:
     """
 
     counter = Counter(string.lower())
+    for c in counter:
+        # spaces and hyphens are allowed to appear multiple times
+        if counter[c] > 1 and c != '-' and c != ' ':
+            return False
 
-    # 1. spaces allowed to appear multiple times
-    spaces = 0
-    if ' ' in counter:
-        spaces = counter[' '] - 1
-
-    # 2. hyphens are allowed to appear multiple times
-    hyphens = 0
-    if '-' in counter:
-        hyphens = counter['-'] - 1
-
-    return len(string) == len(counter.items()) + spaces + hyphens
+    return True
