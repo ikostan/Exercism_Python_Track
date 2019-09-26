@@ -22,5 +22,8 @@ def is_isogram(string) -> bool:
     :return:
     """
 
-    counter = Counter(string.lower())
-    return all((False if counter[c] > 1 and c != '-' and c != ' ' else True) for c in counter)
+    clean_string = ''.join(char.lower() for char in string if char not in [' ', '-'])
+    for char in clean_string:
+        if clean_string.count(char) > 1:
+            return False
+    return True
