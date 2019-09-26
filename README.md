@@ -96,7 +96,7 @@ virtualenv venv --python=python
 ### Python3 virtual environment activation on Windows machine:<br/> 
 
 On Windows, the equivalent activate script is in the Scripts folder.<br/> 
-```python
+```bash
 > \path\to\env\Scripts\activate
 ```
 And type 'deactivate' to undo the changes.<br/>
