@@ -6,8 +6,9 @@ from armstrong_numbers import is_armstrong_number
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
-@pytest.mark.skipif(sys.version_info >= (3,7),
-                    reason="python3.7 fails with 'ValueError: malformed node or string' error")
+@pytest.mark.skipif(sys.version_info >= '3,7',
+                    reason="python3.7 fails with 'ValueError: "
+                           "malformed node or string' error")
 class ArmstrongNumbersTest(unittest.TestCase):
 
     def test_zero_is_an_armstrong_number(self):
