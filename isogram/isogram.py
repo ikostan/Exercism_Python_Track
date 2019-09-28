@@ -22,7 +22,9 @@ def is_isogram(string) -> bool:
     :return:
     """
 
-    clean_string = ''.join(char.lower() for char in string if char not in [' ', '-'])
+    clean_string = ''.join(char.lower()
+                           for char in string
+                           if char not in [' ', '-'])
     for char in clean_string:
         if clean_string.count(char) > 1:
             return False
