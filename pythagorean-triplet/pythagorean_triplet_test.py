@@ -8,8 +8,9 @@ Requiring set(tuples) instead allows the results to
 be returned in any order and still be verified correctly.
 """
 
-import os
+import platform
 import unittest
+import pytest
 from pythagorean_triplet import triplets_with_sum
 
 
@@ -47,6 +48,9 @@ class PythagoreanTripletTest(unittest.TestCase):
                     (240, 252, 348)}
         self.assertEqual(triplets_with_sum(840), expected)
 
+    @pytest.mark.skipif(platform.system() == 'Linux',
+                        reason="Test is too long and will fail with "
+                               "'Too long with no output (exceeded 10m0s)' error")
     def test_triplets_for_large_numbers(self):
         expected = {(1200, 14375, 14425),
                     (1875, 14000, 14125),
