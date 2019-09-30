@@ -8,6 +8,7 @@ Requiring set(tuples) instead allows the results to
 be returned in any order and still be verified correctly.
 """
 
+import os
 import unittest
 from pythagorean_triplet import triplets_with_sum
 
