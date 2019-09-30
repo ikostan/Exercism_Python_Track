@@ -19,7 +19,8 @@ def triplets_with_sum(number) -> set:
     :return:
     """
 
-    return set(t for t in triplets_in_range(int(math.sqrt(number)), number)
+    return set(t for t in triplets_in_range(int(math.sqrt(number)),
+                                            number)
                if sum(t) == number)
 
 
@@ -34,10 +35,11 @@ def triplets_in_range(start: int, end: int) -> list:
 
     triplets = []
 
-    for b in range(end//2):
+    for b in range(end//4, end//2):
         for a in range(start, b):
+            # calculate c
             c = int(math.sqrt(b ** 2 + a ** 2))
-
+            # check is a, b, c Pythagorean triplet
             if is_triplet([a, b, c]):
                 triplets.append((a, b, c))
 
@@ -57,5 +59,4 @@ def is_triplet(triplet: list) -> bool:
     :return:
     """
 
-    return triplet[0] < triplet[1] < triplet[-1] and \
-           triplet[0] ** 2 + triplet[1] ** 2 == triplet[-1] ** 2
+    return triplet[0] ** 2 + triplet[1] ** 2 == triplet[-1] ** 2
