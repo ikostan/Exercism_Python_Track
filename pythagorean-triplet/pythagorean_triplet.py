@@ -19,7 +19,7 @@ def triplets_with_sum(number) -> set:
     :return:
     """
 
-    return set(t for t in triplets_in_range(1, number)
+    return set(t for t in triplets_in_range(int(math.sqrt(number)), number)
                if sum(t) == number)
 
 
@@ -34,7 +34,7 @@ def triplets_in_range(start: int, end: int) -> list:
 
     triplets = []
 
-    for b in range(end):
+    for b in range(end//2):
         for a in range(start, b):
             c = int(math.sqrt(b ** 2 + a ** 2))
 
