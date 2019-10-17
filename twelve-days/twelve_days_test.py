@@ -5,6 +5,7 @@ from twelve_days import recite
 
 
 class TwelveDaysTest(unittest.TestCase):
+
     def test_first_day_a_partridge_in_a_pear_tree(self):
         expected = [
             "On the first day of Christmas my true love gave to me: "
