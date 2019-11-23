@@ -12,7 +12,8 @@ DAYS = ["first",
         "eleventh",
         "twelfth"]
 
-PRESENTS = ["two Turtle Doves",
+PRESENTS = ["a Partridge in a Pear Tree.",
+            "two Turtle Doves",
             "three French Hens",
             "four Calling Birds",
             "five Gold Rings",
@@ -22,8 +23,7 @@ PRESENTS = ["two Turtle Doves",
             "nine Ladies Dancing",
             "ten Lords-a-Leaping",
             "eleven Pipers Piping",
-            "twelve Drummers Drumming",
-            "a Partridge in a Pear Tree."]
+            "twelve Drummers Drumming"]
 
 
 def recite(start_verse, end_verse):
@@ -42,13 +42,13 @@ def recite(start_verse, end_verse):
 
         if n == 0:
             presents.append("On the {} day of Christmas my true love gave to me: "
-                            "{}".format(DAYS[n], PRESENTS[-1]))
+                            "{}".format(DAYS[n], PRESENTS[0]))
         else:
             for i in range(n, 0, -1):
-                tmp_str += PRESENTS[i - 1] + ', '
+                tmp_str = '{}{}{}'.format(tmp_str, PRESENTS[i], ', ')
 
             string = "On the {} day of Christmas my true love gave to me: " \
-                     "{}and {}".format(DAYS[n], tmp_str, PRESENTS[-1])
+                     "{}and {}".format(DAYS[n], tmp_str, PRESENTS[0])
             presents.append(string)
 
     return presents[start_verse - 1:]
