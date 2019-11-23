@@ -26,7 +26,7 @@ PRESENTS = ["a Partridge in a Pear Tree.",
             "twelve Drummers Drumming"]
 
 
-def recite(start_verse, end_verse):
+def recite(start_verse, end_verse) -> list:
     """
     Returns part of 'The Twelve Days of Christmas' verse
     based on function input
