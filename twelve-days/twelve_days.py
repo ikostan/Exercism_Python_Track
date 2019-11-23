@@ -1,30 +1,29 @@
 # Output the lyrics to 'The Twelve Days of Christmas'
-DAYS = {
-    1: "first",
-    2: "second",
-    3: "third",
-    4: "fourth",
-    5: "fifth",
-    6: "sixth",
-    7: "seventh",
-    8: "eighth",
-    9: "ninth",
-    10: "tenth",
-    11: "eleventh",
-    12: "twelfth",
-}
+DAYS = ["first",
+        "second",
+        "third",
+        "fourth",
+        "fifth",
+        "sixth",
+        "seventh",
+        "eighth",
+        "ninth",
+        "tenth",
+        "eleventh",
+        "twelfth"]
 
-PRESENTS = ["two Turtle Doves, ",
-            "three French Hens, ",
-            "four Calling Birds, ",
-            "five Gold Rings, ",
-            "six Geese-a-Laying, ",
-            "seven Swans-a-Swimming, ",
-            "eight Maids-a-Milking, ",
-            "nine Ladies Dancing, ",
-            "ten Lords-a-Leaping, ",
-            "eleven Pipers Piping, ",
-            "twelve Drummers Drumming, "]
+PRESENTS = ["two Turtle Doves",
+            "three French Hens",
+            "four Calling Birds",
+            "five Gold Rings",
+            "six Geese-a-Laying",
+            "seven Swans-a-Swimming",
+            "eight Maids-a-Milking",
+            "nine Ladies Dancing",
+            "ten Lords-a-Leaping",
+            "eleven Pipers Piping",
+            "twelve Drummers Drumming",
+            "a Partridge in a Pear Tree."]
 
 
 def recite(start_verse, end_verse):
@@ -43,15 +42,13 @@ def recite(start_verse, end_verse):
 
         if n == 0:
             presents.append("On the {} day of Christmas my true love gave to me: "
-                            "{}".format(DAYS[n + 1],
-                                        'a Partridge in a Pear Tree.'))
+                            "{}".format(DAYS[n], PRESENTS[-1]))
         else:
             for i in range(n, 0, -1):
-                tmp_str += PRESENTS[i - 1]
+                tmp_str += PRESENTS[i - 1] + ', '
 
             string = "On the {} day of Christmas my true love gave to me: " \
-                     "{}and a Partridge in a Pear Tree.".format(DAYS[n + 1],
-                                                                tmp_str)
+                     "{}and {}".format(DAYS[n], tmp_str, PRESENTS[-1])
             presents.append(string)
 
     return presents[start_verse - 1:]
