@@ -15,7 +15,7 @@ def filter_illegal_chars(sentence: str) -> list:
     replaceable = ",:!&@$%^._\n"
     sentence = ''.join(char if char not in replaceable else " " for char in sentence)
 
-    words = [word.replace(",:!&@$%^.", "").lower() for word in sentence.split()]
+    words = [word.lower() for word in sentence.split()]
 
     for i, word in enumerate(words):
         if "'" in word and (word.index("'") == 0 or word.index("'") == -1):
