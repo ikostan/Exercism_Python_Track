@@ -15,7 +15,6 @@
 
 ## Exercism exercises in Python
 
-
 ### About Exercism
 Exercism is an online platform designed to help you improve your coding skills through practice and mentorship.
 
@@ -28,7 +27,6 @@ Exercism is entirely open source and relies on the contributions of thousands of
 Exercism is designed to be fun and friendly, and we place a strong emphasis on empathetic communication. 
 
 Sign up and have fun. Exercism is 100% free :)
-
 
 ## Getting Started
 We know using a new product can be daunting, and Exercism is a little complicated. So here's a really simple set of instructions to get you started. [Click here for help](https://exercism.io/getting-started)
@@ -77,7 +75,7 @@ The Python code in this repo is meant to follow the [PEP8 style guide](https://w
 
 This repo uses [flake8](http://flake8.readthedocs.org/en/latest/) with default settings to enforce the coding standard.
 
-### Setting up Python3 virtual environment on Windows machine:
+### Setting up Python3 virtual environment on Windows machine
 
  1. open CMD
  2. navigate to project directory, for example:<br/> 
@@ -93,7 +91,7 @@ pip install virtualenv
 virtualenv venv --python=python
 ```
 
-### Python3 virtual environment activation on Windows machine:<br/> 
+### Python3 virtual environment activation on Windows machine<br/> 
 
 On Windows, the equivalent activate script is in the Scripts folder.<br/> 
 ```bash
@@ -103,7 +101,7 @@ And type 'deactivate' to undo the changes.<br/>
 
 [Source](https://virtualenv.pypa.io/en/stable/userguide/)<br/>
 
-### How to delete multiples files in Git:
+### How to delete multiples files in Git
 
 - In the command-line, navigate to your local repository.
 - Ensure you are in the default branch:<br/> 
@@ -135,4 +133,3 @@ git commit -m "fixed untracked files"
 
 ### More help:
 [pip nstallation and upgrade](https://pip.pypa.io/en/stable/installing/)
-
