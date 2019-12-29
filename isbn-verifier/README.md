@@ -30,7 +30,6 @@ Putting this into place requires some thinking about preprocessing/parsing of th
 
 The program should be able to verify ISBN-10 both with and without separating dashes.
 
-
 ## Caveats
 
 Converting from strings to numbers can be tricky in certain languages.
@@ -67,9 +66,11 @@ Alternatively, you can tell Python to run the pytest module (allowing the same c
 
 ### Common `pytest` options
 
+```text
 - `-v` : enable verbose output<br/>
 - `-x` : stop running tests on first failure<br/>
 - `--ff` : run failures from previous test before running other test cases<br/>
+```
 
 For other options, see `python -m pytest -h`
 
