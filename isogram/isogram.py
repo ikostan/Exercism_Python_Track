@@ -1,6 +1,3 @@
-from collections import Counter
-
-
 def is_isogram(string) -> bool:
     """
     Determine if a word or phrase is an isogram.
