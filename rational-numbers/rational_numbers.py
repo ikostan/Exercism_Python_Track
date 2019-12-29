@@ -86,24 +86,24 @@ class Rational:
         """
         # Exponentiation of a rational number r = a/b
         # to a non-negative integer power n is r^n = (a^n)/(b^n).
-        if power >= 0 and type(power) == int:
+        if power >= 0 and isinstance(power, int):
             return Rational((self.numer ** power),
                             (self.denom ** power))
         # Exponentiation of a rational number r = a/b
         # to a negative integer power n is r^n = (b^m)/(a^m), where m = |n|.
-        elif power < 0 and type(power) == int:
+        elif power < 0 and isinstance(power, int):
             return Rational((self.denom ** abs(power)),
                             (self.numer ** abs(power)))
         # Exponentiation of a rational number r = a/b to a
         # real (floating-point) number x is
         # the quotient (a^x)/(b^x), which is a real number.
-        elif power >= 0 and type(power) == float:
+        elif power >= 0 and isinstance(power, float):
             return Rational((self.numer ** power),
                             (self.denom ** power))
         # Exponentiation of a rational number r = a/b to a
         # negative real (floating-point) number x is
         # the quotient (a^x)/(b^x), which is a real number.
-        elif power < 0 and type(power) == float:
+        elif power < 0 and isinstance(power, float):
             return Rational((self.denom ** abs(power)),
                             (self.numer ** abs(power)))
 
