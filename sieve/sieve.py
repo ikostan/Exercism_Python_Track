@@ -1,6 +1,3 @@
-import math
-
-
 def primes(limit: int) -> list:
     """
     Sieve of Eratosthenes:
