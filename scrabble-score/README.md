@@ -39,7 +39,6 @@ And to total:
 - You can play a double or a triple letter.
 - You can play a double or a triple word.
 
-
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
