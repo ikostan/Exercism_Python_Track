@@ -18,7 +18,6 @@ class implements the following methods:
 - `__enter__` and `__exit__`, for implicit opening and closing.
 - `do_something`, which may or may not throw an `Exception`.
 
-
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
