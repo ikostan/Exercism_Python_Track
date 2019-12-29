@@ -8,14 +8,16 @@ class TwelveDaysTest(unittest.TestCase):
 
     def test_first_day_a_partridge_in_a_pear_tree(self):
         expected = [
-            "On the first day of Christmas my true love gave to me: "
+            "On the first day of Christmas "
+            "my true love gave to me: "
             "a Partridge in a Pear Tree."
         ]
         self.assertEqual(recite(1, 1), expected)
 
     def test_second_day_two_turtle_doves(self):
         expected = [
-            "On the second day of Christmas my true love gave to me: "
+            "On the second day of Christmas "
+            "my true love gave to me: "
             "two Turtle Doves, "
             "and a Partridge in a Pear Tree."
         ]
@@ -23,7 +25,8 @@ class TwelveDaysTest(unittest.TestCase):
 
     def test_third_day_three_french_hens(self):
         expected = [
-            "On the third day of Christmas my true love gave to me: "
+            "On the third day of Christmas "
+            "my true love gave to me: "
             "three French Hens, "
             "two Turtle Doves, "
             "and a Partridge in a Pear Tree."
@@ -32,7 +35,8 @@ class TwelveDaysTest(unittest.TestCase):
 
     def test_fourth_day_four_calling_birds(self):
         expected = [
-            "On the fourth day of Christmas my true love gave to me: "
+            "On the fourth day of Christmas "
+            "my true love gave to me: "
             "four Calling Birds, "
             "three French Hens, "
             "two Turtle Doves, "
@@ -42,7 +46,8 @@ class TwelveDaysTest(unittest.TestCase):
 
     def test_fifth_day_five_gold_rings(self):
         expected = [
-            "On the fifth day of Christmas my true love gave to me: "
+            "On the fifth day of Christmas "
+            "my true love gave to me: "
             "five Gold Rings, "
             "four Calling Birds, "
             "three French Hens, "
@@ -53,7 +58,8 @@ class TwelveDaysTest(unittest.TestCase):
 
     def test_sixth_day_six_geese_a_laying(self):
         expected = [
-            "On the sixth day of Christmas my true love gave to me: "
+            "On the sixth day of Christmas my "
+            "true love gave to me: "
             "six Geese-a-Laying, "
             "five Gold Rings, "
             "four Calling Birds, "
@@ -65,7 +71,8 @@ class TwelveDaysTest(unittest.TestCase):
 
     def test_seventh_day_seven_swans_a_swimming(self):
         expected = [
-            "On the seventh day of Christmas my true love gave to me: "
+            "On the seventh day of Christmas "
+            "my true love gave to me: "
             "seven Swans-a-Swimming, "
             "six Geese-a-Laying, "
             "five Gold Rings, "
@@ -78,7 +85,8 @@ class TwelveDaysTest(unittest.TestCase):
 
     def test_eighth_day_eight_maids_a_milking(self):
         expected = [
-            "On the eighth day of Christmas my true love gave to me: "
+            "On the eighth day of Christmas "
+            "my true love gave to me: "
             "eight Maids-a-Milking, "
             "seven Swans-a-Swimming, "
             "six Geese-a-Laying, "
@@ -92,7 +100,8 @@ class TwelveDaysTest(unittest.TestCase):
 
     def test_ninth_day_nine_ladies_dancing(self):
         expected = [
-            "On the ninth day of Christmas my true love gave to me: "
+            "On the ninth day of Christmas "
+            "my true love gave to me: "
             "nine Ladies Dancing, "
             "eight Maids-a-Milking, "
             "seven Swans-a-Swimming, "
@@ -107,7 +116,8 @@ class TwelveDaysTest(unittest.TestCase):
 
     def test_tenth_day_ten_lords_a_leaping(self):
         expected = [
-            "On the tenth day of Christmas my true love gave to me: "
+            "On the tenth day of Christmas "
+            "my true love gave to me: "
             "ten Lords-a-Leaping, "
             "nine Ladies Dancing, "
             "eight Maids-a-Milking, "
@@ -123,7 +133,8 @@ class TwelveDaysTest(unittest.TestCase):
 
     def test_eleventh_day_eleven_pipers_piping(self):
         expected = [
-            "On the eleventh day of Christmas my true love gave to me: "
+            "On the eleventh day of Christmas "
+            "my true love gave to me: "
             "eleven Pipers Piping, "
             "ten Lords-a-Leaping, "
             "nine Ladies Dancing, "
@@ -140,7 +151,8 @@ class TwelveDaysTest(unittest.TestCase):
 
     def test_twelfth_day_twelve_drummers_drumming(self):
         expected = [
-            "On the twelfth day of Christmas my true love gave to me: "
+            "On the twelfth day of Christmas "
+            "my true love gave to me: "
             "twelve Drummers Drumming, "
             "eleven Pipers Piping, "
             "ten Lords-a-Leaping, "
