@@ -19,7 +19,7 @@ class RobotNameTest(unittest.TestCase):
 
     def test_name_sticks(self):
         robot = Robot()
-        robot.name
+        # robot.name # Statement seems to have no effect
         self.assertEqual(robot.name, robot.name)
 
     def test_different_robots_have_different_names(self):
