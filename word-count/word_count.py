@@ -13,7 +13,9 @@ def count_words(sentence: str):
 def filter_illegal_chars(sentence: str) -> list:
 
     replaceable = ",:!&@$%^._\n"
-    sentence = ''.join(char if char not in replaceable else " " for char in sentence)
+    sentence = ''.join(
+        char if char not in replaceable
+        else " " for char in sentence)
 
     words = [word.lower() for word in sentence.split()]
 
