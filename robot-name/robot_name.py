@@ -22,12 +22,14 @@ class Robot(object):
 
         while old_name == self.name:
             self.name = ''
-            for n in range(0, 2):
+            n = 0
+            while n < 2:
                 # Standard pseudo-random generators are not
                 # suitable for security/cryptographic purposes.
                 # self.name += string.ascii_uppercase[random.randint(0, 25)]
                 rnd = SystemRandom()
                 self.name += string.ascii_uppercase[rnd.randrange(0, 25)]
+                n += 1
 
             for n in range(0, 3):
                 self.name += str(rnd.randrange(0, 9))
