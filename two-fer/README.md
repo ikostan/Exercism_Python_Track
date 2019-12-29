@@ -13,7 +13,8 @@ exercism download --exercise=two-fer --track=python
 Use your code editor to solve the problem locally.
 
 3. Submit:<br/>
+```text
 exercism submit /path/to/file [/path/to/file2 ...]
+```
 
-### Source
-https://en.wikipedia.org/wiki/Two-fer
+[Source](https://en.wikipedia.org/wiki/Two-fer)
