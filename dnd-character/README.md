@@ -1,6 +1,6 @@
 # Dnd Character
 
-For a game of [Dungeons & Dragons][DND], each player starts by generating a
+For a game of **Dungeons & Dragons** (DND), each player starts by generating a
 character they can play with. This character has, among other things, six
 abilities; strength, dexterity, constitution, intelligence, wisdom and
 charisma. These six abilities have scores that are determined randomly. You
