@@ -48,14 +48,25 @@ class WordCountTest(unittest.TestCase):
 
     def test_with_apostrophes(self):
         self.assertEqual(
-            count_words("First: don't laugh. Then: don't cry."),
-            {"first": 1, "don't": 2, "laugh": 1, "then": 1, "cry": 1},
+            count_words("First: don't laugh. "
+                        "Then: don't cry."),
+            {"first": 1,
+             "don't": 2,
+             "laugh": 1,
+             "then": 1,
+             "cry": 1},
         )
 
     def test_with_quotations(self):
         self.assertEqual(
-            count_words("Joe can't tell between 'large' and large."),
-            {"joe": 1, "can't": 1, "tell": 1, "between": 1, "large": 2, "and": 1},
+            count_words("Joe can't tell "
+                        "between 'large' and large."),
+            {"joe": 1,
+             "can't": 1,
+             "tell": 1,
+             "between": 1,
+             "large": 2,
+             "and": 1},
         )
 
     def test_substrings_from_the_beginning(self):
