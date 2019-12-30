@@ -90,7 +90,8 @@ class WordCountTest(unittest.TestCase):
     def test_tabs(self):
         self.assertEqual(
             count_words(
-                "rah rah ah ah ah	roma roma ma	ga ga oh la la	want your bad romance"
+                "rah rah ah ah ah	roma roma ma	"
+                "ga ga oh la la	want your bad romance"
             ),
             {
                 "rah": 2,
@@ -110,7 +111,11 @@ class WordCountTest(unittest.TestCase):
     def test_non_alphanumeric(self):
         self.assertEqual(
             count_words("hey,my_spacebar_is_broken"),
-            {"hey": 1, "my": 1, "spacebar": 1, "is": 1, "broken": 1},
+            {"hey": 1,
+             "my": 1,
+             "spacebar": 1,
+             "is": 1,
+             "broken": 1},
         )
 
 
