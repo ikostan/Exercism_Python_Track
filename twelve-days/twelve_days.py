@@ -41,7 +41,8 @@ def recite(start_verse, end_verse) -> list:
         tmp_str = ''
 
         if n == 0:
-            presents.append("On the {} day of Christmas my true love gave to me: "
+            presents.append("On the {} day of Christmas "
+                            "my true love gave to me: "
                             "{}".format(DAYS[n], PRESENTS[0]))
         else:
             for i in range(n, 0, -1):
