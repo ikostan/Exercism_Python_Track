@@ -1,6 +1,43 @@
+import string
+
+
 def score(word: str) -> int:
     """
-    Given a word, compute the scrabble score for that word.
+    Given a word, computes the
+    scrabble score for that word.
+    :param word:
+    :return:
+    """
+
+    total = 0
+    scrabble_score_table = scrabble_score_generator()
+    for letter in word.upper():
+        total += scrabble_score_table[letter]
+    return total
+
+
+def char_generator() -> str:
+    """
+    Returns eng letters in upper case
+    :return:
+    """
+    return string.ascii_uppercase
+
+
+def scrabble_score_generator() -> dict:
+    """
+    Generates Scrabble Score table
+    :return:
+    """
+    scrabble_score_table = dict()
+    for char in char_generator():
+        scrabble_score_table[char] = get_char_score(char)
+    return scrabble_score_table
+
+
+def get_char_score(char: str) -> int:
+    """
+    Returns Scrabble Score for requested char
 
     Letter                           Value
     A, E, I, O, U, L, N, R, S, T       1
@@ -11,9 +48,10 @@ def score(word: str) -> int:
     J, X                               8
     Q, Z                               10
 
-    :param word:
+    :param char:
     :return:
     """
+
     letter_value = {
         1: 'AEIOULNRST',
         2: 'DG',
@@ -24,10 +62,6 @@ def score(word: str) -> int:
         10: 'QZ',
     }
 
-    total = 0
-    for letter in word.upper():
-        for key in letter_value:
-            if letter in letter_value[key]:
-                total += key
-                break
-    return total
+    for key in letter_value:
+        if char in letter_value[key]:
+            return key
