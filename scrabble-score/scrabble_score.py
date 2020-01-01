@@ -7,9 +7,8 @@ def score(word: str) -> int:
     """
 
     total = 0
-    scrabble_score_table = scrabble_score_generator()
     for letter in word.upper():
-        total += scrabble_score_table[letter]
+        total += scrabble_score_generator()[letter]
     return total
 
 
