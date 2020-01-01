@@ -16,21 +16,13 @@ def score(word: str) -> int:
     return total
 
 
-def char_generator() -> str:
-    """
-    Returns eng letters in upper case
-    :return:
-    """
-    return string.ascii_uppercase
-
-
 def scrabble_score_generator() -> dict:
     """
     Generates Scrabble Score table
     :return:
     """
     scrabble_score_table = dict()
-    for char in char_generator():
+    for char in string.ascii_uppercase:
         scrabble_score_table[char] = get_char_score(char)
     return scrabble_score_table
 
