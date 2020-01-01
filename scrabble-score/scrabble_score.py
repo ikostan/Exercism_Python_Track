@@ -1,6 +1,3 @@
-import string
-
-
 def score(word: str) -> int:
     """
     Given a word, computes the
