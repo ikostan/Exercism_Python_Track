@@ -21,28 +21,6 @@ def scrabble_score_generator() -> dict:
     Generates Scrabble Score table
     :return:
     """
-    scrabble_score_table = dict()
-    for char in string.ascii_uppercase:
-        scrabble_score_table[char] = get_char_score(char)
-    return scrabble_score_table
-
-
-def get_char_score(char: str) -> int:
-    """
-    Returns Scrabble Score for requested char
-
-    Letter                           Value
-    A, E, I, O, U, L, N, R, S, T       1
-    D, G                               2
-    B, C, M, P                         3
-    F, H, V, W, Y                      4
-    K                                  5
-    J, X                               8
-    Q, Z                               10
-
-    :param char:
-    :return:
-    """
 
     letter_value = {
         1: 'AEIOULNRST',
@@ -54,6 +32,8 @@ def get_char_score(char: str) -> int:
         10: 'QZ',
     }
 
-    for key in letter_value:
-        if char in letter_value[key]:
-            return key
+    scrabble_score_table = dict()
+    for letter_score in letter_value.keys():
+        for letter in letter_value[letter_score]:
+            scrabble_score_table[letter] = letter_score
+    return scrabble_score_table
