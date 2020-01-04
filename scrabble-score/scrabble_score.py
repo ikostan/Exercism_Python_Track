@@ -6,10 +6,7 @@ def score(word: str) -> int:
     :return:
     """
 
-    total = 0
-    for letter in word.upper():
-        total += scrabble_score_generator()[letter]
-    return total
+    return sum(scrabble_score_generator()[letter] for letter in word.upper())
 
 
 def scrabble_score_generator() -> dict:
