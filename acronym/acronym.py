@@ -26,17 +26,24 @@ def clean_up_words(words: str) -> list:
 
     for w in words.split(' '):
         if '-' in w:
-            w = w.replace('-', ' ').split(' ')
-            if w[0] != '':
-                results.append(w[0])
-            if w[1] != '':
-                results.append(w[1])
+            w_split = w.replace('-', ' ').split(' ')
+            for w_s in w_split:
+                add_word(w_s, results)
         elif '_' in w:
             w = w.replace('_', '')
-            if w != '':
-                results.append(w)
+            add_word(w, results)
         else:
-            if w != '':
-                results.append(w)
+            add_word(w, results)
 
     return results
+
+
+def add_word(word: str, results: list) -> None:
+    """
+    Checks for empty strings before adding word to a list
+    :param word:
+    :param results:
+    :return:
+    """
+    if word != '':
+        results.append(word)
