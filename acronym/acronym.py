@@ -11,7 +11,7 @@ def abbreviate(words: str) -> str:
     :return:
     """
 
-    return ''.join(word[0].upper() for word in clean_up_words(words) if word[0].isalpha())
+    return ''.join(word[0].upper() for word in clean_up_words(words))
 
 
 def clean_up_words(words: str) -> list:
@@ -38,5 +38,5 @@ def clean_up_words(words: str) -> list:
         else:
             if w != '':
                 results.append(w)
-                
+
     return results
