@@ -38,4 +38,5 @@ def clean_up_words(words: str) -> list:
         else:
             if w != '':
                 results.append(w)
+                
     return results
