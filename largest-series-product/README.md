@@ -3,9 +3,7 @@
 Given a string of digits, calculate the largest product for a contiguous
 substring of digits of length n.
 
-For example, for the input `'1027839564'`, the largest product for a
-series of 3 digits is 270 (9 * 5 * 6), and the largest product for a
-series of 5 digits is 7560 (7 * 8 * 3 * 9 * 5).
+For example, for the input `'1027839564'`, the largest product for a series of 3 digits is 270 (9 * 5 * 6), and the largest product for a series of 5 digits is 7560 (7 * 8 * 3 * 9 * 5).
 
 Note that these series are only required to occupy *adjacent positions*
 in the input; the digits need not be *numerically consecutive*.
@@ -17,7 +15,6 @@ Implementation note:
 In case of invalid inputs to the 'largest_product' function
 your program should raise a ValueError with a meaningful error message.
 Feel free to reuse your code from the 'series' exercise!
-
 
 ## Exception messages
 
@@ -33,7 +30,7 @@ To raise a message with an exception, just write it as an argument to the except
 raise Exception("Meaningful message indicating the source of the error")
 ```
 
-## Running the tests
+### Running the tests
 
 To run the tests, run `pytest largest_series_product_test.py`
 
@@ -42,13 +39,13 @@ Alternatively, you can tell Python to run the pytest module:
 
 ### Common `pytest` options
 
-- `-v` : enable verbose output
-- `-x` : stop running tests on first failure
-- `--ff` : run failures from previous test before running other test cases
+* `-v` : enable verbose output
+* `-x` : stop running tests on first failure
+* `--ff` : run failures from previous test before running other test cases
 
 For other options, see `python -m pytest -h`
 
-## Submitting Exercises
+### Submitting Exercises
 
 Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/largest-series-product` directory.
 
@@ -57,10 +54,10 @@ You can find your Exercism workspace by running `exercism debug` and looking for
 For more detailed information about running tests, code style and linting,
 please see [Running the Tests](http://exercism.io/tracks/python/tests).
 
-## Source
+### Source
 
 A variation on Problem 8 at Project Euler [http://projecteuler.net/problem=8](http://projecteuler.net/problem=8)
 
-## Submitting Incomplete Solutions
+### Submitting Incomplete Solutions
 
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
