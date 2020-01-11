@@ -59,7 +59,6 @@ While asking for Bob's plants would yield:
 
 - Clover, grass, clover, clover
 
-
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
