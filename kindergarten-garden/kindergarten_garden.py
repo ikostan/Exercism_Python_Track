@@ -40,8 +40,6 @@ class Garden:
         self._diagram = [diagram[0: diagram_length // 2],
                          diagram[(diagram_length // 2) + 1:]]
 
-        print(diagram, '/n', diagram_length, '/n', self._diagram)
-
     def plants(self, name: str) -> list:
         """
         Determine which plants belong to each student
