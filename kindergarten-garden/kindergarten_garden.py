@@ -38,9 +38,6 @@ class Garden:
         else:
             self._students = sorted(students)
 
-        # diagram_length = len(diagram)
-        # self._diagram = [diagram[0: diagram_length // 2], diagram[(diagram_length // 2) + 1:]]
-
         self._diagram = diagram.split()
 
     def plants(self, name: str) -> list:
