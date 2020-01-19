@@ -53,10 +53,10 @@ class Garden:
 
         # first row
         for char in self._diagram[0][start_index:start_index + self._plants_per_student]:
-            plants.append(self._plants_converter[char])
+            plants.append(PLANTS_CONVERTER[char])
 
         # second row
         for char in self._diagram[1][start_index:start_index + self._plants_per_student]:
-            plants.append(self._plants_converter[char])
+            plants.append(PLANTS_CONVERTER[char])
 
         return plants
