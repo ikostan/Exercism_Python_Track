@@ -45,7 +45,6 @@ class Garden:
         Determine which plants belong to each student
         """
         plants = list()
-
         start_index = self._students.index(name) * self._plants_per_student
 
         t = 0
