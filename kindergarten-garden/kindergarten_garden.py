@@ -48,12 +48,10 @@ class Garden:
 
         start_index = self._students.index(name) * self._plants_per_student
 
-        # first row
-        for char in self._diagram[0][start_index:start_index + self._plants_per_student]:
-            plants.append(PLANTS_CONVERTER[char])
-
-        # second row
-        for char in self._diagram[1][start_index:start_index + self._plants_per_student]:
-            plants.append(PLANTS_CONVERTER[char])
+        t = 0
+        while t < 2:
+            for char in self._diagram[t][start_index:start_index + self._plants_per_student]:
+                plants.append(PLANTS_CONVERTER[char])
+            t += 1
 
         return plants
