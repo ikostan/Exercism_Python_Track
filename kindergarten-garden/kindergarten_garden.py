@@ -1,3 +1,15 @@
+STUDENTS = ['Alice', 'Bob', 'Charlie', 'David',
+            'Eve', 'Fred', 'Ginny', 'Harriet',
+            'Ileana', 'Joseph', 'Kincaid', 'Larry']
+
+PLANTS_CONVERTER = {
+    'G': 'Grass',
+    'C': 'Clover',
+    'R': 'Radishes',
+    'V': 'Violets',
+}
+
+
 class Garden:
     """
     Given a diagram, determine which plants each child
@@ -18,27 +30,18 @@ class Garden:
     cups to the children alphabetically by their names.
     """
 
-    _plants_converter = {
-        'G': 'Grass',
-        'C': 'Clover',
-        'R': 'Radishes',
-        'V': 'Violets',
-    }
-
     _plants_per_student = 2
 
     def __init__(self, diagram: str, students=None):
         if students is None:
-            self._students = ['Alice', 'Bob', 'Charlie', 'David',
-                              'Eve', 'Fred', 'Ginny', 'Harriet',
-                              'Ileana', 'Joseph', 'Kincaid', 'Larry']
+            self._students = STUDENTS
         else:
             self._students = sorted(students)
 
-        diagram_length = len(diagram)
+        # diagram_length = len(diagram)
+        # self._diagram = [diagram[0: diagram_length // 2], diagram[(diagram_length // 2) + 1:]]
 
-        self._diagram = [diagram[0: diagram_length // 2],
-                         diagram[(diagram_length // 2) + 1:]]
+        self._diagram = diagram.split()
 
     def plants(self, name: str) -> list:
         """
