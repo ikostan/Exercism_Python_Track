@@ -1,8 +1,12 @@
 class School:
     """
     The roster for the school.
-    Contains given students' names along with the grade that they are in.
-    Note that all our students only have one name.
+
+    Contains given students' names along
+    with the grade that they are in.
+
+    Note that all our students only have
+    one name.
     """
 
     def __init__(self):
