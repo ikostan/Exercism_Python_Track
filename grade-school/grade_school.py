@@ -48,4 +48,9 @@ class School:
         :param grade_number:
         :return:
         """
+
+        # If you find yourself looking to see if
+        # something is in a dict,
+        # and if not, giving it a default value,
+        # consider using dict.get(key, default)
         return self._roster.get(grade_number, []).copy()
