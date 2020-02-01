@@ -19,6 +19,7 @@ class School:
         :param grade:
         :return:
         """
+
         if grade in self._roster:
             self._roster[grade].append(name)
             self._roster[grade] = sorted(self._roster[grade])
@@ -47,6 +48,4 @@ class School:
         :param grade_number:
         :return:
         """
-        if grade_number not in self._roster:
-            self._roster[grade_number] = list()
-        return self._roster[grade_number]
+        return self._roster.get(grade_number, []).copy()
