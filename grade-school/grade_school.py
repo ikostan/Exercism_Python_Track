@@ -19,12 +19,9 @@ class School:
         :param grade:
         :return:
         """
-
-        if grade in self._roster:
-            self._roster[grade].append(name)
-            self._roster[grade] = sorted(self._roster[grade])
-        else:
-            self._roster[grade] = [name]
+        self._roster.setdefault(grade, [])
+        self._roster[grade].append(name)
+        self._roster[grade].sort()
 
     def roster(self):
         """
@@ -33,14 +30,9 @@ class School:
         within a grade should be sorted alphabetically by name.
         :return:
         """
-        grades = sorted(list(self._roster.keys()))
-        names = list()
-        
-        for grade in grades:
-            for name in self._roster[grade]:
-                names.append(name)
-        
-        return names
+        return [name
+                for grade in sorted(list(self._roster.keys()))
+                for name in self._roster[grade]]
 
     def grade(self, grade_number):
         """
