@@ -1,10 +1,9 @@
 [![CircleCI](https://circleci.com/gh/ikostan/Exercism_Python_Track.svg?style=svg)](https://circleci.com/gh/ikostan/Exercism_Python_Track)
 [![Build Status](https://travis-ci.org/ikostan/Exercism_Python_Track.svg?branch=master)](https://travis-ci.org/ikostan/Exercism_Python_Track)
 [![codecov](https://codecov.io/gh/ikostan/Exercism_Python_Track/branch/master/graph/badge.svg)](https://codecov.io/gh/ikostan/Exercism_Python_Track)
-[![Job Status](https://inspecode.rocro.com/badges/github.com/ikostan/Exercism_Python_Track/status?token=m0eYpjTUxX925VcRlQXn7tGTHPWThTe6gwiorkGYrIQ)](https://inspecode.rocro.com/jobs/github.com/ikostan/Exercism_Python_Track/latest?completed=true)
-[![Report](https://inspecode.rocro.com/badges/github.com/ikostan/Exercism_Python_Track/report?token=m0eYpjTUxX925VcRlQXn7tGTHPWThTe6gwiorkGYrIQ&branch=master)](https://inspecode.rocro.com/reports/github.com/ikostan/Exercism_Python_Track/branch/master/summary)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ca9615282dd64dcfb048b4c9b2c1a871)](https://www.codacy.com/manual/ikostan/Exercism_Python_Track?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ikostan/Exercism_Python_Track&amp;utm_campaign=Badge_Grade)
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+[![Maintainability](https://api.codeclimate.com/v1/badges/0ea011311ba259bed22e/maintainability)](https://codeclimate.com/github/ikostan/Exercism_Python_Track/maintainability)
 
 # [Exercism Python Track](https://exercism.io/my/tracks/python)
 
