@@ -56,7 +56,10 @@ def parse(markdown: str) -> str:
 
             while '*' in line:
                 n = line.find('*')
-                line = line[:n] + '<li>' + line[n + 2:] + '</li>'
+                line = line[:n] + \
+                       PATTERNS['*'][2] + \
+                       line[n + 2:] + \
+                       PATTERNS['*'][3]
 
             if ' + ' in line:
                 line = line.replace(' + ', ' * ')
@@ -67,11 +70,15 @@ def parse(markdown: str) -> str:
     if '<li>' in result:
         # Find index of first occurrence of a substring in a string
         n = result.find('<li>')
-        result = result[:n] + '<ul>' + result[n:]
+        result = result[:n] + \
+                 PATTERNS['*'][0] + \
+                 result[n:]
 
         # Find index of last occurrence of a substring in a string
         n = result.rfind('</li>')
-        result = result[:n + 5] + '</ul>' + result[n + 5:]
+        result = result[:n + 5] + \
+                 PATTERNS['*'][1] + \
+                 result[n + 5:]
 
     return result
 
