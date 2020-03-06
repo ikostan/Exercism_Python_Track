@@ -19,24 +19,34 @@ def parse(markdown: str) -> str:
 
         # Replace double underscore at the beginning/end of the markdown with STRONG tag
         if line[0:2] == '__':
-            line = '<p><strong>' + line[2:len(line) - 2] + '</strong></p>'
+            line = PATTERNS['p'][0] + \
+                   PATTERNS['__'][0] + \
+                   line[2:len(line) - 2] + \
+                   PATTERNS['__'][1] + \
+                   PATTERNS['p'][1]
 
         # Replace double underscore with STRONG tag
         if '__' in line:
-            line = replace_pattern(line, '__', ('<strong>', '</strong>'), 2)
+            line = replace_pattern(line, '__', PATTERNS['__'], 2)
 
         # Replace single underscore at the beginning/end of the markdown with italic and header
         if line[0] == '_' and line[0:2] != '__':
-            line = '<p><em>' + line[1:len(line) - 1] + '</em></p>'
+            line = PATTERNS['p'][0] + \
+                   PATTERNS['_'][0] + \
+                   line[1:len(line) - 1] + \
+                   PATTERNS['_'][1] + \
+                   PATTERNS['p'][1]
 
         # Replace single underscore with italic
         if '_' in line:
-            line = replace_pattern(line, '_', ('<em>', '</em>'), 1)
+            line = replace_pattern(line, '_', PATTERNS['_'], 1)
 
         # Replace hash tag with appropriate header level
         if line[0] == '#':
             n = line.count('#', 0, 7)
-            line = '<h{}>'.format(n) + line[n + 1:] + '</h{}>'.format(n)
+            line = '<{}>'.format(PATTERNS['#'][n - 1]) + \
+                   line[n + 1:] + \
+                   '</{}>'.format(PATTERNS['#'][n - 1])
 
         # Replace * with list item
         if '*' in line:
