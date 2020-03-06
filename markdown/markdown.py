@@ -1,4 +1,10 @@
-import re
+PATTERNS = {
+    'p': ('<p>', '</p>'),
+    '__': ('<strong>', '</strong>'),
+    '_': ('<em>', '</em>'),
+    '#': ('h1', 'h2', 'h3', 'h4', 'h5', 'h6'),
+    '*': ('<ul>', '</ul>', '<li>', '</li>')
+}
 
 
 def parse(markdown: str) -> str:
@@ -9,7 +15,7 @@ def parse(markdown: str) -> str:
 
         # Add paragraph tag
         if line[0].isalpha():
-            line = '<p>' + line + '</p>'
+            line = PATTERNS['p'][0] + line + PATTERNS['p'][1]
 
         # Replace double underscore at the beginning/end of the markdown with STRONG tag
         if line[0:2] == '__':
@@ -17,16 +23,7 @@ def parse(markdown: str) -> str:
 
         # Replace double underscore with STRONG tag
         if '__' in line:
-            i = 0
-            while '__' in line:
-                n = line.find('__')
-
-                if i == 0:
-                    line = line[:n] + '<strong>' + line[n + 2:]
-                    i = 1
-                else:
-                    line = line[:n] + '</strong>' + line[n + 2:]
-                    i = 0
+            line = replace_pattern(line, '__', ('<strong>', '</strong>'), 2)
 
         # Replace single underscore at the beginning/end of the markdown with italic and header
         if line[0] == '_' and line[0:2] != '__':
@@ -34,16 +31,7 @@ def parse(markdown: str) -> str:
 
         # Replace single underscore with italic
         if '_' in line:
-            i = 0
-            while '_' in line:
-                n = line.find('_')
-
-                if i == 0:
-                    line = line[:n] + '<em>' + line[n + 1:]
-                    i = 1
-                else:
-                    line = line[:n] + '</em>' + line[n + 1:]
-                    i = 0
+            line = replace_pattern(line, '_', ('<em>', '</em>'), 1)
 
         # Replace hash tag with appropriate header level
         if line[0] == '#':
@@ -76,3 +64,24 @@ def parse(markdown: str) -> str:
         result = result[:n + 5] + '</ul>' + result[n + 5:]
 
     return result
+
+
+def replace_pattern(line: str,
+                    pattern: str,
+                    new_pattern: tuple,
+                    index: int) -> str:
+    """
+    Replace string pattern based on user criteria
+    """
+    i = 0
+    while pattern in line:
+        n = line.find(pattern)
+
+        if i == 0:
+            line = line[:n] + new_pattern[0] + line[n + index:]
+            i = 1
+        else:
+            line = line[:n] + new_pattern[1] + line[n + index:]
+            i = 0
+
+    return line
