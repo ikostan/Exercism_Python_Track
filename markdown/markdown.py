@@ -19,11 +19,7 @@ def parse(markdown: str) -> str:
 
         # Replace double underscore at the beginning/end of the markdown with STRONG tag
         if line[0:2] == '__':
-            line = PATTERNS['p'][0] + \
-                   PATTERNS['__'][0] + \
-                   line[2:len(line) - 2] + \
-                   PATTERNS['__'][1] + \
-                   PATTERNS['p'][1]
+            line = replace_pattern(line, '__', 2)
 
         # Replace double underscore with STRONG tag
         if '__' in line:
@@ -31,11 +27,7 @@ def parse(markdown: str) -> str:
 
         # Replace single underscore at the beginning/end of the markdown with italic and header
         if line[0] == '_' and line[0:2] != '__':
-            line = PATTERNS['p'][0] + \
-                   PATTERNS['_'][0] + \
-                   line[1:len(line) - 1] + \
-                   PATTERNS['_'][1] + \
-                   PATTERNS['p'][1]
+            line = replace_pattern(line, '_', 1)
 
         # Replace single underscore with italic
         if '_' in line:
@@ -81,6 +73,23 @@ def parse(markdown: str) -> str:
                  result[n + 5:]
 
     return result
+
+
+def replace_pattern(line: str,
+                    pattern: str,
+                    length: int) -> str:
+    """
+    Replace a single pattern
+    :param len:
+    :param line:
+    :param pattern:
+    :return:
+    """
+    return PATTERNS['p'][0] + \
+           PATTERNS[pattern][0] + \
+           line[length:len(line) - length] + \
+           PATTERNS[pattern][1] + \
+           PATTERNS['p'][1]
 
 
 def replace_multiple_pattern(line: str,
