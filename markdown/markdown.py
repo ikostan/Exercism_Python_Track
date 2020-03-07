@@ -47,11 +47,7 @@ def parse(markdown: str) -> str:
                 line = line.replace(' * ', ' + ')
 
             while '*' in line:
-                n = line.find('*')
-                line = line[:n] + \
-                       PATTERNS['*'][2] + \
-                       line[n + 2:] + \
-                       PATTERNS['*'][3]
+                line = replace_multiple_pattern(line, '*', PATTERNS['*'], 2)
 
             if ' + ' in line:
                 line = line.replace(' + ', ' * ')
@@ -103,11 +99,17 @@ def replace_multiple_pattern(line: str,
     while pattern in line:
         n = line.find(pattern)
 
-        if i == 0:
-            line = line[:n] + new_pattern[0] + line[n + index:]
-            i = 1
+        if pattern != '*':
+            if i == 0:
+                line = line[:n] + new_pattern[0] + line[n + index:]
+                i = 1
+            else:
+                line = line[:n] + new_pattern[1] + line[n + index:]
+                i = 0
         else:
-            line = line[:n] + new_pattern[1] + line[n + index:]
-            i = 0
+            line = line[:n] + \
+                   PATTERNS[pattern][2] + \
+                   line[n + index:] + \
+                   PATTERNS[pattern][3]
 
     return line
