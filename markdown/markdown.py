@@ -27,7 +27,7 @@ def parse(markdown: str) -> str:
 
         # Replace double underscore with STRONG tag
         if '__' in line:
-            line = replace_pattern(line, '__', PATTERNS['__'], 2)
+            line = replace_multiple_pattern(line, '__', PATTERNS['__'], 2)
 
         # Replace single underscore at the beginning/end of the markdown with italic and header
         if line[0] == '_' and line[0:2] != '__':
@@ -39,7 +39,7 @@ def parse(markdown: str) -> str:
 
         # Replace single underscore with italic
         if '_' in line:
-            line = replace_pattern(line, '_', PATTERNS['_'], 1)
+            line = replace_multiple_pattern(line, '_', PATTERNS['_'], 1)
 
         # Replace hash tag with appropriate header level
         if line[0] == '#':
@@ -83,10 +83,10 @@ def parse(markdown: str) -> str:
     return result
 
 
-def replace_pattern(line: str,
-                    pattern: str,
-                    new_pattern: tuple,
-                    index: int) -> str:
+def replace_multiple_pattern(line: str,
+                             pattern: str,
+                             new_pattern: tuple,
+                             index: int) -> str:
     """
     Replace string pattern based on user criteria
     """
