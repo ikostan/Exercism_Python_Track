@@ -8,9 +8,18 @@ PATTERNS = {
 
 
 def parse(markdown: str) -> str:
+    """
+    The code that parses a given string with Markdown
+    syntax and returns the associated HTML for that string.
+    :param markdown:
+    :return:
+    """
+
+    # Split source string in to list by new line
     lines = markdown.split('\n')
     result = ""
 
+    # Process the list line by line and replace patterns into HTML tags
     for line in lines:
 
         # Add paragraph tag
@@ -99,13 +108,19 @@ def replace_multiple_pattern(line: str,
     while pattern in line:
         n = line.find(pattern)
 
+        # Replace single/double underscore
         if pattern != '*':
             if i == 0:
-                line = line[:n] + new_pattern[0] + line[n + index:]
+                line = line[:n] + \
+                       new_pattern[0] + \
+                       line[n + index:]
                 i = 1
             else:
-                line = line[:n] + new_pattern[1] + line[n + index:]
+                line = line[:n] + \
+                       new_pattern[1] + \
+                       line[n + index:]
                 i = 0
+        # Replace * with list item
         else:
             line = line[:n] + \
                    PATTERNS[pattern][2] + \
