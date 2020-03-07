@@ -19,28 +19,38 @@ def parse(markdown: str) -> str:
     lines = markdown.split('\n')
     result = ""
 
-    # Process the list line by line and replace patterns into HTML tags
+    # Process the list line by line and replace
+    # patterns into HTML tags
     for line in lines:
 
         # Add paragraph tag
         if line[0].isalpha():
-            line = PATTERNS['p'][0] + line + PATTERNS['p'][1]
+            line = PATTERNS['p'][0] + \
+                   line + \
+                   PATTERNS['p'][1]
 
-        # Replace double underscore at the beginning/end of the markdown with STRONG tag
+        # Replace double underscore at the beginning/end
+        # of the markdown with STRONG tag
         if line[0:2] == '__':
             line = replace_pattern(line, '__', 2)
 
         # Replace double underscore with STRONG tag
         if '__' in line:
-            line = replace_multiple_pattern(line, '__', PATTERNS['__'], 2)
+            line = replace_multiple_pattern(line,
+                                            '__',
+                                            PATTERNS['__'],
+                                            2)
 
-        # Replace single underscore at the beginning/end of the markdown with italic and header
+        # Replace single underscore at the beginning/end
+        # of the markdown with italic and header
         if line[0] == '_' and line[0:2] != '__':
             line = replace_pattern(line, '_', 1)
 
         # Replace single underscore with italic
         if '_' in line:
-            line = replace_multiple_pattern(line, '_', PATTERNS['_'], 1)
+            line = replace_multiple_pattern(line,
+                                            '_',
+                                            PATTERNS['_'], 1)
 
         # Replace hash tag with appropriate header level
         if line[0] == '#':
@@ -56,7 +66,9 @@ def parse(markdown: str) -> str:
                 line = line.replace(' * ', ' + ')
 
             while '*' in line:
-                line = replace_multiple_pattern(line, '*', PATTERNS['*'], 2)
+                line = replace_multiple_pattern(line,
+                                                '*',
+                                                PATTERNS['*'], 2)
 
             if ' + ' in line:
                 line = line.replace(' + ', ' * ')
@@ -65,13 +77,15 @@ def parse(markdown: str) -> str:
 
     # Wrap list items
     if '<li>' in result:
-        # Find index of first occurrence of a substring in a string
+        # Find index of first occurrence
+        # of a substring in a string
         n = result.find('<li>')
         result = result[:n] + \
                  PATTERNS['*'][0] + \
                  result[n:]
 
-        # Find index of last occurrence of a substring in a string
+        # Find index of last occurrence
+        # of a substring in a string
         n = result.rfind('</li>')
         result = result[:n + 5] + \
                  PATTERNS['*'][1] + \
