@@ -6,6 +6,7 @@
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 [![HitCount](http://hits.dwyl.com/ikostan/Exercism_Python_Track.svg)](http://hits.dwyl.com/ikostan/Exercism_Python_Track)
 ![Maintenance](https://img.shields.io/maintenance/yes/2020)
+[![Known Vulnerabilities](https://snyk.io/test/github/ikostan/Exercism_Python_Track/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/ikostan/Exercism_Python_Track?targetFile=requirements.txt)
 
 # [Exercism Python Track](https://exercism.io/my/tracks/python)
 
