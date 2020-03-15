@@ -4,6 +4,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ca9615282dd64dcfb048b4c9b2c1a871)](https://www.codacy.com/manual/ikostan/Exercism_Python_Track?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ikostan/Exercism_Python_Track&amp;utm_campaign=Badge_Grade)
 [![Maintainability](https://api.codeclimate.com/v1/badges/0ea011311ba259bed22e/maintainability)](https://codeclimate.com/github/ikostan/Exercism_Python_Track/maintainability)
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+[![HitCount](http://hits.dwyl.com/ikostan/Exercism_Python_Track.svg)](http://hits.dwyl.com/ikostan/Exercism_Python_Track)
 
 # [Exercism Python Track](https://exercism.io/my/tracks/python)
 
