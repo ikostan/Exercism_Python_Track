@@ -4,44 +4,48 @@ import re
 def parse(markdown):
     # Split source string in to list by new line
     lines = markdown.split('\n')
-
-    # Flags
     result = ''
     in_list = False
-    in_list_append = False
 
     # Process the list line by line and replace
     # patterns into HTML tags
     for line in lines:
 
         line = replace_header(line)
-
-        m = re.match(r'\* (.*)', line)
-        if m:
-
-            curr = m.group(1)
-
-            if not in_list:
-                in_list = True
-                line = ''.join(('<ul><li>',
-                                curr,
-                                '</li>'))
-            else:
-                # List item
-                line = ''.join(('<li>',
-                                curr,
-                                '</li></ul>'))
-
-        m = re.match('<h|<ul|<p|<li', line)
-        if not m:
-            line = '<p>' + line + '</p>'
-
+        line, in_list = replace_list(line, in_list)
+        line = replace_paragraph(line)
         line = replace_strong(line)
         line = replace_em(line)
 
-        result += line
+        result = ''.join((result, line))
 
     return result
+
+
+def replace_list(line: str, in_list: bool) -> (str, bool):
+    # Replace list items
+    m = re.match(r'\* (.*)', line)
+    if m:
+        curr = m.group(1)
+
+        if not in_list:
+            in_list = True
+            line = ''.join(('<ul><li>',
+                            curr,
+                            '</li>'))
+        else:
+            # List item
+            line = ''.join(('<li>',
+                            curr,
+                            '</li></ul>'))
+    return line, in_list
+
+
+def replace_paragraph(line: str) -> str:
+    m = re.match('<h|<ul|<p|<li', line)
+    if not m:
+        line = '<p>' + line + '</p>'
+    return line
 
 
 def replace_em(line: str) -> str:
