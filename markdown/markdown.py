@@ -1,144 +1,84 @@
-PATTERNS = {
-    'p': ('<p>', '</p>'),
-    '__': ('<strong>', '</strong>'),
-    '_': ('<em>', '</em>'),
-    '#': ('h1', 'h2', 'h3', 'h4', 'h5', 'h6'),
-    '*': ('<ul>', '</ul>', '<li>', '</li>')
-}
+import re
 
 
-def parse(markdown: str) -> str:
-    """
-    The code that parses a given string with Markdown
-    syntax and returns the associated HTML for that string.
-    :param markdown:
-    :return:
-    """
-
+def parse(markdown):
     # Split source string in to list by new line
     lines = markdown.split('\n')
-    result = ""
+
+    # Flags
+    res = ''
+    in_list = False
+    in_list_append = False
 
     # Process the list line by line and replace
     # patterns into HTML tags
-    for line in lines:
-
-        # Add paragraph tag
-        if line[0].isalpha():
-            line = PATTERNS['p'][0] + \
-                   line + \
-                   PATTERNS['p'][1]
-
-        # Replace double underscore at the beginning/end
-        # of the markdown with STRONG tag
-        if line[0:2] == '__':
-            line = replace_pattern(line, '__', 2)
-
-        # Replace double underscore with STRONG tag
-        if '__' in line:
-            line = replace_multiple_pattern(line,
-                                            '__',
-                                            PATTERNS['__'],
-                                            2)
-
-        # Replace single underscore at the beginning/end
-        # of the markdown with italic and header
-        if line[0] == '_' and line[0:2] != '__':
-            line = replace_pattern(line, '_', 1)
-
-        # Replace single underscore with italic
-        if '_' in line:
-            line = replace_multiple_pattern(line,
-                                            '_',
-                                            PATTERNS['_'], 1)
+    for i in lines:
 
         # Replace hash tag with appropriate header level
-        if line[0] == '#':
-            n = line.count('#', 0, 7)
-            line = '<{}>'.format(PATTERNS['#'][n - 1]) + \
-                   line[n + 1:] + \
-                   '</{}>'.format(PATTERNS['#'][n - 1])
+        if '#' in i[:7]:
+            counter = i[:7].count('#')
+            i = '<h{}>'.format(counter) + \
+                i[counter + 1:] + \
+                '</h{}>'.format(counter)
 
-        # Replace * with list item
-        if '*' in line:
+        m = re.match(r'\* (.*)', i)
+        if m:
 
-            if ' * ' in line:
-                line = line.replace(' * ', ' + ')
+            curr = m.group(1)
 
-            while '*' in line:
-                line = replace_multiple_pattern(line,
-                                                '*',
-                                                PATTERNS['*'], 2)
+            # Replace double underscore with STRONG tag
+            m1 = re.match('(.*)__(.*)__(.*)', curr)
+            if m1:
+                curr = m1.group(1) + '<strong>' + \
+                       m1.group(2) + '</strong>' + \
+                       m1.group(3)
 
-            if ' + ' in line:
-                line = line.replace(' + ', ' * ')
+            # Replace single underscore with italic
+            m1 = re.match('(.*)_(.*)_(.*)', curr)
+            if m1:
+                curr = m1.group(1) + '<em>' + \
+                       m1.group(2) + \
+                       '</em>' + \
+                       m1.group(3)
 
-        result += line
-
-    # Wrap list items
-    if '<li>' in result:
-        # Find index of first occurrence
-        # of a substring in a string
-        n = result.find('<li>')
-        result = result[:n] + \
-                 PATTERNS['*'][0] + \
-                 result[n:]
-
-        # Find index of last occurrence
-        # of a substring in a string
-        n = result.rfind('</li>')
-        result = result[:n + 5] + \
-                 PATTERNS['*'][1] + \
-                 result[n + 5:]
-
-    return result
-
-
-def replace_pattern(line: str,
-                    pattern: str,
-                    length: int) -> str:
-    """
-    Replace a single pattern
-    :param len:
-    :param line:
-    :param pattern:
-    :return:
-    """
-    return PATTERNS['p'][0] + \
-           PATTERNS[pattern][0] + \
-           line[length:len(line) - length] + \
-           PATTERNS[pattern][1] + \
-           PATTERNS['p'][1]
-
-
-def replace_multiple_pattern(line: str,
-                             pattern: str,
-                             new_pattern: tuple,
-                             index: int) -> str:
-    """
-    Replace string pattern based on user criteria
-    """
-    i = 0
-    while pattern in line:
-        n = line.find(pattern)
-
-        # Replace single/double underscore
-        if pattern != '*':
-            if i == 0:
-                line = line[:n] + \
-                       new_pattern[0] + \
-                       line[n + index:]
-                i = 1
+            if not in_list:
+                in_list = True
+                i = '<ul><li>' + curr + '</li>'
             else:
-                line = line[:n] + \
-                       new_pattern[1] + \
-                       line[n + index:]
-                i = 0
-        # Replace * with list item
+                # List item
+                i = '<li>' + curr + '</li>'
         else:
-            line = line[:n] + \
-                   PATTERNS[pattern][2] + \
-                   line[n + index:] + \
-                   PATTERNS[pattern][3]
+            if in_list:
+                in_list_append = True
+                in_list = False
 
-    return line
+        m = re.match('<h|<ul|<p|<li', i)
+        if not m:
+            i = '<p>' + i + '</p>'
+
+        # Replace double underscore with STRONG tag
+        m = re.match('(.*)__(.*)__(.*)', i)
+        if m:
+            i = m.group(1) + \
+                '<strong>' + \
+                m.group(2) + \
+                '</strong>' + \
+                m.group(3)
+
+        # Replace * with EM tag
+        m = re.match('(.*)_(.*)_(.*)', i)
+        if m:
+            i = m.group(1) + '<em>' + \
+                m.group(2) + '</em>' + \
+                m.group(3)
+
+        if in_list_append:
+            i = '</ul>' + i
+            in_list_append = False
+
+        res += i
+
+    if in_list:
+        res += '</ul>'
+
+    return res
