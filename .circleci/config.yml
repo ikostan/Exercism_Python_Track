@@ -16,7 +16,11 @@ jobs: # A basic unit of work in a run
             sudo pip install --upgrade pip
             sudo pip install pipenv
             sudo mkdir /home/circleci/project/test-results
-            pipenv install --skip-lock requirements.txt
+            pipenv --rm
+            rm -rf Pipfile.lock
+            rm -rf ~/.cache/pip
+            rm -rf ~/.cache/pipenv
+            pipenv install --skip-lock --pre requirements.txt
 
       - run:
           name: run tests
