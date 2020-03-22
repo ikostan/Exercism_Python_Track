@@ -30,11 +30,7 @@ def parse(markdown):
                 # List item
                 line = ''.join(('<li>',
                                 curr,
-                                '</li>'))
-        else:
-            if in_list:
-                in_list_append = True
-                in_list = False
+                                '</li></ul>'))
 
         m = re.match('<h|<ul|<p|<li', line)
         if not m:
@@ -43,14 +39,7 @@ def parse(markdown):
         line = replace_strong(line)
         line = replace_em(line)
 
-        if in_list_append:
-            line = '</ul>' + line
-            in_list_append = False
-
         result += line
-
-    if in_list:
-        result += '</ul>'
 
     return result
 
