@@ -19,6 +19,7 @@ jobs: # A basic unit of work in a run
             pipenv --rm
             rm Pipfile
             rm Pipfile.lock
+            pipenv --python 3.6.4
             pipenv install --verbose -r requirements.txt
 
       - run:
