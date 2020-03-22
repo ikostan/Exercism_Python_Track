@@ -37,8 +37,7 @@ def parse(markdown):
             m1 = re.match('(.*)_(.*)_(.*)', curr)
             if m1:
                 curr = m1.group(1) + '<em>' + \
-                       m1.group(2) + \
-                       '</em>' + \
+                       m1.group(2) + '</em>' + \
                        m1.group(3)
 
             if not in_list:
@@ -59,10 +58,8 @@ def parse(markdown):
         # Replace double underscore with STRONG tag
         m = re.match('(.*)__(.*)__(.*)', i)
         if m:
-            i = m.group(1) + \
-                '<strong>' + \
-                m.group(2) + \
-                '</strong>' + \
+            i = m.group(1) + '<strong>' + \
+                m.group(2) + '</strong>' + \
                 m.group(3)
 
         # Replace * with EM tag
