@@ -42,6 +42,7 @@ def replace_list(line: str, in_list: bool) -> (str, bool):
 
 
 def replace_paragraph(line: str) -> str:
+    # Replace paragraph tag
     m = re.match('<h|<ul|<p|<li', line)
     if not m:
         line = '<p>' + line + '</p>'
