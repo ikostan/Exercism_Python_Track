@@ -4,7 +4,7 @@ import re
 def parse(markdown):
     # Split source string in to list by new line
     lines = markdown.split('\n')
-    result = ''
+    results = list()
     in_list = False
 
     # Process the list line by line and replace
@@ -17,9 +17,9 @@ def parse(markdown):
         line = replace_strong(line)
         line = replace_em(line)
 
-        result = ''.join((result, line))
+        results.append(line)
 
-    return result
+    return ''.join(results)
 
 
 def replace_list(line: str, in_list: bool) -> (str, bool):
