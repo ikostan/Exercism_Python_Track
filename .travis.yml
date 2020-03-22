@@ -16,7 +16,7 @@ script:
   - pytest --cov-config=.coveragerc --cov-report term-missing --cov  # check test coverage with pytest-cov
 
 env:
-  #- CODECOV_TOKEN=<token>#IF ONLY YOU HAVE A PRIVATE REPOSITORY
+  # - CODECOV_TOKEN=<token>#IF ONLY YOU HAVE A PRIVATE REPOSITORY
 
 after_success:
   # Generates coverage report, public repo using Travis:
