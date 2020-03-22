@@ -1,0 +1,131 @@
+HEAD = "Team                           | MP |  W |  D |  L |  P"
+
+
+class Team:
+    possible_results = ('loss', 'win', 'draw')
+
+    def __init__(self, name: str):
+        self.__name = name
+        self.__MP = 0  # Matches Played
+        self.__W = 0  # Matches Won
+        self.__D = 0  # Matches Drawn (Tied)
+        self.__L = 0  # Matches Lost
+        self.__P = 0  # Points
+
+    def update_team_score(self, index: int, result: str) -> None:
+        """
+        The result of the match refers to the first team listed.
+        :param result:
+        :param index:
+        :return:
+        """
+
+        self.__MP += 1
+
+        if result == 'loss' and index == 1:
+            self.__W += 1
+
+        if result == 'loss' and index == 0:
+            self.__L += 1
+
+        if result == 'win' and index == 1:
+            self.__L += 1
+
+        if result == 'win' and index == 0:
+            self.__W += 1
+
+        if result == 'draw':
+            self.__D += 1
+
+        if result not in self.possible_results:
+            raise ValueError("ERROR: this is invalid game outcome: {}".format(result))
+
+    def __str__(self):
+        """
+        Team | MP |  W |  D |  L |  P
+        :return:
+        """
+        return '{:30} |  {} |  {} |  {} |  {} |  {}'.format(self.name,
+                                                            self.matches_played,
+                                                            self.wins,
+                                                            self.draws,
+                                                            self.losses,
+                                                            self.points())
+
+    @property
+    def name(self) -> str:
+        return self.__name
+
+    @property
+    def matches_played(self) -> int:
+        return self.__MP
+
+    @property
+    def wins(self) -> int:
+        return self.__W
+
+    @property
+    def losses(self) -> int:
+        return self.__L
+
+    @property
+    def draws(self) -> int:
+        return self.__D
+
+    def points(self) -> int:
+        """
+        A win earns a team 3 points.
+        A draw earns 1.
+        A loss earns 0.
+        :return:
+        """
+        return (self.__W * 3) + self.__D
+
+
+def tally(rows: list) -> list:
+    teams = data_processor(rows)
+    results = sort_by_name(teams)
+    results = sort_by_points(results)
+
+    return [str(r) for r in ([HEAD] + results)]
+
+
+def data_processor(rows: list) -> dict:
+    # Process initial data by row
+    teams = dict()
+    for row in rows:
+        team_0, team_1, result = row.split(';')
+
+        if team_0 in teams:
+            teams[team_0].update_team_score(0, result)
+        else:
+            teams[team_0] = Team(team_0)
+            teams[team_0].update_team_score(0, result)
+
+        if team_1 in teams:
+            teams[team_1].update_team_score(1, result)
+        else:
+            teams[team_1] = Team(team_1)
+            teams[team_1].update_team_score(1, result)
+    return teams
+
+
+def sort_by_name(teams: dict) -> list:
+    # Sort by name
+    results = list()
+    for team in sorted(teams):
+        results.append(teams[team])
+    return results
+
+
+def sort_by_points(results: list) -> list:
+    # Sort by total points
+    is_sorted = False
+    while not is_sorted:
+        is_sorted = True
+        for i, result in enumerate(results):
+            if i + 1 < len(results):
+                if result.points() < results[i + 1].points():
+                    is_sorted = False
+                    results[i], results[i + 1] = results[i + 1], results[i]
+    return results
