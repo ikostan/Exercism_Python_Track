@@ -13,12 +13,10 @@ jobs: # A basic unit of work in a run
       - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
       - run:
           command: |
-            pipenv --rm
-            rm Pipfile
-            rm Pipfile.lock
-            pipenv --python 3.6.4
-            pipenv install --verbose -r requirements.txt
+            sudo pip install --upgrade pip
+            sudo pip install pipenv
             sudo mkdir /home/circleci/project/test-results
+            pipenv install --verbose -r requirements.txt
 
       - run:
           name: run tests
