@@ -75,19 +75,18 @@ def data_processor(rows: list) -> dict:
     teams = dict()
     for row in rows:
         team_0, team_1, result = row.split(';')
+        add_team(teams, team_0, result, 0)
+        add_team(teams, team_1, result, 1)
 
-        if team_0 in teams:
-            teams[team_0].update_team_score(0, result)
-        else:
-            teams[team_0] = Team(team_0)
-            teams[team_0].update_team_score(0, result)
-
-        if team_1 in teams:
-            teams[team_1].update_team_score(1, result)
-        else:
-            teams[team_1] = Team(team_1)
-            teams[team_1].update_team_score(1, result)
     return teams
+
+
+def add_team(teams: dict, team: str, result: str, index: int) -> None:
+    if team in teams:
+        teams[team].update_team_score(index, result)
+    else:
+        teams[team] = Team(team)
+        teams[team].update_team_score(index, result)
 
 
 def sort_by_name(teams: dict) -> list:
