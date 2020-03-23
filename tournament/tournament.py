@@ -5,7 +5,7 @@ class Team:
     possible_results = ('loss', 'win', 'draw')
 
     def __init__(self, name: str):
-        self.__name = name
+        self.__name = name  # Team Name
         self.__MP = 0  # Matches Played
         self.__W = 0  # Matches Won
         self.__D = 0  # Matches Drawn (Tied)
@@ -45,32 +45,12 @@ class Team:
         Team | MP |  W |  D |  L |  P
         :return:
         """
-        return '{:30} |  {} |  {} |  {} |  {} |  {}'.format(self.name,
-                                                            self.matches_played,
-                                                            self.wins,
-                                                            self.draws,
-                                                            self.losses,
+        return '{:30} |  {} |  {} |  {} |  {} |  {}'.format(self.__name,
+                                                            self.__MP,
+                                                            self.__W,
+                                                            self.__D,
+                                                            self.__L,
                                                             self.points())
-
-    @property
-    def name(self) -> str:
-        return self.__name
-
-    @property
-    def matches_played(self) -> int:
-        return self.__MP
-
-    @property
-    def wins(self) -> int:
-        return self.__W
-
-    @property
-    def losses(self) -> int:
-        return self.__L
-
-    @property
-    def draws(self) -> int:
-        return self.__D
 
     def points(self) -> int:
         """
