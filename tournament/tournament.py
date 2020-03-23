@@ -67,7 +67,7 @@ def tally(rows: list) -> list:
     results = sort_by_name(teams)
     results = sort_by_points(results)
 
-    return [str(r) for r in ([HEAD] + results)]
+    return [str(team) for team in ([HEAD] + results)]
 
 
 def data_processor(rows: list) -> dict:
