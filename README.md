@@ -5,6 +5,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/0ea011311ba259bed22e/maintainability)](https://codeclimate.com/github/ikostan/Exercism_Python_Track/maintainability)
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 ![Maintenance](https://img.shields.io/maintenance/yes/2020)
+[![Known Vulnerabilities](https://snyk.io/test/github/ikostan/Exercism_Python_Track/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/ikostan/Exercism_Python_Track?targetFile=requirements.txt)
 
 # [Exercism Python Track](https://exercism.io/my/tracks/python)
 
