@@ -27,6 +27,9 @@ class Team:
 
         self.__MP += 1
 
+        if result == 'win' and index == 0:
+            self.__W += 1
+
         if result == 'loss' and index == 1:
             self.__W += 1
 
@@ -35,9 +38,6 @@ class Team:
 
         if result == 'win' and index == 1:
             self.__L += 1
-
-        if result == 'win' and index == 0:
-            self.__W += 1
 
         if result == 'draw':
             self.__D += 1
