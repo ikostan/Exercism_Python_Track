@@ -29,7 +29,7 @@ class TournamentTest(unittest.TestCase):
         self.assertEqual(tally(results), table)
 
     def test_a_different_team_can_win(self):
-        results = ["Blithering Badgers;Allegoric Alaskans;win"]
+        results = ["Blithering Badgers;Allegoric Alaskans;WIN"]
         table = [
             "Team                           | MP |  W |  D |  L |  P",
             "Blithering Badgers             |  1 |  1 |  0 |  0 |  3",
@@ -38,7 +38,7 @@ class TournamentTest(unittest.TestCase):
         self.assertEqual(tally(results), table)
 
     def test_a_draw_is_one_point_each(self):
-        results = ["Allegoric Alaskans;Blithering Badgers;draw"]
+        results = ["Allegoric Alaskans;Blithering Badgers;drAw"]
         table = [
             "Team                           | MP |  W |  D |  L |  P",
             "Allegoric Alaskans             |  1 |  0 |  1 |  0 |  1",
@@ -48,7 +48,7 @@ class TournamentTest(unittest.TestCase):
 
     def test_there_can_be_more_than_one_match(self):
         results = [
-            "Allegoric Alaskans;Blithering Badgers;win",
+            "Allegoric Alaskans;Blithering Badgers;win ",
             "Allegoric Alaskans;Blithering Badgers;win",
         ]
         table = [
@@ -60,7 +60,7 @@ class TournamentTest(unittest.TestCase):
 
     def test_there_can_be_more_than_one_winner(self):
         results = [
-            "Allegoric Alaskans;Blithering Badgers;loss",
+            "Allegoric Alaskans;Blithering Badgers; lOSs",
             "Allegoric Alaskans;Blithering Badgers;win",
         ]
         table = [
@@ -74,7 +74,7 @@ class TournamentTest(unittest.TestCase):
         results = [
             "Allegoric Alaskans;Blithering Badgers;win",
             "Blithering Badgers;Courageous Californians;win",
-            "Courageous Californians;Allegoric Alaskans;loss",
+            "Courageous Californians;Allegoric Alaskans; loss ",
         ]
         table = [
             "Team                           | MP |  W |  D |  L |  P",
