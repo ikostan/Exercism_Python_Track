@@ -1,5 +1,5 @@
 class Team:
-    possible_results = ('loss', 'win', 'draw')
+    POSSIBLE_RESULTS = ('loss', 'win', 'draw')
 
     def __init__(self, name: str):
         self.__name = name  # Team Name
@@ -44,7 +44,7 @@ class Team:
         if result == 'draw':
             self.__D += 1
 
-        if result not in self.possible_results:
+        if result not in self.POSSIBLE_RESULTS:
             raise ValueError("ERROR: this is invalid game outcome: {}".format(result))
 
     def __eq__(self, other):
