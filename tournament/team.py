@@ -24,6 +24,8 @@ class Team:
         :param index:
         :return:
         """
+        # remove spaces and convert chars to lower case
+        result = result.strip().lower()
 
         self.__MP += 1
 
