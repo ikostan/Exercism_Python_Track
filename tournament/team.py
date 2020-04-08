@@ -1,5 +1,4 @@
 class Team:
-    POSSIBLE_RESULTS = ('loss', 'win', 'draw')
 
     def __init__(self, name: str):
         self.__name = name  # Team Name
@@ -17,35 +16,22 @@ class Team:
         """
         return self.__name
 
-    def update_team_score(self, index: int, result: str) -> None:
+    def update_team_score(self, result: str) -> None:
         """
         The result of the match refers to the first team listed.
         :param result:
-        :param index:
         :return:
         """
-        # remove spaces and convert chars to lower case
-        result = result.strip().lower()
-
         self.__MP += 1
 
-        if result == 'win' and index == 0:
+        if result == 'win':
             self.__W += 1
 
-        if result == 'loss' and index == 1:
-            self.__W += 1
-
-        if result == 'loss' and index == 0:
-            self.__L += 1
-
-        if result == 'win' and index == 1:
+        if result == 'loss':
             self.__L += 1
 
         if result == 'draw':
             self.__D += 1
-
-        if result not in self.POSSIBLE_RESULTS:
-            raise ValueError("ERROR: this is invalid game outcome: {}".format(result))
 
     def __eq__(self, other):
         return self.__class__ == other.__class__ and self.points() == other.points()
