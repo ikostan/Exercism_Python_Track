@@ -33,18 +33,29 @@ class Team:
         if result == 'draw':
             self.__D += 1
 
+    def __check_data_type(self, other):
+        if self.__class__ != other.__class__:
+            raise Exception('ERROR: please enter object of type {}'.format(self.__class__))
+
     def __eq__(self, other):
-        return self.__class__ == other.__class__ and self.points() == other.points()
+        self.__check_data_type(other)
+        return self.points() == other.points()
 
     def __lt__(self, other):
-        if self.__class__ == other.__class__:
-            if self.points() > other.points():
-                return True
-            elif self.points() == other.points() and self.name < other.name:
-                return True
+        self.__check_data_type(other)
+        if self.points() > other.points():
+            return True
+        elif self.points() == other.points() and self.name < other.name:
+            return True
+        return False
 
     def __gt__(self, other):
-        return not self.__lt__(other)
+        self.__check_data_type(other)
+        if self.points() < other.points():
+            return True
+        elif self.points() == other.points() and self.name > other.name:
+            return True
+        return False
 
     def __str__(self):
         """
