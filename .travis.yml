@@ -17,6 +17,11 @@ install:
     - "pip install codacy-coverage"      # Install codacy-coverage
     - "pip install -r requirements.txt"  # Needed mainly for making Allure work
 
+before_script:  # code coverage tool
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
 script:
   - pytest --cov-config=.coveragerc --cov-report term-missing --cov  # check test coverage with pytest-cov
 
