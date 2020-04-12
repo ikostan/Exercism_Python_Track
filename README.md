@@ -3,6 +3,7 @@
 [![codecov](https://codecov.io/gh/ikostan/Exercism_Python_Track/branch/master/graph/badge.svg)](https://codecov.io/gh/ikostan/Exercism_Python_Track)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ca9615282dd64dcfb048b4c9b2c1a871)](https://www.codacy.com/manual/ikostan/Exercism_Python_Track?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ikostan/Exercism_Python_Track&amp;utm_campaign=Badge_Grade)
 [![Maintainability](https://api.codeclimate.com/v1/badges/0ea011311ba259bed22e/maintainability)](https://codeclimate.com/github/ikostan/Exercism_Python_Track/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/0ea011311ba259bed22e/test_coverage)](https://codeclimate.com/github/ikostan/Exercism_Python_Track/test_coverage)
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 ![Maintenance](https://img.shields.io/maintenance/yes/2020)
 [![Known Vulnerabilities](https://snyk.io/test/github/ikostan/Exercism_Python_Track/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/ikostan/Exercism_Python_Track?targetFile=requirements.txt)
