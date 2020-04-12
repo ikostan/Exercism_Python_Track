@@ -12,7 +12,7 @@ class BookStoreTest(unittest.TestCase):
 
     def test_two_of_the_same_book(self):
         basket = [2, 2]
-        self.assertEqual(total(basket), 1600)
+        self.assertEqual(1600, total(basket))
 
     def test_empty_basket(self):
         basket = []
@@ -32,7 +32,7 @@ class BookStoreTest(unittest.TestCase):
 
     def test_five_different_books(self):
         basket = [1, 2, 3, 4, 5]
-        self.assertEqual(total(basket), 3000)
+        self.assertEqual(3000, total(basket))
 
     def test_two_groups_of_four_is_cheaper_than_group_of_five_plus_group_of_three(self):
         basket = [1, 1, 2, 2, 3, 3, 4, 5]
@@ -44,7 +44,7 @@ class BookStoreTest(unittest.TestCase):
 
     def test_group_of_four_plus_group_of_two_is_cheaper_than_two_groups_of_three(self):
         basket = [1, 1, 2, 2, 3, 4]
-        self.assertEqual(total(basket), 4080)
+        self.assertEqual(4080, total(basket))
 
     def test_two_each_of_first_4_books_and_1_copy_each_of_rest(self):
         basket = [1, 1, 2, 2, 3, 3, 4, 4, 5]
@@ -66,17 +66,17 @@ class BookStoreTest(unittest.TestCase):
         self
     ):
         basket = [1, 1, 2, 2, 3, 3, 4, 5, 1, 1, 2, 2, 3, 3, 4, 5]
-        self.assertEqual(total(basket), 10240)
+        self.assertEqual(10240, total(basket))
 
     # Additional tests for this track
 
     def test_two_groups_of_four_and_a_group_of_five(self):
         basket = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 5, 5]
-        self.assertEqual(total(basket), 8120)
+        self.assertEqual(8120, total(basket))
 
     def test_shuffled_book_order(self):
         basket = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3]
-        self.assertEqual(total(basket), 8120)
+        self.assertEqual(8120, total(basket))
 
 
 if __name__ == "__main__":
