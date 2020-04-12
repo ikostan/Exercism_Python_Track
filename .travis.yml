@@ -5,6 +5,10 @@ language: python
 python:
   - "3.6"
   - "3.7"
+  
+ env:
+  global:
+    - CC_TEST_REPORTER_ID=44d834637557f78627da2973e1169fb8729bd587fd07b3bbe15571aa850ee957
 
 install:
     - "pip install pytest"
