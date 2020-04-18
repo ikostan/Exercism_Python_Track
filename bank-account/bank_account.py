@@ -12,87 +12,72 @@ class BankAccount(object):
         self._is_opened = False
         self._lock = threading.Lock()
 
-    def get_balance(self):
+    def get_balance(self) -> float:
         """
         Returns current balance
         :return:
         """
-
         self._check_is_account_opened()
         return self._balance
 
-    def open(self):
+    def open(self) -> None:
         """
         Simulate a bank account supporting opening
         :return:
         """
-
         if not self._is_opened:
             self._is_opened = True
         else:
             raise ValueError("ERROR: account already opened")
-        return None
 
-    def deposit(self, amount):
+    def deposit(self, amount) -> None:
         """
         Clients can make deposits
         :param amount:
         :return:
         """
-
         self._check_is_account_opened()
         BankAccount._check_is_negative_amount(amount)
-
         with self._lock:
             self._balance += amount
-        return None
 
-    def withdraw(self, amount):
+    def withdraw(self, amount) -> None:
         """
         Clients can make withdrawals
         :param amount:
         :return:
         """
-
         self._check_is_account_opened()
         BankAccount._check_is_negative_amount(amount)
-
         with self._lock:
             if amount <= self.get_balance():
                 self._balance = self._balance - amount
             else:
                 raise ValueError("ERROR: insufficient balance")
-        return None
 
-    def close(self):
+    def close(self) -> None:
         """
         It should be possible to close an account
         :return:
         """
-
         self._check_is_account_opened()
         self._is_opened = False
         self._balance = 0.0
-        return None
 
-    def _check_is_account_opened(self):
+    def _check_is_account_opened(self) -> None:
         """
         Operations against a closed account must fail
         :return:
         """
-
         if not self._is_opened:
             raise ValueError('ERROR: account is closed.')
-        return None
 
     @staticmethod
-    def _check_is_negative_amount(amount):
+    def _check_is_negative_amount(amount) -> None:
         """
         Cannot withdraw or deposit negative amount
         :param amount:
         :return:
         """
-
         if amount < 0:
             raise ValueError("ERROR: Cannot withdraw/deposit negative amount")
-        return None
