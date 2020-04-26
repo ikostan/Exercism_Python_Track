@@ -1,25 +1,28 @@
+"""
+The mission is to write a piece of code to calculate the price
+of any conceivable shopping basket (containing only books of the
+same series), giving as big a discount as possible.
+"""
+
+
 def total(basket: list) -> float:
     """
     Calculates the price of any conceivable shopping basket
     (containing only books of the same series), giving as
     big a discount as possible.
+
     :param basket:
     :return:
     """
-
     # empty basket
     if not basket:
         return 0
 
-    book_price = 8.0
-    total_prices = 0
-    discount_combinations = regroup(discount_combinations_generator(basket))
+    discount_combinations = regroup(unique_combinations(basket))
 
-    for combination in discount_combinations:
-        total_books = len(combination)
-        total_prices += book_price * calculate_discount(total_books) * total_books
+    total_prices = sum(calculate_total(combination)
+                       for combination in discount_combinations)
 
-    # calculate total price
     return round(total_prices * 100, 0)
 
 
@@ -29,29 +32,35 @@ def regroup(discount_combinations: list) -> list:
     :param discount_combinations: unique combinations of books
     :return:
     """
+    total_books = sum(len(combination)
+                      for combination in discount_combinations)
 
-    total_books = 0
-    for combination in discount_combinations:
-        total_books += len(combination)
+    i, min_len = 0, len(discount_combinations[-1])
 
-    min_len = len(discount_combinations[-1])
-    i = 0
+    # In some cases there is a big gap between the biggest vs smallest combination.
+    # Because of that, the total discount may be less than max possible.
+    # In order to solve the problem, combinations must be reshuffled.
     if total_books % min_len != 0:
-        for x, combination in enumerate(discount_combinations):
+        for combination_index, combination in enumerate(discount_combinations):
+            # In case we found smallest combination do following:
+            # 1. Take the biggest one (use index, starts from 0).
+            # 2. Find the book that not in smallest and move it there.
+            # 3. Remove the same book from the biggest combination.
+            # 4. Update index of the biggest combination.
             if len(combination) == min_len:
-                for b in discount_combinations[i]:
-                    if b not in combination:
-                        discount_combinations[x].add(b)
-                        discount_combinations[i].remove(b)
+                for book in discount_combinations[i]:
+                    if book not in combination:
+                        discount_combinations[combination_index].add(book)
+                        discount_combinations[i].remove(book)
                         i += 1
                         break
-
     return discount_combinations
 
 
-def discount_combinations_generator(basket: list) -> list:
+def unique_combinations(basket: list) -> list:
     """
-    Generates possible unique groups of books
+    Returns possible unique groups of books
+
     :param basket: all books from customer's basket
     :return:
     """
@@ -61,34 +70,29 @@ def discount_combinations_generator(basket: list) -> list:
         combinations.append(temp)
         for t in temp:
             basket.remove(t)
+
     return combinations
 
 
-def calculate_discount(n: int) -> float:
+def calculate_total(combination: list) -> float:
     """
     If you buy two different books, you get a 5% discount on those two books.
     If you buy 3 different books, you get a 10% discount.
     If you buy 4 different books, you get a 20% discount.
     If you buy all 5, you get a 25% discount.
 
-    :param n: number of books
-    :return:
+    :param combination: combination of books
+    :return: total price
     """
+    book_price = 8.0
+    amount = len(combination)
+    return DISCOUNT[amount] * book_price * amount
 
-    # One copy of any of the five books -> no discount
-    discount = 1.0
 
-    # If you buy two different books, you get a 5% discount
-    if n == 2:
-        discount = 0.95
-    # If you buy 3 different books, you get a 10% discount
-    elif n == 3:
-        discount = 0.9
-    # If you buy 4 different books, you get a 20% discount
-    elif n == 4:
-        discount = 0.8
-    # If you buy all 5, you get a 25% discount.
-    elif n == 5:
-        discount = 0.75
-
-    return discount
+DISCOUNT = {
+    1: 1.0,
+    2: 0.95,
+    3: 0.9,
+    4: 0.8,
+    5: 0.75
+}
