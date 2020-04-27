@@ -20,7 +20,7 @@ def total(basket: list) -> float:
 
     discount_combinations = regroup(unique_combinations(basket))
 
-    total_prices = sum(calculate_total(combination)
+    total_prices = sum(DISCOUNT[len(combination)] * BOOK_PRICE
                        for combination in discount_combinations)
 
     return round(total_prices * 100, 0)
@@ -65,6 +65,8 @@ def unique_combinations(basket: list) -> list:
     :return:
     """
     combinations = list()
+    basket = basket[:]
+
     while basket:
         temp = set(basket)
         combinations.append(temp)
@@ -74,25 +76,13 @@ def unique_combinations(basket: list) -> list:
     return combinations
 
 
-def calculate_total(combination: list) -> float:
-    """
-    If you buy two different books, you get a 5% discount on those two books.
-    If you buy 3 different books, you get a 10% discount.
-    If you buy 4 different books, you get a 20% discount.
-    If you buy all 5, you get a 25% discount.
-
-    :param combination: combination of books
-    :return: total price
-    """
-    book_price = 8.0
-    amount = len(combination)
-    return DISCOUNT[amount] * book_price * amount
+BOOK_PRICE = 8.0
 
 
 DISCOUNT = {
-    1: 1.0,
-    2: 0.95,
-    3: 0.9,
-    4: 0.8,
-    5: 0.75
+    1: 1.0 * 1,
+    2: 0.95 * 2,
+    3: 0.9 * 3,
+    4: 0.8 * 4,
+    5: 0.75 * 5,
 }
