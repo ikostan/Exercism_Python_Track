@@ -4,6 +4,17 @@ of any conceivable shopping basket (containing only books of the
 same series), giving as big a discount as possible.
 """
 
+BOOK_PRICE = 8.0
+
+
+TOTAL_PRICE_AFTER_DISCOUNT = {
+    1: 1.0 * BOOK_PRICE * 1,
+    2: 0.95 * BOOK_PRICE * 2,
+    3: 0.9 * BOOK_PRICE * 3,
+    4: 0.8 * BOOK_PRICE * 4,
+    5: 0.75 * BOOK_PRICE * 5,
+}
+
 
 def total(basket: list) -> float:
     """
@@ -11,8 +22,8 @@ def total(basket: list) -> float:
     (containing only books of the same series), giving as
     big a discount as possible.
 
-    :param basket:
-    :return:
+    :param basket: list of books
+    :return: big discount as possible
     """
     # empty basket
     if not basket:
@@ -20,7 +31,7 @@ def total(basket: list) -> float:
 
     discount_combinations = regroup(unique_combinations(basket))
 
-    total_prices = sum(DISCOUNT[len(combination)] * BOOK_PRICE
+    total_prices = sum(TOTAL_PRICE_AFTER_DISCOUNT[len(combination)]
                        for combination in discount_combinations)
 
     return round(total_prices * 100, 0)
@@ -29,8 +40,9 @@ def total(basket: list) -> float:
 def regroup(discount_combinations: list) -> list:
     """
     Regroup unique combinations in order to get total cheapest price
+
     :param discount_combinations: unique combinations of books
-    :return:
+    :return: unique combinations of books based on biggest discount
     """
     total_books = sum(len(combination)
                       for combination in discount_combinations)
@@ -62,7 +74,7 @@ def unique_combinations(basket: list) -> list:
     Returns possible unique groups of books
 
     :param basket: all books from customer's basket
-    :return:
+    :return: unique combinations of books
     """
     combinations = list()
     basket = basket[:]
@@ -74,15 +86,3 @@ def unique_combinations(basket: list) -> list:
             basket.remove(t)
 
     return combinations
-
-
-BOOK_PRICE = 8.0
-
-
-DISCOUNT = {
-    1: 1.0 * 1,
-    2: 0.95 * 2,
-    3: 0.9 * 3,
-    4: 0.8 * 4,
-    5: 0.75 * 5,
-}
