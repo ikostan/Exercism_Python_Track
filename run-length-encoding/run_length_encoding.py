@@ -1,3 +1,10 @@
+"""
+Run-length encoding (RLE) is a simple form of data compression,
+where runs (consecutive data elements) are replaced by just one
+data value and count.
+"""
+
+
 def decode(string: str) -> str:
 
     if not string:
