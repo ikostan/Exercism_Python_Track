@@ -32,11 +32,11 @@ def get_id(char: str, key: int) -> int:
     :param key: rotational cipher index
     :return: cipher index
     """
-    id: int = LOWERCASE.index(char.lower())
-    if id + key >= len(LOWERCASE):
-        return id + key - len(LOWERCASE)
+    new_key: int = LOWERCASE.index(char.lower())
+    if new_key + key >= len(LOWERCASE):
+        return new_key + key - len(LOWERCASE)
     else:
-        return id + key
+        return new_key + key
 
 
 def cipher_char(char: str, key: int) -> str:
