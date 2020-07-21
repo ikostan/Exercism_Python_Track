@@ -47,9 +47,8 @@ def cipher_char(char: str, key: int) -> str:
     :param key: rotational cipher index
     :return: ciphered char
     """
-    id: int = get_id(char, key)
     if char.isupper():
-        new_char = UPPERCASE[id]
+        new_char = UPPERCASE[get_id(char, key)]
     else:
-        new_char = LOWERCASE[id]
+        new_char = LOWERCASE[get_id(char, key)]
     return new_char
