@@ -7,9 +7,7 @@ DIGITS = string.digits
 def replace_char(char: str) -> str:
     if char.isalpha():
         return LOWERCASE[len(LOWERCASE) - LOWERCASE.index(char) - 1]
-
-    if char.isdigit():
-        return char
+    return char
 
 
 def encode(plain_text: str) -> str:
