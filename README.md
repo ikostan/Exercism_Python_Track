@@ -31,9 +31,11 @@ Exercism is designed to be fun and friendly, and we place a strong emphasis on e
 Sign up and have fun. Exercism is 100% free :)
 
 ## Getting Started
+
 We know using a new product can be daunting, and Exercism is a little complicated. So here's a really simple set of instructions to get you started. [Click here for help](https://exercism.io/getting-started)
 
 ### [Exercism installation guide](https://exercism.io/cli-walkthrough)<br/>
+
 This guide was created in order to help you get started learning with Exercism. Answer a few questions, follow a few instructions, and you should be ready in no time!
 
 ### [Installer for the Latest Exercism Windows CLI](https://github.com/exercism/windows-installer/releases/tag/v1.5.3)
@@ -41,21 +43,21 @@ This guide was created in order to help you get started learning with Exercism. 
 ### [Configuring the CLI](https://exercism.io/cli-walkthrough)
 
 ### Download exercise
-- You should now have the CLI installed.<br/>
-- Download the exercise using:<br/>
+
+-   You should now have the CLI installed.
+-   Download the exercise using:
 ```bash
 exercism download --exercise=<exercise name> --track=python
 ```
-<br/>
 
 ### Submit your solution
-- You should now have the CLI installed and the exercise downloaded to your computer. <br/>
-- Solve the exercise and then upload it using:<br/> 
+-   You should now have the CLI installed and the exercise downloaded to your computer.
+-   Solve the exercise and then upload it using:
 ```bash
 exercism submit /PATH/TO/SOLUTION
 ```
-<br/>
-- In your web-browser, go back to the language tracks page, choose your exercise and the exercise you've just worked on. You will now see your solution online and notice that it is awaiting a mentor.<br/>
+
+-   In your web-browser, go back to the language tracks page, choose your exercise and the exercise you've just worked on. You will now see your solution online and notice that it is awaiting a mentor.<br/>
 
 ### Testing
 
@@ -80,41 +82,41 @@ This repo uses [flake8](http://flake8.readthedocs.org/en/latest/) with default s
 ### Setting up Python3 virtual environment on Windows machine
 
  1. open CMD
- 2. navigate to project directory, for example:<br/> 
+ 2. navigate to project directory, for example:
 ```bash
 cd C:\Users\superadmin\Desktop\Python\CodinGame
 ```
- 3. run following command:<br/> 
+ 3. run following command:
 ```bash 
 pip install virtualenv
 ```
- 4. run following command:<br/> 
+ 4. run following command:
 ```bash 
 virtualenv venv --python=python
 ```
 
-### Python3 virtual environment activation on Windows machine<br/> 
+### Python3 virtual environment activation on Windows machine
 
-On Windows, the equivalent activate script is in the Scripts folder.<br/> 
+On Windows, the equivalent activate script is in the Scripts folder.
 ```bash
 > \path\to\env\Scripts\activate
 ```
-And type 'deactivate' to undo the changes.<br/>
+And type 'deactivate' to undo the changes.
 
 [Source](https://virtualenv.pypa.io/en/stable/userguide/)<br/>
 
 ### How to delete multiples files in Git
 
-- In the command-line, navigate to your local repository.
-- Ensure you are in the default branch:<br/> 
+-   In the command-line, navigate to your local repository.
+-   Ensure you are in the default branch:<br/> 
 ```bash 
 git checkout master
 ```
-- The rm -r command will recursively remove your folder:<br/> 
+-   The rm -r command will recursively remove your folder:
 ```bash 
 git rm -r folder-name
 ```
-- Commit the change:<br/> 
+-   Commit the change:
 ```bash 
 git commit -m "Remove duplicated directory"
 ```
@@ -124,14 +126,18 @@ git push origin master
 ```
 
 ### How to fix in case .gitignore is ignored by Git
-Even if you haven't tracked the files so far, Git seems to be able to "know" about them even after you add them to .gitignore.<br/> 
-**NOTE:** First commit your current changes, or you will lose them.<br/> 
-Then run the following commands from the top folder of your Git repository:<br/> 
+
+Even if you haven't tracked the files so far, Git seems to be able to "know" about them even after you add them to .gitignore. 
+
+**NOTE:** First commit your current changes, or you will lose them.
+
+Then run the following commands from the top folder of your Git repository:
 ```bash 
 git rm -r --cached .
 git add .
 git commit -m "fixed untracked files"
 ```
 
-### More help:
+### More help
+
 [pip nstallation and upgrade](https://pip.pypa.io/en/stable/installing/)
