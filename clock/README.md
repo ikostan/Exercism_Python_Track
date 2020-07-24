@@ -6,7 +6,6 @@ You should be able to add and subtract minutes to it.
 
 Two clocks that represent the same time should be equal to each other.
 
-
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
