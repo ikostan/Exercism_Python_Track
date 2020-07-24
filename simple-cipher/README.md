@@ -75,10 +75,7 @@ If you want to go farther in this field, the questions begin to be about
 how we can exchange keys in a secure way. Take a look at [Diffie-Hellman
 on Wikipedia][dh] for one of the first implementations of this scheme.
 
-[1]: https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Caesar_cipher_left_shift_of_3.svg/320px-Caesar_cipher_left_shift_of_3.svg.png
-[dh]: http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange
-
-## Should I use random or secrets?
+## Should I use random or secrets
 
 Python, as of version 3.6, includes two different random modules.
 
@@ -94,7 +91,6 @@ cryptographically strong random numbers that provide the greater security requir
 
 Since this is only an exercise, `random` is fine to use, but note that **it would be
 very insecure if actually used for cryptography.**
-
 
 ## Exception messages
 
@@ -141,3 +137,6 @@ Substitution Cipher at Wikipedia [http://en.wikipedia.org/wiki/Substitution_ciph
 ## Submitting Incomplete Solutions
 
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+
+[1]: https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Caesar_cipher_left_shift_of_3.svg/320px-Caesar_cipher_left_shift_of_3.svg.png
+[dh]: http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange
