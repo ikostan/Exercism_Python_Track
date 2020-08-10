@@ -66,7 +66,7 @@ def cipher_text(plain_text: str) -> str:
     # from the English text and the message is down-cased.
     plain_text_no_empty_chars: str = ''.join([char.lower() for char in plain_text
                                               if (char.isalpha() or char.isdigit())])
-    
+
     if not plain_text_no_empty_chars:
         return ''
 
