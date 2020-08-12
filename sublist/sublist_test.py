@@ -77,7 +77,3 @@ class SublistTest(unittest.TestCase):
         self.assertEqual(
             sublist(list(range(3, 200, 3)), list(range(15, 200, 15))), UNEQUAL
         )
-
-
-if __name__ == "__main__":
-    unittest.main()
