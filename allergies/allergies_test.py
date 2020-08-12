@@ -178,7 +178,3 @@ class AllergiesTest(unittest.TestCase):
                 "cats",
             ],
         )
-
-
-if __name__ == "__main__":
-    unittest.main()
