@@ -66,7 +66,3 @@ class LuhnTest(unittest.TestCase):
         number = Luhn("055 444 285")
         self.assertIs(number.valid(), True)
         self.assertIs(number.valid(), True)
-
-
-if __name__ == "__main__":
-    unittest.main()

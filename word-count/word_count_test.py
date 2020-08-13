@@ -128,7 +128,3 @@ class WordCountTest(unittest.TestCase):
              "is": 1,
              "broken": 1},
         )
-
-
-if __name__ == "__main__":
-    unittest.main()

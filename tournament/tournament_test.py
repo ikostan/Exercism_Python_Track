@@ -135,7 +135,3 @@ class TournamentTest(unittest.TestCase):
             "Devastating Donkeys            |  3 |  0 |  1 |  2 |  1",
         ]
         self.assertEqual(tally(results), table)
-
-
-if __name__ == "__main__":
-    unittest.main()

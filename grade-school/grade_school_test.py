@@ -58,7 +58,3 @@ class GradeSchoolTest(unittest.TestCase):
         school = School()
         expected = []
         self.assertEqual(school.grade(1), expected)
-
-
-if __name__ == "__main__":
-    unittest.main()

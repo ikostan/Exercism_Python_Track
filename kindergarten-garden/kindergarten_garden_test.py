@@ -71,7 +71,3 @@ class KindergartenGardenTest(unittest.TestCase):
         self.assertEqual(
             garden.plants("Xander"), ["Radishes", "Grass", "Clover", "Violets"]
         )
-
-
-if __name__ == "__main__":
-    unittest.main()

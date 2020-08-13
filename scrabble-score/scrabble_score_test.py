@@ -38,7 +38,3 @@ class ScrabbleScoreTest(unittest.TestCase):
 
     def test_entire_alphabet_available(self):
         self.assertEqual(score("abcdefghijklmnopqrstuvwxyz"), 87)
-
-
-if __name__ == "__main__":
-    unittest.main()

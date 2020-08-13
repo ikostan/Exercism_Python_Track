@@ -135,7 +135,3 @@ class RobotSimulatorTest(unittest.TestCase):
 
         self.assertEqual(robot.coordinates, (11, 5))
         self.assertEqual(robot.direction, NORTH)
-
-
-if __name__ == "__main__":
-    unittest.main()
