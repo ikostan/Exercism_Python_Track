@@ -50,15 +50,15 @@ def decode(encoded_message: str, rails: int) -> str:
     decoded: list = get_rails(encoded_message, rails)
 
     i = 0
-    for r, row_decoded in enumerate(decoded):
+    for row, row_decoded in enumerate(decoded):
         for c, col_decoded in enumerate(row_decoded):
             if col_decoded:
-                decoded[r][c] = encoded_message[i]
+                decoded[row][c] = encoded_message[i]
                 i += 1
 
     for c in range(len(decoded[0])):
-        for r in range(len(decoded)):
-            if decoded[r][c]:
-                message += decoded[r][c]
+        for row in range(len(decoded)):
+            if decoded[row][c]:
+                message += decoded[row][c]
 
     return message
