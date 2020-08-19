@@ -35,13 +35,8 @@ def sort_results(results: list, reverse: bool) -> list:
         is_sorted = True
         for i, val in enumerate(results):
             if i + 1 < len(results):
-                if not reverse:
-                    if get_key(results[i]) > get_key(results[i + 1]):
+                if not reverse and get_key(results[i]) > get_key(results[i + 1]):
                         results[i], results[i + 1] = results[i + 1], results[i]
-                        is_sorted = False
-                else:
-                    if get_key(results[i]) < get_key(results[i + 1]):
-                        results[i + 1], results[i] = results[i], results[i + 1]
                         is_sorted = False
     return results
 
