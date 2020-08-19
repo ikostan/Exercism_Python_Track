@@ -41,7 +41,7 @@ def sort_results(results: list, reverse: bool) -> list:
                         is_sorted = False
                 else:
                     if get_key(results[i]) < get_key(results[i + 1]):
-                        results[i], results[i + 1] = results[i + 1], results[i]
+                        results[i + 1], results[i] = results[i], results[i + 1]
                         is_sorted = False
     return results
 
