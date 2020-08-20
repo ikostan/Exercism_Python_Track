@@ -1,4 +1,12 @@
 class Node:
+    """
+    The node is where data is stored in the linked
+    list (they remind me of those plastic Easter
+    eggs that hold treats). Along with the data
+    each node also holds a pointer, which is a
+    reference to the next node in the list.
+    """
+
     def __init__(self, value):
         self.__value = value
         self.next_node = None
@@ -46,13 +54,10 @@ class LinkedList:
         node.next_node, self.__head = self.__head, node
 
     def pop(self):
-        if self.head():
-            self.__len -= 1
-            val = self.head().value()
-            self.__head = self.head().next()
-            return val
-        else:
-            raise EmptyListException("ERROR: the list is empty")
+        self.__len -= 1
+        val = self.head().value()
+        self.__head = self.head().next()
+        return val
 
     def reversed(self):
         return LinkedList(list(self))
