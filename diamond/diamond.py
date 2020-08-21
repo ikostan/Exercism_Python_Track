@@ -14,15 +14,16 @@ def rows(letter: str) -> list:
     """
 
     diamond: list = list()
+    mid = int(LETTERS.index(letter))
 
-    for i, char in enumerate(LETTERS[:LETTERS.index(letter) + 1]):
+    for i, char in enumerate(LETTERS[:mid + 1]):
 
-        temp_row = [' ' for i in range((LETTERS.index(letter) * 2) + 1)]
+        temp_row = [' ' for i in range((mid * 2) + 1)]
         if i == 0:
-            temp_row[int(len(temp_row) / 2)] = char
+            temp_row[mid] = char
         else:
-            temp_row[int(len(temp_row) / 2) - i] = char
-            temp_row[int(len(temp_row) / 2) + i] = char
+            temp_row[mid - i] = char
+            temp_row[mid + i] = char
 
         diamond.append(''.join(temp_row))
 
