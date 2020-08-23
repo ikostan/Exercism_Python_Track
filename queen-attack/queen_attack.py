@@ -16,7 +16,7 @@ class Queen:
         """
         In the game of chess, a queen can attack pieces
         which are on the same row, column, or diagonal.
-        
+
         :param another_queen:
         :return:
         """
