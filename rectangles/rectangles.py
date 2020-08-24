@@ -18,12 +18,16 @@ class Rectangle:
 
     def __find_b(self, dots: tuple) -> list:
         for dot in dots:
-            if self.A[0] == dot[0] and self.A[1] < dot[1] and self.D[1] == dot[1]:
+            if self.A[0] == dot[0] and \
+                    self.A[1] < dot[1] and \
+                    self.D[1] == dot[1]:
                 return dot
 
     def __find_c(self, dots: tuple) -> list:
         for dot in dots:
-            if self.D[0] == dot[0] and self.D[1] > dot[1] and self.A[1] == dot[1]:
+            if self.D[0] == dot[0] and \
+                    self.D[1] > dot[1] and \
+                    self.A[1] == dot[1]:
                 return dot
 
     def __eq__(self, other):
@@ -48,13 +52,19 @@ class Rectangle:
 
         # find B
         for dot in dots:
-            if A[0] == dot[0] and A[1] < dot[1] and D[1] == dot[1] and dot not in rec:
+            if A[0] == dot[0] and \
+                    A[1] < dot[1] and \
+                    D[1] == dot[1] and \
+                    dot not in rec:
                 B = dot
                 rec.append(dot)
 
         # find C
         for dot in dots:
-            if D[0] == dot[0] and D[1] > dot[1] and A[1] == dot[1] and dot not in rec:
+            if D[0] == dot[0] and \
+                    D[1] > dot[1] and \
+                    A[1] == dot[1] and \
+                    dot not in rec:
                 C = dot
                 rec.append(dot)
 
@@ -64,7 +74,10 @@ class Rectangle:
 
         # vertical lines should be consist of '+'/'|' only
         for row in strings[A[0] + 1: C[0]]:
-            if row[A[1]] == ' ' or row[B[1]] == ' ' or row[A[1]] == '-' or row[B[1]] == '-':
+            if row[A[1]] == ' ' or \
+                    row[B[1]] == ' ' or \
+                    row[A[1]] == '-' or \
+                    row[B[1]] == '-':
                 return False
 
         # horizontal line should be consist of '+'/'-' only
