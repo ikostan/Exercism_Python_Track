@@ -38,8 +38,6 @@ class Rectangle:
 
     @staticmethod
     def is_rectangle(dots: tuple, strings: list) -> bool:
-        if len(dots) != 4:
-            return False
 
         rec = list()
         D: list = max(dots)
