@@ -69,7 +69,6 @@ class Hand:
             elif self.sorted_hand[3][:-1] == self.sorted_hand[4][:-1]:
                 return ''.join(self.sorted_hand[:3])
 
-
     @property
     def sorted_hand(self):
         return self.__sorted_hand
@@ -248,10 +247,7 @@ class Hand:
         for key in sorted(RANK.keys()):
             results = list()
             for func in RANK[key][1:]:
-                results.append(func(self.hand))
+                results.append(func(self.__sorted_hand))
 
             if all(results):
                 return RANK[key][0]
-
-    def __repr__(self):
-        return '{}'.format(self.sorted_hand)

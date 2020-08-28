@@ -1,6 +1,5 @@
 def is_same_format(hand: str) -> bool:
-    h = hand.split(' ')
-    return h[0][-1] == h[1][-1] == h[2][-1] == h[3][-1] == h[4][-1]
+    return hand[0][-1] == hand[1][-1] == hand[2][-1] == hand[3][-1] == hand[4][-1]
 
 
 def sort_hand(hand: str) -> str:
@@ -18,8 +17,7 @@ def sort_hand(hand: str) -> str:
     return ' '.join(decks)
 
 
-def is_four_of_a_kind(hand: str) -> bool:
-    cards = sort_hand(hand).split(' ')
+def is_four_of_a_kind(cards: list) -> bool:
 
     if cards[0][:-1] == cards[1][:-1] == cards[2][:-1] == cards[3][:-1]:
         return True
@@ -30,90 +28,84 @@ def is_four_of_a_kind(hand: str) -> bool:
     return False
 
 
-def is_straight(hand) -> bool:
-    sorted_hand = sort_hand(hand).split(' ')
+def is_straight(hand: list) -> bool:
 
-    return (DECK_RANK.index(sorted_hand[0][:-1]) + 1 == DECK_RANK.index(sorted_hand[1][:-1]) or
-            (DECK_RANK.index(sorted_hand[0][:-1]) + (len(DECK_RANK) - 1)) == DECK_RANK.index(sorted_hand[4][:-1])) and \
-           DECK_RANK.index(sorted_hand[1][:-1]) + 1 == DECK_RANK.index(sorted_hand[2][:-1]) and \
-           DECK_RANK.index(sorted_hand[2][:-1]) + 1 == DECK_RANK.index(sorted_hand[3][:-1]) and \
-           DECK_RANK.index(sorted_hand[3][:-1]) + 1 == DECK_RANK.index(sorted_hand[4][:-1])
+    return (DECK_RANK.index(hand[0][:-1]) + 1 == DECK_RANK.index(hand[1][:-1]) or
+            (DECK_RANK.index(hand[0][:-1]) + (len(DECK_RANK) - 1)) == DECK_RANK.index(hand[4][:-1])) and \
+           DECK_RANK.index(hand[1][:-1]) + 1 == DECK_RANK.index(hand[2][:-1]) and \
+           DECK_RANK.index(hand[2][:-1]) + 1 == DECK_RANK.index(hand[3][:-1]) and \
+           DECK_RANK.index(hand[3][:-1]) + 1 == DECK_RANK.index(hand[4][:-1])
 
 
-def is_flush(hand: str) -> bool:
-    sorted_hand = sort_hand(hand).split(' ')
+def is_flush(hand: list) -> bool:
 
-    if DECK_RANK.index(sorted_hand[0][:-1]) + 1 == DECK_RANK.index(sorted_hand[1][:-1]) and \
-            DECK_RANK.index(sorted_hand[1][:-1]) + 1 == DECK_RANK.index(sorted_hand[2][:-1]) and \
-            DECK_RANK.index(sorted_hand[2][:-1]) + 1 == DECK_RANK.index(sorted_hand[3][:-1]):
+    if DECK_RANK.index(hand[0][:-1]) + 1 == DECK_RANK.index(hand[1][:-1]) and \
+            DECK_RANK.index(hand[1][:-1]) + 1 == DECK_RANK.index(hand[2][:-1]) and \
+            DECK_RANK.index(hand[2][:-1]) + 1 == DECK_RANK.index(hand[3][:-1]):
         return True
 
-    if DECK_RANK.index(sorted_hand[1][:-1]) + 1 == DECK_RANK.index(sorted_hand[2][:-1]) and \
-            DECK_RANK.index(sorted_hand[2][:-1]) + 1 == DECK_RANK.index(sorted_hand[3][:-1]) and \
-            DECK_RANK.index(sorted_hand[3][:-1]) + 1 == DECK_RANK.index(sorted_hand[4][:-1]):
-        return True
-
-    return False
-
-
-def is_full_house(hand: str) -> bool:
-    sorted_hand = sort_hand(hand).split(' ')
-
-    if sorted_hand[0][:-1] == sorted_hand[1][:-1] == sorted_hand[2][:-1] and \
-            sorted_hand[3][:-1] == sorted_hand[4][:-1]:
-        return True
-    elif sorted_hand[0][:-1] == sorted_hand[1][:-1] and \
-            sorted_hand[2][:-1] == sorted_hand[3][:-1] == sorted_hand[4][:-1]:
+    if DECK_RANK.index(hand[1][:-1]) + 1 == DECK_RANK.index(hand[2][:-1]) and \
+            DECK_RANK.index(hand[2][:-1]) + 1 == DECK_RANK.index(hand[3][:-1]) and \
+            DECK_RANK.index(hand[3][:-1]) + 1 == DECK_RANK.index(hand[4][:-1]):
         return True
 
     return False
 
 
-def is_three_of_a_kind(hand) -> bool:
-    sorted_hand = sort_hand(hand).split(' ')
+def is_full_house(hand: list) -> bool:
 
-    if sorted_hand[0][:-1] == sorted_hand[1][:-1] == sorted_hand[2][:-1]:
+    if hand[0][:-1] == hand[1][:-1] == hand[2][:-1] and \
+            hand[3][:-1] == hand[4][:-1]:
         return True
-    elif sorted_hand[2][:-1] == sorted_hand[3][:-1] == sorted_hand[4][:-1]:
-        return True
-    elif sorted_hand[1][:-1] == sorted_hand[2][:-1] == sorted_hand[3][:-1]:
-        return True
-
-    return False
-
-
-def is_two_pair(hand) -> bool:
-    sorted_hand = sort_hand(hand).split(' ')
-
-    if sorted_hand[0][:-1] == sorted_hand[1][:-1] and \
-            sorted_hand[2][:-1] == sorted_hand[3][:-1]:
-        return True
-    elif sorted_hand[1][:-1] == sorted_hand[2][:-1] and \
-            sorted_hand[3][:-1] == sorted_hand[4][:-1]:
-        return True
-    elif sorted_hand[0][:-1] == sorted_hand[1][:-1] and \
-            sorted_hand[3][:-1] == sorted_hand[4][:-1]:
+    elif hand[0][:-1] == hand[1][:-1] and \
+            hand[2][:-1] == hand[3][:-1] == hand[4][:-1]:
         return True
 
     return False
 
 
-def is_one_pair(hand) -> bool:
-    sorted_hand = sort_hand(hand).split(' ')
+def is_three_of_a_kind(hand: list) -> bool:
 
-    if sorted_hand[0][:-1] == sorted_hand[1][:-1]:
+    if hand[0][:-1] == hand[1][:-1] == hand[2][:-1]:
         return True
-    elif sorted_hand[1][:-1] == sorted_hand[2][:-1]:
+    elif hand[2][:-1] == hand[3][:-1] == hand[4][:-1]:
         return True
-    elif sorted_hand[2][:-1] == sorted_hand[3][:-1]:
-        return True
-    elif sorted_hand[3][:-1] == sorted_hand[4][:-1]:
+    elif hand[1][:-1] == hand[2][:-1] == hand[3][:-1]:
         return True
 
     return False
 
 
-def is_high_card(hand) -> bool:
+def is_two_pair(hand: list) -> bool:
+
+    if hand[0][:-1] == hand[1][:-1] and \
+            hand[2][:-1] == hand[3][:-1]:
+        return True
+    elif hand[1][:-1] == hand[2][:-1] and \
+            hand[3][:-1] == hand[4][:-1]:
+        return True
+    elif hand[0][:-1] == hand[1][:-1] and \
+            hand[3][:-1] == hand[4][:-1]:
+        return True
+
+    return False
+
+
+def is_one_pair(hand: list) -> bool:
+
+    if hand[0][:-1] == hand[1][:-1]:
+        return True
+    elif hand[1][:-1] == hand[2][:-1]:
+        return True
+    elif hand[2][:-1] == hand[3][:-1]:
+        return True
+    elif hand[3][:-1] == hand[4][:-1]:
+        return True
+
+    return False
+
+
+def is_high_card(hand: list) -> bool:
     return True
 
 
