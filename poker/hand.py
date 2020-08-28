@@ -69,7 +69,7 @@ class Hand:
             elif self.sorted_hand[1][:-1] == self.sorted_hand[2][:-1]:
                 return ''.join(self.sorted_hand[0] + self.sorted_hand[3:])
             elif self.sorted_hand[2][:-1] == self.sorted_hand[3][:-1]:
-                return ''.join(self.sorted_hand[0:2] + self.sorted_hand[4])
+                return ''.join(self.sorted_hand[0:2] + [self.sorted_hand[4]])
             elif self.sorted_hand[3][:-1] == self.sorted_hand[4][:-1]:
                 return ''.join(self.sorted_hand[:3])
 
@@ -152,11 +152,15 @@ class Hand:
                 return False
             # One pair
             elif self.rank_key == 8:
-                # Each one pair is ranked first by the rank of its pair,
-                # then by the rank of its highest-ranking kicker, then by
-                # the rank of its second highest-ranking kicker, and finally
-                # by the rank of its lowest-ranking kicker.
-                pass
+
+                if self.get_one_pair()[0][:-1] > other.get_one_pair()[0][:-1]:
+                    return False
+
+                for pair in zip(self.kicker.split(' '), other.kicker.split(' ')):
+                    if pair[0][:-1] > pair[1][:-1]:
+                        return False
+
+                return True
             # High Card, Flush, Three of a kind
             elif self.rank_key in [4, 6, 9]:
                 for pair in zip(self.sorted_hand, other.sorted_hand):

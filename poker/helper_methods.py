@@ -1,53 +1,6 @@
-def get_highest_hands(hands: list):
-    highest = len(DECK_RANK) - 1
-    for hand in hands:
-        for h in hand.split(' '):
-            if DECK_RANK.index(h[:-1]) < highest:
-                highest = DECK_RANK.index(h[:-1])
-
-    is_sorted = False
-    while not is_sorted:
-        is_sorted = True
-        for i, hand in enumerate(hands):
-            if DECK_RANK[highest] not in hand:
-                is_sorted = False
-                del hands[i]
-                break
-
-    clean_up_hands(hands)
-
-
-def get_total_hand_rank(hand: str) -> int:
-    decks = hand.split(' ')
-    total = 0
-
-    for deck in decks:
-        total += DECK_RANK.index(deck[:-1])
-
-    return total
-
-
 def is_same_format(hand: str) -> bool:
     h = hand.split(' ')
     return h[0][-1] == h[1][-1] == h[2][-1] == h[3][-1] == h[4][-1]
-
-
-def clean_up_hands(hands: list):
-    is_clean = False
-    while not is_clean:
-        is_clean = True
-        for i, hand in enumerate(hands):
-
-            if i + 1 < len(hands):
-                if get_total_hand_rank(hand) > get_total_hand_rank(hands[i + 1]):
-                    is_clean = False
-                    del hands[i]
-                    break
-
-                if get_total_hand_rank(hand) < get_total_hand_rank(hands[i + 1]):
-                    is_clean = False
-                    del hands[i + 1]
-                    break
 
 
 def sort_hand(hand: str) -> str:
