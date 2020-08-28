@@ -20,7 +20,6 @@ class Hand:
             if self.sorted_hand[0][:-1] == self.sorted_hand[2][:-1]:
                 return self.sorted_hand[0:3], self.sorted_hand[3:]
             return self.sorted_hand[2:], self.sorted_hand[:2]
-        raise Exception('This method available for \'Full house\' only!')
 
     @property
     def quadruplet_card(self) -> str:
@@ -38,13 +37,11 @@ class Hand:
                 return [self.sorted_hand[2], self.sorted_hand[3]]
             elif self.sorted_hand[3][:-1] == self.sorted_hand[4][:-1]:
                 return [self.sorted_hand[3], self.sorted_hand[4]]
-        raise Exception('This method available for \'One pair\' only!')
 
     def get_two_pairs(self) -> list:
         if self.__rank == 'Two pair':
             pairs = [card for card in self.sorted_hand if card != self.kicker]
             return pairs
-        raise Exception('This method available for \'Two pair\' only!')
 
     # TODO: rewrite so that it will fit: Three of a kind, One pair
     @property
@@ -72,7 +69,6 @@ class Hand:
             elif self.sorted_hand[3][:-1] == self.sorted_hand[4][:-1]:
                 return ''.join(self.sorted_hand[:3])
 
-        raise Exception('There is no kicker for {}'.format(self.__rank))
 
     @property
     def sorted_hand(self):
@@ -131,7 +127,7 @@ class Hand:
                 other_triplet, other_pair = other.get_triplet_pair()
                 if DECK_RANK.index(triplet[0][:-1]) < DECK_RANK.index(other_triplet[0][:-1]):
                     return True
-                elif DECK_RANK.index(triplet[0][:-1]) == DECK_RANK.index(other_triplet[0][:-1]):
+                elif triplet[0][:-1] == other_triplet[0][:-1]:
                     if DECK_RANK.index(pair[0][:-1]) < DECK_RANK.index(other_pair[0][:-1]):
                         return True
                 return False
@@ -173,7 +169,6 @@ class Hand:
 
     # TODO
     def __eq__(self, other):
-        print('eq')
         # x==y calls x.__eq__(y)
         if not isinstance(other, Hand):
             # don't attempt to compare against unrelated types
@@ -189,7 +184,7 @@ class Hand:
             elif self.rank_key == 2:
                 # Each four of a kind is ranked first by the rank of its
                 # quadruplet, and then by the rank of its kicker.
-                if DECK_RANK.index(self.quadruplet_card[:-1]) == DECK_RANK.index(other.quadruplet_card[:-1]):
+                if self.quadruplet_card[:-1] == other.quadruplet_card[:-1]:
                     if DECK_RANK.index(self.kicker[:-1]) == DECK_RANK.index(other.kicker[:-1]):
                         return True
                 return False
@@ -200,7 +195,7 @@ class Hand:
                 # print('Full house: eq')
                 triplet, pair = self.get_triplet_pair()
                 other_triplet, other_pair = other.get_triplet_pair()
-                if DECK_RANK.index(triplet[0][:-1]) == DECK_RANK.index(other_triplet[0][:-1]) and \
+                if triplet[0][:-1] == other_triplet[0][:-1] and \
                         DECK_RANK.index(pair[0][:-1]) == DECK_RANK.index(other_pair[0][:-1]):
                     return True
                 return False
@@ -210,9 +205,9 @@ class Hand:
                 # then by the rank of its lowest-ranking pair, and finally by the rank
                 # of its kicker.
                 for pair in zip(self.get_two_pairs(), other.get_two_pairs()):
-                    if DECK_RANK.index(pair[0][:-1]) != DECK_RANK.index(pair[1][:-1]):
+                    if pair[0][:-1] != pair[1][:-1]:
                         return False
-                if DECK_RANK.index(self.kicker[:-1]) != DECK_RANK.index(other.kicker[:-1]):
+                if self.kicker[:-1] != other.kicker[:-1]:
                     return False
                 return True
             # One pair
@@ -237,7 +232,7 @@ class Hand:
                 # of its lowest-ranking card.
                 results = list()
                 for pair in zip(self.sorted_hand, other.sorted_hand):
-                    results.append(DECK_RANK.index(pair[0][:-1]) == DECK_RANK.index(pair[1][:-1]))
+                    results.append(pair[0][:-1] == pair[1][:-1])
                 return all(results)
 
             return True
