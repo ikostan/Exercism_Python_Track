@@ -22,7 +22,6 @@ def best_hands(hands: list) -> list:
             # Filter out by rank
             if hand.rank_key > max_rank:
                 is_filtered = False
-                print('Filter out by rank', hands_objects[i])
                 del hands_objects[i]
                 break
 
@@ -31,13 +30,11 @@ def best_hands(hands: list) -> list:
 
                 if hand < hands_objects[i + 1]:
                     is_filtered = False
-                    print('compare objects between themselves #1: ', hands_objects[i])
                     del hands_objects[i]
                     break
 
                 if hand > hands_objects[i + 1]:
                     is_filtered = False
-                    print('compare objects between themselves #2: ', hands_objects[i + 1])
                     del hands_objects[i + 1]
                     break
 
