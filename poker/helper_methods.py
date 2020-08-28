@@ -59,14 +59,11 @@ def is_flush(hand: str) -> bool:
 def is_full_house(hand: str) -> bool:
     sorted_hand = sort_hand(hand).split(' ')
 
-    if (sorted_hand[0][:-1] == sorted_hand[1][:-1] and
-        sorted_hand[1][:-1] == sorted_hand[2][:-1]) and \
+    if sorted_hand[0][:-1] == sorted_hand[1][:-1] == sorted_hand[2][:-1] and \
             sorted_hand[3][:-1] == sorted_hand[4][:-1]:
         return True
-
-    if sorted_hand[0][:-1] == sorted_hand[1][:-1] and \
-            (sorted_hand[2][:-1] == sorted_hand[3][:-1] and
-             sorted_hand[3][:-1] == sorted_hand[4][:-1]):
+    elif sorted_hand[0][:-1] == sorted_hand[1][:-1] and \
+            sorted_hand[2][:-1] == sorted_hand[3][:-1] == sorted_hand[4][:-1]:
         return True
 
     return False
@@ -75,16 +72,11 @@ def is_full_house(hand: str) -> bool:
 def is_three_of_a_kind(hand) -> bool:
     sorted_hand = sort_hand(hand).split(' ')
 
-    if sorted_hand[0][:-1] == sorted_hand[1][:-1] and \
-            sorted_hand[1][:-1] == sorted_hand[2][:-1]:
+    if sorted_hand[0][:-1] == sorted_hand[1][:-1] == sorted_hand[2][:-1]:
         return True
-
-    if sorted_hand[2][:-1] == sorted_hand[3][:-1] and \
-            sorted_hand[3][:-1] == sorted_hand[4][:-1]:
+    elif sorted_hand[2][:-1] == sorted_hand[3][:-1] == sorted_hand[4][:-1]:
         return True
-
-    if sorted_hand[1][:-1] == sorted_hand[2][:-1] and \
-            sorted_hand[2][:-1] == sorted_hand[3][:-1]:
+    elif sorted_hand[1][:-1] == sorted_hand[2][:-1] == sorted_hand[3][:-1]:
         return True
 
     return False
@@ -96,12 +88,10 @@ def is_two_pair(hand) -> bool:
     if sorted_hand[0][:-1] == sorted_hand[1][:-1] and \
             sorted_hand[2][:-1] == sorted_hand[3][:-1]:
         return True
-
-    if sorted_hand[1][:-1] == sorted_hand[2][:-1] and \
+    elif sorted_hand[1][:-1] == sorted_hand[2][:-1] and \
             sorted_hand[3][:-1] == sorted_hand[4][:-1]:
         return True
-
-    if sorted_hand[0][:-1] == sorted_hand[1][:-1] and \
+    elif sorted_hand[0][:-1] == sorted_hand[1][:-1] and \
             sorted_hand[3][:-1] == sorted_hand[4][:-1]:
         return True
 
@@ -113,14 +103,11 @@ def is_one_pair(hand) -> bool:
 
     if sorted_hand[0][:-1] == sorted_hand[1][:-1]:
         return True
-
-    if sorted_hand[1][:-1] == sorted_hand[2][:-1]:
+    elif sorted_hand[1][:-1] == sorted_hand[2][:-1]:
         return True
-
-    if sorted_hand[2][:-1] == sorted_hand[3][:-1]:
+    elif sorted_hand[2][:-1] == sorted_hand[3][:-1]:
         return True
-
-    if sorted_hand[3][:-1] == sorted_hand[4][:-1]:
+    elif sorted_hand[3][:-1] == sorted_hand[4][:-1]:
         return True
 
     return False
