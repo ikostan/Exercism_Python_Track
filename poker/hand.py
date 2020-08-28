@@ -1,4 +1,4 @@
-from helper_methods import DECK_RANK, RANK, get_total_hand_rank, sort_hand
+from helper_methods import DECK_RANK, RANK, sort_hand
 
 
 class Hand:
@@ -43,7 +43,6 @@ class Hand:
     def get_two_pairs(self) -> list:
         if self.__rank == 'Two pair':
             pairs = [card for card in self.sorted_hand if card != self.kicker]
-            print('pairs: {}'.format(pairs))
             return pairs
         raise Exception('This method available for \'Two pair\' only!')
 
@@ -164,7 +163,6 @@ class Hand:
             # High Card, Flush, Three of a kind
             elif self.rank_key in [4, 6, 9]:
                 for pair in zip(self.sorted_hand, other.sorted_hand):
-                    print('\npair: {}'.format(pair))
                     if DECK_RANK.index(pair[0][:-1]) < DECK_RANK.index(pair[1][:-1]):
                         return True
                     elif DECK_RANK.index(pair[0][:-1]) > DECK_RANK.index(pair[1][:-1]):
@@ -232,7 +230,6 @@ class Hand:
 
                 return True
             elif self.rank_key in [4, 6, 9]:
-                print('High Card, Flush')
                 # Each high card hand is ranked first by the rank of its
                 # highest-ranking card, then by the rank of its second highest-ranking
                 # card, then by the rank of its third highest-ranking card, then by
@@ -241,7 +238,6 @@ class Hand:
                 results = list()
                 for pair in zip(self.sorted_hand, other.sorted_hand):
                     results.append(DECK_RANK.index(pair[0][:-1]) == DECK_RANK.index(pair[1][:-1]))
-                print('eq [4,6,9] -> results: {}'.format(results))
                 return all(results)
 
             return True
@@ -255,13 +251,11 @@ class Hand:
 
     def __get_rank(self) -> str:
         for key in sorted(RANK.keys()):
-            # print('\nKEY: {}'.format(key))
             results = list()
             for func in RANK[key][1:]:
                 results.append(func(self.hand))
 
             if all(results):
-                print('\nRANK: {}, HAND: {}'.format(RANK[key][0], self.hand))
                 return RANK[key][0]
 
     def __repr__(self):

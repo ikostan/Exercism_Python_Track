@@ -31,9 +31,7 @@ def is_four_of_a_kind(hand: str) -> bool:
 
 
 def is_straight(hand) -> bool:
-    # print('\nhand: {}'.format(hand))
     sorted_hand = sort_hand(hand).split(' ')
-    # print('\nsorted_hand: {}'.format(sorted_hand))
 
     return (DECK_RANK.index(sorted_hand[0][:-1]) + 1 == DECK_RANK.index(sorted_hand[1][:-1]) or
             (DECK_RANK.index(sorted_hand[0][:-1]) + (len(DECK_RANK) - 1)) == DECK_RANK.index(sorted_hand[4][:-1])) and \
@@ -94,7 +92,6 @@ def is_three_of_a_kind(hand) -> bool:
 
 def is_two_pair(hand) -> bool:
     sorted_hand = sort_hand(hand).split(' ')
-    # print('\nis_two_pair: {}'.format(sorted_hand))
 
     if sorted_hand[0][:-1] == sorted_hand[1][:-1] and \
             sorted_hand[2][:-1] == sorted_hand[3][:-1]:
