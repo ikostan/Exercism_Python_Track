@@ -1,4 +1,5 @@
 from __future__ import division
+from math import gcd
 
 
 class Rational:
@@ -10,9 +11,6 @@ class Rational:
     def __init__(self, numer, denom):
         if denom == 0:
             raise ValueError('ERROR: denominator can not be zero')
-        elif numer == 0:
-            self.numer = numer
-            self.denom = denom
         else:
             if (numer > 0 and denom > 0) or (numer < 0 and denom < 0):
                 self.numer = abs(int(numer / gcd(numer, denom)))
@@ -116,25 +114,3 @@ class Rational:
         :return:
         """
         return (base ** self.numer) ** (1./self.denom)
-
-
-def gcd(numer: int, denom: int):
-    """
-    Finds greatest common divisor (gcd).
-    :param numer:
-    :param denom:
-    :return:
-    """
-
-    if numer == 0:
-        return 0
-
-    if numer == denom:
-        return denom
-
-    divisor = min(abs(numer), abs(denom))
-    while not (numer % divisor == 0 and denom % divisor == 0):
-        divisor -= 1
-        # print('gcd: {}'.format(divisor))  # debug only
-
-    return divisor
