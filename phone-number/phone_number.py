@@ -1,4 +1,4 @@
-class Phone(object):
+class PhoneNumber(object):
 
     def __init__(self, phone_number):
         digits_only = ''.join(n for n in phone_number if n.isdigit())
@@ -20,11 +20,11 @@ class Phone(object):
     # return formatted phone number:
     def pretty(self):
         if len(self.number) == 10:
-            return '({0}) {1}-{2}'.format(self.number[0:3],
+            return '({0})-{1}-{2}'.format(self.number[0:3],
                                           self.number[3:6],
                                           self.number[6:])
         else:
-            return '({0}) {1}-{2}'.format(self.number[1:3],
+            return '({0})-{1}-{2}'.format(self.number[1:3],
                                           self.number[4:7],
                                           self.number[7:])
 
