@@ -31,8 +31,7 @@ def country_code(digits_only: str):
         return True
     elif digits_only[0] == '1' and len(digits_only[1:]) == 10:
         return True
-    else:
-        return False
+    return False
 
 
 # NPA validation:
@@ -45,8 +44,7 @@ def npa(digits_only: str):
     elif npa[0] <= int(digits_only[1:4]) <= npa[1] \
             and len(digits_only) == 11:
         return digits_only[1:4]
-    else:
-        return False
+    return False
 
 
 # Exchange code validation:
@@ -57,5 +55,4 @@ def exchange_code(digits_only: str):
     elif int(digits_only[4]) > 1 \
             and len(digits_only) == 11:
         return True
-    else:
-        return False
+    return False
