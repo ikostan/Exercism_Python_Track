@@ -3,19 +3,15 @@ class PhoneNumber(object):
     def __init__(self, phone_number):
         digits_only = ''.join(n for n in phone_number if n.isdigit())
 
-        if country_code(digits_only):
-            if npa(digits_only):
-                if exchange_code(digits_only):
-                    self.number = digits_only \
-                        if len(digits_only) == 10 \
-                        else digits_only[1:]
-                    self.area_code = npa(digits_only)
-                else:
-                    raise ValueError('Invalid exchange code')
-            else:
-                raise ValueError('Invalid NPA')
-        else:
+        if not country_code(digits_only):
             raise ValueError('Invalid country code')
+        elif not npa(digits_only):
+            raise ValueError('Invalid NPA')
+        elif not exchange_code(digits_only):
+            raise ValueError('Invalid exchange code')
+
+        self.number = digits_only if len(digits_only) == 10 else digits_only[1:]
+        self.area_code = npa(digits_only)
 
     # return formatted phone number:
     def pretty(self):
