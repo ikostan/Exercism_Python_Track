@@ -19,10 +19,7 @@ class Rational:
             self.denom = abs(int(denom / gcd(numer, denom)))
 
     def __eq__(self, other):
-        if self.numer != 0:
-            return self.numer == other.numer and self.denom == other.denom
-        else:
-            return self.numer == other.numer
+        return self.numer == other.numer and self.denom == other.denom
 
     def __repr__(self):
         return '{}/{}'.format(self.numer, self.denom)
@@ -69,8 +66,7 @@ class Rational:
         if self.denom * other.numer != 0:
             return Rational((self.numer * other.denom),
                             (self.denom * other.numer))
-        else:
-            raise ValueError('ERROR: denominator can not be zero')
+        raise ValueError('ERROR: denominator can not be zero')
 
     def __abs__(self):
         return Rational(abs(self.numer),
