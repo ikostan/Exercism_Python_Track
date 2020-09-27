@@ -50,4 +50,5 @@ def exchange_code(digits_only: str):
         return True
     elif int(digits_only[4]) > 1 and len(digits_only) == 11:
         return True
-    return False
+    else:
+        return False
