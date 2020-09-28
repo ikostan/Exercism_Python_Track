@@ -11,12 +11,12 @@ class Rational:
     def __init__(self, numer, denom):
         if denom == 0:
             raise ValueError('ERROR: denominator can not be zero')
-        else:
-            self.numer = abs(int(numer / gcd(numer, denom)))
-            if not((numer > 0 and denom > 0) or (numer < 0 and denom < 0)):
-                self.numer *= -1
 
-            self.denom = abs(int(denom / gcd(numer, denom)))
+        self.numer = abs(int(numer / gcd(numer, denom)))
+        if not((numer > 0 and denom > 0) or (numer < 0 and denom < 0)):
+            self.numer *= -1
+
+        self.denom = abs(int(denom / gcd(numer, denom)))
 
     def __eq__(self, other):
         return self.numer == other.numer and self.denom == other.denom
