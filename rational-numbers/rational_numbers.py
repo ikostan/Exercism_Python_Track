@@ -63,10 +63,8 @@ class Rational:
         :param other:
         :return:
         """
-        if self.denom * other.numer != 0:
-            return Rational((self.numer * other.denom),
-                            (self.denom * other.numer))
-        raise ValueError('ERROR: denominator can not be zero')
+        return Rational((self.numer * other.denom),
+                        (self.denom * other.numer))
 
     def __abs__(self):
         return Rational(abs(self.numer),
@@ -79,25 +77,13 @@ class Rational:
         :return:
         """
         # Exponentiation of a rational number r = a/b
-        # to a non-negative integer power n is r^n = (a^n)/(b^n).
-        if power >= 0 and isinstance(power, int):
+        # to a non-negative power n is r^n = (a^n)/(b^n).
+        if power >= 0:
             return Rational((self.numer ** power),
                             (self.denom ** power))
         # Exponentiation of a rational number r = a/b
-        # to a negative integer power n is r^n = (b^m)/(a^m), where m = |n|.
-        elif power < 0 and isinstance(power, int):
-            return Rational((self.denom ** abs(power)),
-                            (self.numer ** abs(power)))
-        # Exponentiation of a rational number r = a/b to a
-        # real (floating-point) number x is
-        # the quotient (a^x)/(b^x), which is a real number.
-        elif power >= 0 and isinstance(power, float):
-            return Rational((self.numer ** power),
-                            (self.denom ** power))
-        # Exponentiation of a rational number r = a/b to a
-        # negative real (floating-point) number x is
-        # the quotient (a^x)/(b^x), which is a real number.
-        elif power < 0 and isinstance(power, float):
+        # to a negative power n is r^n = (b^m)/(a^m), where m = |n|.
+        else:
             return Rational((self.denom ** abs(power)),
                             (self.numer ** abs(power)))
 
