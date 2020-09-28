@@ -83,9 +83,8 @@ class Rational:
                             (self.denom ** power))
         # Exponentiation of a rational number r = a/b
         # to a negative power n is r^n = (b^m)/(a^m), where m = |n|.
-        else:
-            return Rational((self.denom ** abs(power)),
-                            (self.numer ** abs(power)))
+        return Rational((self.denom ** abs(power)),
+                        (self.numer ** abs(power)))
 
     def __rpow__(self, base):
         """
